@@ -1,6 +1,15 @@
 # Data Preprocessing
 
-Crestr’s routing engine is built on a preprocessed graph derived from OpenStreetMap (OSM) data. This document outlines the full preprocessing pipeline, the structure of the resulting graph, and the reasoning behind the design choices. The aim is to give contributors a clear understanding of how raw geographic data becomes the elevation‑aware, cost‑weighted graph used by the A* routing engine.
+---
+
+**Last updated:** May 2026
+
+---
+
+Crestr’s routing engine is built on a preprocessed graph derived from OpenStreetMap (OSM) data.
+This document outlines the full preprocessing pipeline, the structure of the resulting graph, and the reasoning behind the design choices.
+The aim is to give contributors a clear understanding of how raw geographic data becomes the elevation‑aware,
+cost‑weighted graph used by the A* routing engine.
 
 ---
 
@@ -173,7 +182,7 @@ This graph is cached on disk and loaded once at backend startup.
 
 The preprocessing pipeline is designed to keep the runtime graph as lightweight as possible:
 
-- Nodes store only **coordinates and elevatio**n**.
+- Nodes store only **coordinates and elevation**.
 - Edges store only the **attributes required for routing**.
 - Raw OSM tags are used only during cost calculation and are **not retained** afterward.
 - The graph is **fully deterministic and reproducible** from the preprocessing scripts.

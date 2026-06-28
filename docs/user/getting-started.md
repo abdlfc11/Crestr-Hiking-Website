@@ -13,11 +13,10 @@ Before starting, ensure you have the following installed:
 
 ---
 
-## Step-by-Step Installation
 
-### Users
+## Users
 
-#### 1. Clone the Repository
+### 1. Clone the Repository
 
 Open your terminal and run:
 
@@ -29,7 +28,9 @@ git clone https://github.com/abdlfc11/Crestr-Hiking-App.git
 cd Crestr-Hiking-App
 ```
 
-#### 2. After cloning you should see a project structure similar to this
+### 2. After cloning set up the .env file
+
+You should see a project structure similar to this
 
 ```
 Crestr-Hiking-App/
@@ -43,10 +44,29 @@ Crestr-Hiking-App/
 ├── data/
 ├── README.md
 └── requirements.txt
+└── .env.example
 └── ...
 ```
 
-#### 3. Build and Start the App
+#### Follow the steps below to set up a .env file
+
+##### Make a file named '.env' and copy the contents from the 'example.env' file
+
+The contents of the example.env file is shown below
+``` bash
+FLASK_SECRET_KEY=dev_secret_key
+LOCATIONIQ_API_KEY=your_own_key
+DATABASE_URI=postgresql://pick_a_username:pick_a_password@db:5432/pick_a_name_for_your_database
+POSTGRES_USER=pick_a_username
+POSTGRES_PASSWORD=pick_a_password
+POSTGRES_DB=pick_a_name_for_your_database
+```
+
+The app will work fine with these values unchanged excepting the searching for an area feature, 
+as this is achieved via the `LOCATIONIQ_API_KEY` of which you will need to retrieve your own from 
+[their website](https://locationiq.com)
+
+### 3. Build and Start the App
 
 Run the following command to build the Docker image and start all services
 
@@ -54,7 +74,7 @@ Run the following command to build the Docker image and start all services
 docker-compose up --build
 ```
 
-##### Useful commands
+#### Useful commands
 
 ``` bash
 docker-compose up --build -d # this builds and starts services in the background (detached mode)
@@ -62,12 +82,12 @@ docker-compose --build --force-recreate # this force builds everything and resta
 docker-compose logs -f # this allows you to follow logs in real time
 ```
 
-#### 4. Access the App
+### 4. Access the App
 Wait until the containers are running
 <br>
 Once they are, the app should  be accessible via [localhost:5000](http://localhost:5000), opening on the Crestr homepage
 
-####  5. Common Issues + Troubleshooting
+###  5. Common Issues + Troubleshooting
 
 | Issue          | Solution |
 | :----------------: | :------: | 
@@ -75,7 +95,7 @@ Once they are, the app should  be accessible via [localhost:5000](http://localho
 | Docker permission error           |   Run with sudo (linux) or ensure Docker Desktop is operational   | 
 | Build fails    |  run docker system prune -f and try again   | 
 
-### Developers
+## Developers
 
 If you want to run the app locally you can do so with the commands below:
 

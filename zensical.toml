@@ -1,18 +1,26 @@
 [project]
 site_name = "Crestr Documentation"
+repo_url = "https://github.com/abdlfc11/Crestr-Hiking-App"
+repo_name = "Crestr Hiking App"
 
 # Theme configuration
 theme.name = "material"
 theme.logo = "assets/images/Crest-Logo.png"
 theme.variant = "modern"
-theme.favicon = "favicon.ico"          # ← use .ico or .png
+theme.favicon = "favicon.ico"
 
 theme.features = [
     "navigation.tabs",
     "navigation.sections",
+    "navigation.expand",
     "content.code.copy",
-    # "content.action.edit",
+    "content.code.annotate", # Good for technical docs
+    "content.tabs.link",  # Better internal navigation
+    "navigation.top", # Back to top button 
 ]
+
+[project.theme.icon]
+repo = "fontawesome/brands/github"
 
 # Palette (light + dark)
 [[project.theme.palette]]
@@ -33,17 +41,13 @@ accent = "amber"
 icon = "material/weather-night"
 name = "Switch to Light Mode"
 
+
 # Navigation
 [[project.nav]]
 Home = "index.md"
 
 [[project.nav]]
-"Roadmap" = [
-    { "Overview" = "roadmap/overview.md" },
-    { "2025" = "roadmap/2025.md" },
-    { "2026" = "roadmap/2026.md" },
-    { "2027" = "roadmap/2027.md" }
-]
+"Crestr App" = "https://crestr.co.uk"
 
 [[project.nav]]
 "User Guide" = [
@@ -55,8 +59,9 @@ Home = "index.md"
 
 [[project.nav]]
 "Technical" = [
-    { "Architecture Overview" = "technical/architecture.md" },
     { "Data Preprocessing" = "technical/data-preprocessing.md" },
+    { "Tech Stack" = "technical/tech-stack.md" },
+    { "Architecture Overview" = "technical/architecture.md" },
     { "Routing Engine (A*)" = "technical/routing-engine.md" },
     { "KDTree" = "technical/kdtree.md" },
     { "Elevation Pipeline" = "technical/elevation.md" },
@@ -64,8 +69,17 @@ Home = "index.md"
     { "Frontend Architecture" = "technical/frontend-architecture.md" }
 ]
 
+[[project.nav]]
+"Roadmap" = [
+    { "Overview" = "roadmap/overview.md" },
+    { "2025" = "roadmap/2025.md" },
+    { "2026" = "roadmap/2026.md" },
+    { "2027" = "roadmap/2027.md" }
+]
+
+
 # Plugins
-project.plugins = ["search"]
+project.plugins = ["search", "git-revision-date-localized"] 
 
 # Markdown extensions
 project.markdown_extensions = [
@@ -74,3 +88,6 @@ project.markdown_extensions = [
     "pymdownx.details",
     "pymdownx.superfences",
 ]
+
+[extra]
+  homepage = "https://crestr.co.uk"
