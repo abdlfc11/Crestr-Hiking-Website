@@ -116,6 +116,8 @@ body {
 #login-link,
 #register-link {
     opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* this styles each li item */
@@ -170,6 +172,12 @@ body {
     background-color: #2563eb !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* this adds click feedback to the beta link */
+.beta-link:active {
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
 /* --- MOBILE NAVBAR FIX --- */
