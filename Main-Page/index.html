@@ -32,7 +32,9 @@
     <nav id="navbar">
         <div id="left-nav-side" class="nav-sides">
             <div id="navbar-logo-container">
-                <img src="images/Crest-Logo.png" id="navbar-logo-image">
+                <a href="https://crestr.co.uk">
+                    <img src="images/Crest-Logo.png" id="navbar-logo-image">
+                </a>
             </div>
             <ul id="about-navbar-list" class="navbar-list">
                 <li class="navbar-item"><a href="#about-section" class="navbar-link">About</a></li>
@@ -42,7 +44,7 @@
         </div>
         
         <div id="centre-nav">
-            <span id="in-development">IN DEVELOPMENT</span>
+            <span id="in-development">Coming Soon</span>
         </div>
 
         <div id="right-nav-side" class="nav-sides">
@@ -53,6 +55,13 @@
             </ul>
             
             <ul id="beta-navbar-list" class="navbar-list">
+                <li class="navbar-item">
+                    <a href="https://github.com/abdlfc11/Crestr-Hiking-App" target="_blank" rel="noopener noreferrer" class="navbar-link icon-link" aria-label="View GitHub repository">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.92.58.11.79-.25.79-.56v-2.18c-3.2.7-3.88-1.38-3.88-1.38-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.56-.29-5.25-1.28-5.25-5.71 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.18a10.95 10.95 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.57.23 2.73.11 3.02.73.81 1.18 1.84 1.18 3.1 0 4.44-2.7 5.42-5.27 5.7.41.35.78 1.04.78 2.1v3.11c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+                        </svg>
+                    </a>
+                </li>
                 <li class="navbar-item">
                     <a href="https://tally.so/r/44pAOY" class="navbar-link beta-link">Join Beta</a>
                 </li>
@@ -66,6 +75,7 @@
         <div id="hero-text-container">
             <h1 id="top-hero-text" class="hero-text">Find your trail,</h1>
             <h1 id="bottom-hero-text" class="hero-text">without the subscriptions</h1>
+            <p class="hero-subtitle">Simple. Accurate. Completely free.</p>
 
             <!-- CTA button ( create a free account )-->
             <button type="button" id="hero-create-account-button" onclick="switchToRegistering()">Create a free account</button>
@@ -78,30 +88,31 @@
         <h1 id="feature-heading">Features of Crestr</h1>
 
     <!-- this is a reusable feature block -->
-        <div class="feature-block">
-            
-            <h2 class="feature-heading">Plan routes with precision</h2>
-            
-            <div class="feature-image">
-                <img src="https://files.catbox.moe/oywsje.png" alt="Feature preview">
-            </div>
-            
-            <p class="feature-description">
-                Crestr generates an accurate elevation profile of automatically generated routes immediately upon the creation of the route.
-            </p>
-        </div>
 
-        <div class="feature-block">
-            <h2 class="feature-heading">Save and Export Routes</h2>
+    <div class="feature-block">
         
-            <div class="feature-image">
-                <img src="https://files.catbox.moe/k143pc.jpeg" alt="Feature preview">
-            </div>
+        <h2 class="feature-heading">Plan routes with precision</h2>
         
-            <p class="feature-description">
-                Crestr lets you save routes as well as export them in either GPX or GeoJSON for free.
-            </p>
+        <div class="feature-image">
+            <img src="https://images.crestr.co.uk/SCR-20260530-klgb.png" alt="Feature preview: Elevation Profile">
         </div>
+        
+        <p class="feature-description">
+            Crestr generates an accurate elevation profile of automatically generated routes immediately upon the creation of the route.
+        </p>
+    </div>
+
+    <div class="feature-block">
+        <h2 class="feature-heading">Save and Export Routes</h2>
+    
+        <div class="feature-image">
+            <img src="https://images.crestr.co.uk/SCR-20260530-klik.png" alt="Feature preview: Saved Routes Dashboard showing route export and downloads">
+        </div>
+    
+        <p class="feature-description">
+            Crestr lets you save routes as well as export them in either GPX or GeoJSON for free.
+        </p>
+    </div>
 
 
     </section>
