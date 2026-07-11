@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../architecture/">
+        <link rel="prev" href="../../user/exporting-routes/">
       
       
-        <link rel="next" href="../kdtree/">
+        <link rel="next" href="../data-preprocessing/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Routing Engine - Crestr Documentation</title>
+        <title>Action Log Reference - Crestr Documentation</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#routing-engine" class="md-skip">
+        <a href="#action-log-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Routing Engine
+              Action Log Reference
             
           </span>
         </div>
@@ -257,7 +257,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../action_log_codes/" class="md-tabs__link">
+        <a href="././" class="md-tabs__link">
           
   
   Technical
@@ -612,10 +612,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../action_log_codes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Action Log Codes
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -630,6 +656,371 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Why
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-this-with-pgadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How to Use this with pgAdmin:
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-for-self-hosters" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Benefits for Self-Hosters:
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-for-contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Benefits for Contributors:
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-user-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Authentication &amp; User Accounts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication &amp; User Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>LOGIN</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed_registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>FAILED_REGISTRATION</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed_account_deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>FAILED_ACCOUNT_DELETION</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Profile &amp; Settings
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile &amp; Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed_get_settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>FAILED_GET_SETTINGS</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed_save_settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>FAILED_SAVE_SETTINGS</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine-pathfinding" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Engine &amp; Pathfinding
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine &amp; Pathfinding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalid_coords_auto_path_creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>INVALID_COORDS_AUTO_PATH_CREATION</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no_path_found" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>NO_PATH_FOUND</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_created" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>PATH_CREATED</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-routes-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points &amp; Routes Management
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Points &amp; Routes Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving_point" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>SAVING_POINT</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>SAVE_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>LOAD_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>DOWNLOAD_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>IMPORT_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_saved_point" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>GET_SAVED_POINT</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_point" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>DELETE_POINT</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>DELETE_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-ui-view-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Map UI &amp; View Metrics
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Map UI &amp; View Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>LOAD_MAP</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset_view" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>RESET_VIEW</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search_area" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>SEARCH_AREA</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -720,36 +1111,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Routing Engine (A*)
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../routing-engine/" class="md-nav__link">
         
   
   
@@ -764,143 +1129,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Overview
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Key Components
-      </span>
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-astarroutefinder-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        1. AStarRouteFinder Class
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-heuristic-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        2. Heuristic Function
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spatial-optimisation-a_star-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        3. Spatial Optimisation (<code>a_star</code> function)
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Algorithm Flow
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-decisions" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Design Decisions
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Performance Characteristics
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Future Improvements
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Related Documents
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1229,33 +1457,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Overview
+        Why
       </span>
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Key Components
-      </span>
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Components">
+    <nav class="md-nav" aria-label="Why">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-astarroutefinder-class" class="md-nav__link">
+  <a href="#how-to-use-this-with-pgadmin" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        1. AStarRouteFinder Class
+        How to Use this with pgAdmin:
       </span>
     </span>
   </a>
@@ -1263,10 +1480,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-heuristic-function" class="md-nav__link">
+  <a href="#benefits-for-self-hosters" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        2. Heuristic Function
+        Benefits for Self-Hosters:
       </span>
     </span>
   </a>
@@ -1274,10 +1491,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-spatial-optimisation-a_star-function" class="md-nav__link">
+  <a href="#benefits-for-contributors" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        3. Spatial Optimisation (<code>a_star</code> function)
+        Benefits for Contributors:
       </span>
     </span>
   </a>
@@ -1290,57 +1507,296 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm-flow" class="md-nav__link">
+  <a href="#authentication-user-accounts" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Algorithm Flow
+        Authentication &amp; User Accounts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication &amp; User Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>LOGIN</code>
       </span>
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#design-decisions" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#failed_registration" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Design Decisions
+        <code>FAILED_REGISTRATION</code>
       </span>
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-characteristics" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#failed_account_deletion" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Performance Characteristics
+        <code>FAILED_ACCOUNT_DELETION</code>
       </span>
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#future-improvements" class="md-nav__link">
+  <a href="#profile-settings" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Future Improvements
+        Profile &amp; Settings
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile &amp; Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed_get_settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>FAILED_GET_SETTINGS</code>
       </span>
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#related-documents" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#failed_save_settings" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Related Documents
+        <code>FAILED_SAVE_SETTINGS</code>
       </span>
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine-pathfinding" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Engine &amp; Pathfinding
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine &amp; Pathfinding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalid_coords_auto_path_creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>INVALID_COORDS_AUTO_PATH_CREATION</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no_path_found" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>NO_PATH_FOUND</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_created" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>PATH_CREATED</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-routes-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points &amp; Routes Management
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Points &amp; Routes Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving_point" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>SAVING_POINT</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>SAVE_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>LOAD_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>DOWNLOAD_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>IMPORT_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_saved_point" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>GET_SAVED_POINT</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_point" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>DELETE_POINT</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>DELETE_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-ui-view-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Map UI &amp; View Metrics
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Map UI &amp; View Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>LOAD_MAP</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset_view" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>RESET_VIEW</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search_area" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>SEARCH_AREA</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1362,96 +1818,148 @@
   
 
 
-<h1 id="routing-engine">Routing Engine<a class="headerlink" href="#routing-engine" title="Permanent link">&para;</a></h1>
-<hr />
-<p><strong>Last updated:</strong> June 2026</p>
-<hr />
-<p>The core of Crestr’s route generation is a custom <strong>A* pathfinding</strong> implementation, 
-heavily optimised for large hiking networks and realistic hiking costs.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The routing engine finds the lowest-cost path between two points on the enriched graph while respecting user preferences
-such as minimum slope tolerance. </p>
-<p>It combines:</p>
-<ul>
-<li>Accurate <strong>Naismith-based edge costs</strong> (from the elevation pipeline)</li>
-<li><strong>Euclidean heuristic</strong> with elevation penalty</li>
-<li><strong>Spatial optimisation</strong> using a global KDTree and dynamic subgraph extraction</li>
-</ul>
-<h2 id="key-components">Key Components<a class="headerlink" href="#key-components" title="Permanent link">&para;</a></h2>
-<h3 id="1-astarroutefinder-class">1. AStarRouteFinder Class<a class="headerlink" href="#1-astarroutefinder-class" title="Permanent link">&para;</a></h3>
-<p>The main implementation of the A* algorithm:</p>
-<ul>
-<li><strong>Priority Queue</strong> (<code>nodes_left</code>): Uses <code>heapq</code> to always expand the most promising node next.</li>
-<li><strong>Cost Tracking</strong>:</li>
-<li><code>actual_cost</code>: Real cost from start to current node</li>
-<li><code>full_cost</code>: <code>actual_cost + heuristic</code></li>
-<li><strong>Early Termination</strong>: Returns as soon as the destination node is dequeued.</li>
-<li><strong>Slope Filtering</strong>: Skips edges that violate the user’s <code>min_slope</code> preference.</li>
-</ul>
-<h3 id="2-heuristic-function">2. Heuristic Function<a class="headerlink" href="#2-heuristic-function" title="Permanent link">&para;</a></h3>
-<p>A fast, admissible heuristic that estimates remaining time:</p>
-<ul>
-<li>Straight-line (Euclidean) distance at 1.4 m/s base speed</li>
-<li>Additional penalty for elevation difference to the destination</li>
-<li>Guarantees optimality while guiding the search efficiently</li>
-</ul>
-<h3 id="3-spatial-optimisation-a_star-function">3. Spatial Optimisation (<code>a_star</code> function)<a class="headerlink" href="#3-spatial-optimisation-a_star-function" title="Permanent link">&para;</a></h3>
-<p>Because the full graph is large, the engine uses several techniques to reduce computation:</p>
-<ul>
-<li><strong>Global KDTree</strong>: Built once for fast nearest-neighbour lookups.</li>
-<li><strong>Radius-based Subgraph</strong>: Extracts a relevant portion of the graph around the start and end points.</li>
-<li><strong>Bounding Box Culling</strong>: Further removes nodes outside the search area.</li>
-<li><strong>Snapping</strong>: Snaps the user’s clicked coordinates to the nearest actual trail node.</li>
-</ul>
-<p>These optimisations make routing feel instantaneous even on a dense national trail network.</p>
-<h2 id="algorithm-flow">Algorithm Flow<a class="headerlink" href="#algorithm-flow" title="Permanent link">&para;</a></h2>
+<h1 id="action-log-reference">Action Log Reference<a class="headerlink" href="#action-log-reference" title="Permanent link">&para;</a></h1>
+<p>This document catalogs the system-level event codes logged to the <code>ActionLog</code> table. Each code represents an action or system endpoint, with the <code>outcome</code> column determining whether the event tracks a successful operation/metric or an application failure.</p>
+<h2 id="why">Why<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
+<p>For self-hosters and open-source contributors, troubleshooting a headless backend or a multi-container network can feel like working in the dark. </p>
+<p>By default, this project includes a <strong>pgAdmin</strong> instance exposed via your <code>docker-compose.yml</code> file (accessible at <code>http://localhost:5050</code>). The <code>ActionLog</code> table within your Postgres database serves as a transparent, centralised dashboard for your entire application's health.</p>
+<h3 id="how-to-use-this-with-pgadmin">How to Use this with pgAdmin:<a class="headerlink" href="#how-to-use-this-with-pgadmin" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Snap start and end coordinates to the nearest trail nodes using KDTree.</li>
-<li>Build a focused subgraph around the route corridor.</li>
-<li>Run A* on the subgraph using precomputed edge costs.</li>
-<li>Reconstruct and return the path.</li>
+<li>Open your browser and navigate to <code>http://localhost:5050</code>.</li>
+<li>Connect to your application database and locate the <code>action_log</code> table.</li>
+<li>Run a quick query to see recent system activity, performance benchmarks, or tracebacks:
+   <code>sql
+   SELECT action, outcome, duration_ms, error_code, info 
+   FROM public.action_log 
+   ORDER BY created_at DESC;</code></li>
 </ol>
-<h2 id="design-decisions">Design Decisions<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h2>
+<h3 id="benefits-for-self-hosters">Benefits for Self-Hosters:<a class="headerlink" href="#benefits-for-self-hosters" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>Why A*?</strong><br />
-  It guarantees the optimal path when using an admissible heuristic, while being significantly faster than Dijkstra in practice.
-  The use of a heuristic allows me to tune the algorithm to the specific needs of my app making pathfinding highly customisable.</p>
-</li>
-<li>
-<p><strong>Precomputed Costs</strong><br />
-  All elevation, terrain, and Naismith calculations are done once during preprocessing.
-  The routing engine only reads these values.</p>
-</li>
-<li>
-<p><strong>Scalability</strong><br />
-  The combination of KDTree + subgraph extraction allows the engine to scale to 1M+ node graphs without excessive memory or CPU usage.</p>
-</li>
-<li>
-<p><strong>Customisability</strong><br />
-  The <code>min_slope</code> parameter enables future features such as “avoid steep sections”.</p>
-</li>
+<li><strong>Instant Diagnosis:</strong> Instead of digging through raw, unformatted Docker container logs, you can quickly check the error_code column to identify exactly why a feature (like a map tile loading or account creation) is failing in your local environment.</li>
+<li><strong>Environmental Integrity Checks:</strong> Codes like <code>NO_PATH_FOUND</code> or <code>LOAD_MAP</code> failures instantly signal if your local osm/map data assets are missing or disconnected from your containers.</li>
 </ul>
-<h2 id="performance-characteristics">Performance Characteristics<a class="headerlink" href="#performance-characteristics" title="Permanent link">&para;</a></h2>
+<h3 id="benefits-for-contributors">Benefits for Contributors:<a class="headerlink" href="#benefits-for-contributors" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Typical routing time: well under 1 second on regional graphs (distance approx 5-7km).</li>
-<li>Memory efficient due to subgraph extraction.</li>
-<li>Scales with trail density rather than total graph size.</li>
+<li><strong>Performance Profiling:</strong> Successful events (where outcome is true) often populate the duration_ms column. This allows you to benchmark optimisations made to pathfinding algorithms or database queries directly from your local deployment.</li>
+<li><strong>No Lost Stack Traces:</strong> If a route handler crashes during development, the complete Python exception stack trace is securely captured in the info column, even if the main API response returned a generic 500 error to the client.</li>
 </ul>
-<h2 id="future-improvements">Future Improvements<a class="headerlink" href="#future-improvements" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="authentication-user-accounts">Authentication &amp; User Accounts<a class="headerlink" href="#authentication-user-accounts" title="Permanent link">&para;</a></h2>
+<h3 id="login"><code>LOGIN</code><a class="headerlink" href="#login" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Bidirectional A* for even faster searches.</li>
-<li>Support for multi-criteria optimisation (e.g. shortest vs least ascent).</li>
-<li>Caching of common routes.</li>
-<li>Real-time dynamic obstacles or closures.</li>
-<li>Integration with live weather / trail conditions.</li>
+<li><strong>Context:</strong> Triggered during user authentication attempts.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Tracks active user sessions and security audit trails.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Indicates bad credentials, expired tokens, or session configuration mismatches.</li>
 </ul>
-<h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>
+<h3 id="failed_registration"><code>FAILED_REGISTRATION</code><a class="headerlink" href="#failed_registration" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href=".././tech-stack/">Tech Stack</a></li>
-<li><a href=".././kdtree/">KDTree</a></li>
-<li><a href=".././elevation/">Elevation Pipeline</a></li>
-<li><a href=".././architecture/">Architecture Overview</a></li>
+<li><strong>Context:</strong> Triggered during new user account creation attempts.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Account creation aborted. Common causes include username/email already taken, or failing password complexity requirements.</li>
+</ul>
+<h3 id="failed_account_deletion"><code>FAILED_ACCOUNT_DELETION</code><a class="headerlink" href="#failed_account_deletion" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Triggered when a user tries to purge their profile data.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Account data deletion halted. Common causes include unhandled foreign key constraints (e.g., active saved routes or points still tied to the user).</li>
+</ul>
+<hr />
+<h2 id="profile-settings">Profile &amp; Settings<a class="headerlink" href="#profile-settings" title="Permanent link">&para;</a></h2>
+<h3 id="failed_get_settings"><code>FAILED_GET_SETTINGS</code><a class="headerlink" href="#failed_get_settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Triggered when fetching a user's interface configurations or profile preferences.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Failed to render settings. Usually caused by missing session data or a corrupted profile record.</li>
+</ul>
+<h3 id="failed_save_settings"><code>FAILED_SAVE_SETTINGS</code><a class="headerlink" href="#failed_save_settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Triggered when committing new profile choices or map configurations to the database.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Preferences not updated. Usually due to invalid schema formats or data field overflows.</li>
+</ul>
+<hr />
+<h2 id="engine-pathfinding">Engine &amp; Pathfinding<a class="headerlink" href="#engine-pathfinding" title="Permanent link">&para;</a></h2>
+<h3 id="invalid_coords_auto_path_creation"><code>INVALID_COORDS_AUTO_PATH_CREATION</code><a class="headerlink" href="#invalid_coords_auto_path_creation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Triggered when incoming coords data fails baseline validation checks before the routing engine runs.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Routing skipped due to malformed coordinate syntax or points sitting completely outside map bounds.</li>
+</ul>
+<h3 id="no_path_found"><code>NO_PATH_FOUND</code><a class="headerlink" href="#no_path_found" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Triggered when the routing engine processes coordinates successfully but cannot link them together.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Expected failure. Happens when no points are found as given coords are out of bounds (<strong>most likely cause</strong>) or points are entirely isolated from known road networks or maps segments are physically disconnected. </li>
+</ul>
+<h3 id="path_created"><code>PATH_CREATED</code><a class="headerlink" href="#path_created" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Triggered during automated route path generation or manual routing (path generated between segments). </li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Path processed successfully. The <code>duration_ms</code> tracks how fast the routing engine responded.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Engine crashed mid-calculation, likely due to a timeout or a memory limit overflow from overly dense coordinate data.</li>
+</ul>
+<hr />
+<h2 id="points-routes-management">Points &amp; Routes Management<a class="headerlink" href="#points-routes-management" title="Permanent link">&para;</a></h2>
+<h3 id="saving_point"><code>SAVING_POINT</code><a class="headerlink" href="#saving_point" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Adding a new custom waypoint, pinpoint, or marker to the map dataset.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Marker committed successfully.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Write failed. Usually caused by description character limits or broken database pools.</li>
+</ul>
+<h3 id="save_route"><code>SAVE_ROUTE</code><a class="headerlink" href="#save_route" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Committing a whole multi-coordinate route sequence to the user's saved list.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Route securely saved.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Duplicate name constraints hit or geometry layout parse error.</li>
+</ul>
+<h3 id="load_route"><code>LOAD_ROUTE</code><a class="headerlink" href="#load_route" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Fetching a previously stored route for display on the map canvas.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Route metrics and geometry sent to client.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Missing route ID, or user trying to load a route they don't own.</li>
+</ul>
+<h3 id="download_route"><code>DOWNLOAD_ROUTE</code><a class="headerlink" href="#download_route" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Compiling a route layout into an exportable format (GPX, GeoJSON) for a user download.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> File payload delivered to user.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Filesystem permission locks or serialisation errors.</li>
+</ul>
+<h3 id="import_route"><code>IMPORT_ROUTE</code><a class="headerlink" href="#import_route" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Parsing an external file upload (GPX/KML/GeoJSON/FIT) into the platform's internal tracking format.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Route metadata accepted and converted.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> File corrupted or XML/JSON markup syntax tags invalid.</li>
+</ul>
+<h3 id="get_saved_point"><code>GET_SAVED_POINT</code><a class="headerlink" href="#get_saved_point" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Querying points to place on map.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Waypoint data retrieved.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Invalid waypoint ID requested / connection dropped.</li>
+</ul>
+<h3 id="delete_point"><code>DELETE_POINT</code><a class="headerlink" href="#delete_point" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Deleting a user waypoint from the system.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Point successfully dropped.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Deletion unauthorised or connection dropped.</li>
+</ul>
+<h3 id="delete_route"><code>DELETE_ROUTE</code><a class="headerlink" href="#delete_route" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Permanent removal of a stored route line sequence.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Route dropped.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Deletion unauthorised or connection dropped.</li>
+</ul>
+<hr />
+<h2 id="map-ui-view-metrics">Map UI &amp; View Metrics<a class="headerlink" href="#map-ui-view-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="load_map"><code>LOAD_MAP</code><a class="headerlink" href="#load_map" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Initial canvas engine startup or tile mapping initialization.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Tiles loaded successfully</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Incorrect coord conversion for saved points (as saved points are retrieved)</li>
+</ul>
+<h3 id="reset_view"><code>RESET_VIEW</code><a class="headerlink" href="#reset_view" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Triggered when clicking to re-center the map bounds to default focus areas.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Map camera boundaries updated.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Missing default bound array configuration values.</li>
+</ul>
+<h3 id="search_area"><code>SEARCH_AREA</code><a class="headerlink" href="#search_area" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Processing coordinate boundary geocoding or spatial address queries.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Search indices returned matches.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Database lookup failed, query thread timed out and/or incorrect (or no) API key.</li>
 </ul>
 
 

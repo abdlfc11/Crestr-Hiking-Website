@@ -59,6 +59,7 @@ Home = "index.md"
 
 [[project.nav]]
 "Technical" = [
+    { "Action Log Codes" = "technical/action_log_codes.md" },
     { "Data Preprocessing" = "technical/data-preprocessing.md" },
     { "Tech Stack" = "technical/tech-stack.md" },
     { "Architecture Overview" = "technical/architecture.md" },
