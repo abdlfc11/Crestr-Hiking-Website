@@ -5,7 +5,7 @@ This roadmap exists to give a clear, honest picture of where Crestr is heading o
 It likely won't remain the same, as I will be a university student and as such may not always be able to commit myself to long-term projects, most notably, the mobile app (which may be delayed beyond Nov. 2027)
 
 ## A Personal Note
-Crestr started as my A‑Level Computer Science project back in 2025.  
+Crestr started as my A‑Level Computer Science project in 2025.  
 Most of the early work, such as the first A* implementation, the KDTree, the basic UI, the initial routing engine, was built during revision weeks, late nights, and whatever spare time I could carve out between exams.
 
 In 2026, I continued developing Crestr while finishing my A‑Levels and preparing for university.  

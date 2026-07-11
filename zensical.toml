@@ -78,6 +78,11 @@ Home = "index.md"
     { "2027" = "roadmap/2027.md" }
 ]
 
+[[project.nav]]
+"Privacy Policy" = [
+    { "Policy" = "privacy-policy/privacy_policy.md" },
+]
+
 
 # Plugins
 project.plugins = ["search", "git-revision-date-localized"] 
