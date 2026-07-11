@@ -20,6 +20,7 @@ We process two categories of data:
 ### 2. Legal Basis and Purpose of Processing
 
 We process your data under the following legal frameworks:
+
 - **Contractual Necessity:** Processing account credentials is required to provide the core account management services you request.
 - **Legitimate Interests:** Processing anonymous diagnostics allows us to monitor infrastructure health, debug routing algorithms, and improve application stability.
 
