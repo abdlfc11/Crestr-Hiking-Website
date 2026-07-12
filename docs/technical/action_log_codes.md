@@ -87,6 +87,12 @@ By default, this project includes a **pgAdmin** instance exposed via your `docke
 * **On Success (`outcome: true`):** Route securely saved.
 * **On Failure (`outcome: false`):** Duplicate name constraints hit or geometry layout parse error.
 
+### TEMPLATE_FILTER_DISTANCE_UNIT
+
+# **Context:** Processing distance values through the Jinja template filter for display according to user settings.
+# **On Success (`outcome: true`): Not applicable
+# **On Failure (`outcome: false`):** Failed to retrieve user distance unit setting from database or encountered an error during formatting.
+
 ### `LOAD_ROUTE`
 * **Context:** Fetching a previously stored route for display on the map canvas.
 * **On Success (`outcome: true`):** Route metrics and geometry sent to client.
