@@ -8,6 +8,10 @@
 
 const createAccountHeroButton = document.getElementById('hero-create-account-button')
 
+// ###########
+// ADDING EVENT LISTENERS
+// ###########
+
 
 document.querySelectorAll('.about-group-header-button').forEach(headerButton => {
     headerButton.addEventListener('click', () => {
@@ -16,10 +20,6 @@ document.querySelectorAll('.about-group-header-button').forEach(headerButton => 
     })
 });
 
-// ###########
-// ADDING EVENT LISTENERS
-// ###########
-
-if (createAccountHeroButton) {
-    createAccountHeroButton.disabled = true
+function switchToRegistering() {
+    window.location.href = "https://app.crestr.co.uk/register"
 }

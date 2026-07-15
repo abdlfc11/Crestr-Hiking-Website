@@ -52,28 +52,6 @@ body {
 
 /* CENTRE NAV */
 
-/* this holds the centre nav content */
-#centre-nav {
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-}
-
-/* this styles the in‑development badge */
-#in-development {
-    font-size: clamp(0.88rem, 1.02vw, 1.02rem);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #334155;
-    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
-    padding: 0.45rem 0.95rem;
-    border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    white-space: nowrap;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
-}
-
 /* this aligns the left side of the navbar */
 #left-nav-side {
     display: flex;
@@ -115,14 +93,6 @@ body {
 /* this is for the right side login/register list */
 #login-register-navbar-list {
     gap: 0.75rem;
-}
-
-/* this disables login/register links */
-#login-link,
-#register-link {
-    opacity: 0.45;
-    cursor: not-allowed;
-   pointer-events: none;
 }
 
 /* this styles each li item */
@@ -185,26 +155,6 @@ body {
     font-weight: 600;
 }
 
-/* this styles the beta link button */
-.beta-link {
-    background-color: #3b82f6 !important;
-    color: white !important;
-    font-weight: 600;
-    min-height: 44px;
-}
-
-/* this adds hover feedback to the beta link */
-.beta-link:hover {
-    background-color: #2563eb !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-/* this adds click feedback to the beta link */
-.beta-link:active {
-    transform: translateY(1px);
-    box-shadow: none;
-}
 
 /* --- MOBILE NAVBAR --- */
 @media (max-width: 768px) {
@@ -376,7 +326,7 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     text-align: center;
-    cursor: not-allowed;
+    cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.05s ease-in-out;
     min-height: 56px;
     width: 90%;
