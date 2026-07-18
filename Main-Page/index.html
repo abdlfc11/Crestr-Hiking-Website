@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+
     <!-- title + description -->
     <title>Crest: Free & Open‑Source Hiking Route Planner</title>
     <meta name="description" content="Crest is a free, open‑source hiking route planner focused on simple, reliable footpath routing without paywalls. A work‑in‑progress project built by a student developer.">
@@ -21,6 +23,9 @@
     <!-- mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- canonical url (this helps avoid duplicate-content issues, e.g. http vs https / www vs non-www) -->
+    <link rel="canonical" href="https://crestr.co.uk">
+
     <!-- favicon -->
     <link rel="icon" href="images/Crest-Logo.png">
 
@@ -29,11 +34,11 @@
 </head>
 <body>
     <!-- NAVBAR -->
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Primary">
         <div id="left-nav-side" class="nav-sides">
             <div id="navbar-logo-container">
                 <a href="https://crestr.co.uk">
-                    <img src="images/Crest-Logo.png" id="navbar-logo-image">
+                    <img src="images/Crest-Logo.png" id="navbar-logo-image" alt="Crest logo" width="60" height="60">
                 </a>
             </div>
             <ul id="about-navbar-list" class="navbar-list">
@@ -42,7 +47,7 @@
                 <li class="navbar-item"><a href="https://crestr.co.uk/docs" class="navbar-link">Documentation</a></li>
             </ul>
         </div>
-        
+
 
         <div id="right-nav-side" class="nav-sides">
 
@@ -50,7 +55,7 @@
                 <li id="login-link" class="navbar-item"><a href="https://app.crestr.co.uk/login-page" class="navbar-link">Login</a></li>
                 <li id="register-link" class="navbar-item"><a href="https://app.crestr.co.uk/register" class="navbar-link">Register</a></li>
             </ul>
-            
+
             <ul id="beta-navbar-list" class="navbar-list">
                 <li class="navbar-item">
                     <a href="https://github.com/abdlfc11/Crestr-Hiking-App" target="_blank" rel="noopener noreferrer" class="navbar-link icon-link" aria-label="View GitHub repository">
@@ -61,8 +66,34 @@
                 </li>
             </ul>
 
+            <!-- mobile hamburger menu toggle: only visible below 768px, controls #mobile-menu -->
+            <button type="button" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
         </div>
     </nav>
+
+    <!-- MOBILE MENU PANEL: this mirrors the desktop nav links, shown only when the hamburger is toggled open -->
+    <div id="mobile-menu">
+        <ul id="mobile-menu-list">
+            <li><a href="#about-section" class="mobile-menu-link">About</a></li>
+            <li><a href="#feature-section" class="mobile-menu-link">Features</a></li>
+            <li><a href="https://crestr.co.uk/docs" class="mobile-menu-link">Documentation</a></li>
+            <li class="mobile-menu-divider" role="separator"></li>
+            <li><a href="https://app.crestr.co.uk/login-page" class="mobile-menu-link">Login</a></li>
+            <li><a href="https://app.crestr.co.uk/register" class="mobile-menu-link">Register</a></li>
+        </ul>
+    </div>
+
     <!-- HERO SECTION-->
     <section id="hero-section">
         <div id="hero-image"></div>
@@ -84,13 +115,13 @@
         <!-- this is a reusable feature block -->
 
         <div class="feature-block">
-            
+
             <h2 class="feature-heading">Plan routes with precision</h2>
-            
+
             <div class="feature-image">
-                <img src="https://images.crestr.co.uk/SCR-20260530-klgb.png" alt="Feature preview: Elevation Profile">
+                <img src="https://images.crestr.co.uk/SCR-20260530-klgb.png" alt="Feature preview: Elevation Profile" loading="lazy" width="500" height="320">
             </div>
-            
+
             <p class="feature-description">
                 Crestr generates an accurate elevation profile of automatically generated routes immediately upon the creation of the route.
             </p>
@@ -98,11 +129,11 @@
 
         <div class="feature-block">
             <h2 class="feature-heading">Save and Export Routes</h2>
-        
+
             <div class="feature-image">
-                <img src="https://images.crestr.co.uk/Saved-Routes-Dashboard.png" alt="Feature preview: Saved Routes Dashboard showing route export and downloads">
+                <img src="https://images.crestr.co.uk/Saved-Routes-Dashboard.png" alt="Feature preview: Saved Routes Dashboard showing route export and downloads" loading="lazy" width="500" height="320">
             </div>
-        
+
             <p class="feature-description">
                 Crestr lets you save routes as well as export them in either GPX or GeoJSON for free.
             </p>
@@ -120,11 +151,11 @@
         <!-- each question is here -->
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-1">
                 <h2 class="about-group-header">What is Crestr?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-1">
                 Crestr is an open source hiking app for UK walkers. It lets you plan, save, load and download routes through a clean and focused interface without unnecessary clutter.
             </p>
         </article>
@@ -132,11 +163,11 @@
 
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-2">
                 <h2 class="about-group-header">How does Crestr generate hiking routes?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-2">
                 Crestr uses open map data and a custom routing engine to build routes between your chosen points. It prioritises safer and greener paths by default, and a feature is planned to let users adjust a path filter to their preferences.
             </p>
         </article>
@@ -144,11 +175,11 @@
 
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-3">
                 <h2 class="about-group-header">Is Crestr really free?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-3">
                 Yes. Crestr is completely free to use. There are no subscriptions, paywalls or premium tiers.
             </p>
         </article>
@@ -156,11 +187,11 @@
 
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-4">
                 <h2 class="about-group-header">How is Crestr different from other hiking apps?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-4">
                 Crestr is built by a hiker with a focus on simplicity and clarity. There are no ads, no subscriptions and no upselling. The goal is a fast and reliable routing experience.
             </p>
         </article>
@@ -168,11 +199,11 @@
 
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-5">
                 <h2 class="about-group-header">Does Crestr work across the entire UK?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-5">
                 Not yet. Crestr currently supports Cumbria due to processing limitations. Full UK coverage is planned for 2027.
             </p>
         </article>
@@ -180,11 +211,11 @@
 
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-6">
                 <h2 class="about-group-header">Do I need an account?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-6">
                 Yes. An account is required to save and manage routes. Registration is quick and only essential data is stored.
             </p>
         </article>
@@ -192,11 +223,11 @@
 
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-7">
                 <h2 class="about-group-header">Can I use Crestr offline?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-7">
                 Not yet. Offline support is planned and will be introduced alongside the mobile app.
             </p>
         </article>
@@ -204,11 +235,11 @@
 
     <div class="about-group-container">
         <article class="about-group">
-            <button class="about-group-header-button">
+            <button class="about-group-header-button" aria-expanded="false" aria-controls="about-text-8">
                 <h2 class="about-group-header">What features are planned for the future?</h2>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-icon lucide-arrow-big-up" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"/></svg></span>
             </button>
-            <p class="about-group-text">
+            <p class="about-group-text" id="about-text-8">
                 The roadmap includes a mobile app, offline support, improved elevation data, difficulty based route filters and full UK coverage.
             </p>
         </article>
