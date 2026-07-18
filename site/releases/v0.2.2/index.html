@@ -1156,16 +1156,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-breakdown-of-changes" class="md-nav__link">
+  <a href="#what-changed" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Detailed Breakdown of Changes
+        What Changed
       </span>
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Detailed Breakdown of Changes">
+    <nav class="md-nav" aria-label="What Changed">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving-routes-and-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Saving Routes and Points
+      </span>
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#navigation-engine-backend-geometry-optimisation" class="md-nav__link">
@@ -1451,16 +1462,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-breakdown-of-changes" class="md-nav__link">
+  <a href="#what-changed" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Detailed Breakdown of Changes
+        What Changed
       </span>
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Detailed Breakdown of Changes">
+    <nav class="md-nav" aria-label="What Changed">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving-routes-and-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Saving Routes and Points
+      </span>
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#navigation-engine-backend-geometry-optimisation" class="md-nav__link">
@@ -1533,7 +1555,13 @@
 <p><strong>Date: 18<sup>th</sup> July 2026</strong></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Version 0.2.2 introduces critical reliability updates to our navigation engine and user feedback systems. This release focuses heavily on stability, ensuring that edge-case routing coordinates resolve successfully and that users are properly communicated with when network discrepancies occur.</p>
-<h2 id="detailed-breakdown-of-changes">Detailed Breakdown of Changes<a class="headerlink" href="#detailed-breakdown-of-changes" title="Permanent link">&para;</a></h2>
+<h2 id="what-changed">What Changed<a class="headerlink" href="#what-changed" title="Permanent link">&para;</a></h2>
+<h3 id="saving-routes-and-points">Saving Routes and Points<a class="headerlink" href="#saving-routes-and-points" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Removed the global <code>unique=True</code> constraint from the name column on both the <code>Route</code> and <code>Point</code> models.</li>
+<li>Added a composite <code>UniqueConstraint</code> for <code>("user_id", "name")</code> across the route and point tables to ensure user-specific name uniqueness.</li>
+<li>Created and applied an Alembic migration script to safely alter the local and remote PostgreSQL database schemas.</li>
+</ul>
 <h3 id="navigation-engine-backend-geometry-optimisation">Navigation Engine &amp; Backend Geometry Optimisation<a class="headerlink" href="#navigation-engine-backend-geometry-optimisation" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
