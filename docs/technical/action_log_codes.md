@@ -29,6 +29,15 @@ By default, this project includes a **pgAdmin** instance exposed via your `docke
 
 ---
 
+## Rate Limiting
+
+### `RATE_LIMIT_HIT`
+* **Context:** Triggered when the user performs too many requests, 
+    for example, generating routes too fast in a short space of time
+    
+* **On Success :** (Inapplicable)
+* **On Failure :** (Inapplicable)
+
 ## Authentication & User Accounts
 
 ### `LOGIN`
@@ -89,9 +98,9 @@ By default, this project includes a **pgAdmin** instance exposed via your `docke
 
 ### `TEMPLATE_FILTER_DISTANCE_UNIT`
 
-# **Context:** Processing distance values through the Jinja template filter for display according to user settings.
-# **On Success (`outcome: true`): Not applicable
-# **On Failure (`outcome: false`):** Failed to retrieve user distance unit setting from database or encountered an error during formatting.
+* **Context:** Processing distance values through the Jinja template filter for display according to user settings.
+* **On Success** (`outcome: true`): Not applicable
+* **On Failure** (`outcome: false`):** Failed to retrieve user distance unit setting from database or encountered an error during formatting.
 
 ### `LOAD_ROUTE`
 * **Context:** Fetching a previously stored route for display on the map canvas.
