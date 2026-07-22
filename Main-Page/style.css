@@ -440,8 +440,8 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.05s ease-in-out;
     min-height: 56px;
-    width: 90%;
-    max-width: 320px;
+    width: 50%;
+    max-width: 250px;
     box-shadow: 0 14px 30px -12px rgba(37, 99, 235, 0.5);
 }
 

@@ -87,6 +87,6 @@ if (mobileMenuToggle && mobileMenu) {
 // NAVIGATION HELPERS
 // ###########
 
-function switchToRegistering() {
-    window.location.href = "https://app.crestr.co.uk/register"
+function switchToMap() {
+    window.location.href = "https://app.crestr.co.uk/map"
 }
