@@ -1,3 +1,10 @@
+
+---
+
+**Last updated:** June 2026
+
+--- 
+
 # Exporting Routes in Crestr
 
 **Easily save and share your routes** with industry-standard file formats.
@@ -29,12 +36,12 @@ Crestr lets you export any saved route as either **GPX** or **GeoJSON**, so you 
 ### Saved Routes Dashboard
 
 <p align="center">
-    <img width="1470" height="832" alt="image" src="https://files.catbox.moe/0wzic3.png"/>
+    <img width="1470" height="832" alt="image" src="https://images.crestr.co.uk/Saved-Routes-Dashboard.png"/>
     <br> 
 </p>
 
 
-> *The two download buttons (GPX and GeoJSON) are highlighted with a red rectangle in the screenshot above.*
+> *The two download buttons (GPX and GeoJSON) are highlighted with a green background.*
 
 ---
 
@@ -43,7 +50,7 @@ Crestr lets you export any saved route as either **GPX** or **GeoJSON**, so you 
 Exported files contain:
 
 - Route name and description
- - Full track points with timestamps (when available)
+- Full track points with timestamps (when available)
 - Elevation data
 - Waypoints / markers
 - Metadata (created date, Crestr user info)
@@ -53,6 +60,6 @@ Exported files contain:
 ## Need Help?
 
 - Having trouble with the exported file? Check the format compatibility of your target app.
-- Want a specific feature added (e.g., KML export, batch export)? Open an issue on GitHub or reach out to the Crestr team.
+- Want a specific feature added (e.g., KML export, batch export)? Open an issue on GitHub or reach out to the developer at [abdul@crestr.co.uk](mailto:abdul@crestr.co.uk)
 
 ---

@@ -44,7 +44,7 @@ Once points are placed, the following statistics are displayed in real time:
 - Estimated time of arrival (ETA) using Naismith’s rule with slope-aware speeds
 - Elevation change
 
-![Route Statistics Panel](../assets/images/manual_elevation_profile.jpeg)  
+![Route Statistics Panel](https://images.crestr.co.uk/Manual-Routing-Plus-Stats.jpeg)  
 *Screenshot: Route statistics panel showing distance, ETA, and elevation change, with elevation profile chart.*
 
 ## Saving and Exporting

@@ -49,6 +49,7 @@ Home = "index.md"
 [[project.nav]]
 "User Guide" = [
     { "Getting Started" = "user/getting-started.md" },
+    { "Developers" = "user/developers.md" },
     { "Automatic Routing" = "user/automatic-routing.md" },
     { "Manual Routing" = "user/manual-routing.md" },
     { "Exporting Routes" = "user/exporting-routes.md" }

@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../developers/">
       
       
         <link rel="next" href="../manual-routing/">
@@ -458,6 +458,33 @@
     
   
   Getting Started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developers
 
     
   </span>
@@ -1638,9 +1665,12 @@
 
   <h1 id="__skip">Automatic routing</h1>
 
+<hr />
+<p><strong>Last updated:</strong> June 2026</p>
+<hr />
 <h2 id="explanation-of-the-panels-during-automatic-route-generation">Explanation of the panels during Automatic Route Generation<a class="headerlink" href="#explanation-of-the-panels-during-automatic-route-generation" title="Permanent link">&para;</a></h2>
 <p align="center">
-  <img width="1470" height="833" alt="image" src="https://files.catbox.moe/ukxayk.jpeg" />
+  <img width="1470" height="833" alt="image" src="https://images.crestr.co.uk/Auto-Routing-Tour.jpeg" />
   <br>
   <sub>An image clearly showing each of the 4 distinct panels on the automatic route generation mode</sub>
 </p>
@@ -1665,24 +1695,17 @@ The menu button (as the name suggests) opens a menu from the left hand side wher
 <li>ETA: This is calculated using Naismith's rule and is different depending on descent or ascent</li>
 <li>Distance: This is calculated via a complex web mercator equation I had to scour the internet for, I might make a blog post about it</li>
 <li>Elevation Change: The elevation used for this is <strong><em>somewhat</em></strong> accurate (<a href="https://www.earthdata.nasa.gov/data/instruments/srtm">NASA SRTM data for those interested</a>). Better, more accurate datasets are being explored</li>
-<li>Elevation profile: This was made available via chart.js and an image of an example of an elevation profile can be seen below
-<img width="1047" height="278" alt="image" src="https://github.com/user-attachments/assets/e8f44d82-001a-41a2-8b4a-f637e359b7d7" /></li>
+<li>Elevation profile: This was made available via chart.js </li>
 </ul>
 <h3 id="save-route-panel-in-purple">Save Route Panel (In Purple)<a class="headerlink" href="#save-route-panel-in-purple" title="Permanent link">&para;</a></h3>
 <p>This part of the UI is where you can save a route to the database. 
-<br>
-It instantly registers the route and loads it dynamically into the saved routes dashboard ready to be downloaded in either GPX or GeoJSON format</p>
-<p><em><strong>Note</strong>: the file format dropdown is due to be deleted as users can load both types from the Saved Routes Dashboard</em></p>
+<br></p>
 <h2 id="setting-coordinates">Setting coordinates<a class="headerlink" href="#setting-coordinates" title="Permanent link">&para;</a></h2>
 <p>You can either enter coordinates directly, or use the set coord buttons, which allow you to click a point on the map to place a coordinate into the corresponding start / end entry</p>
 <p>Examples can be seen below:</p>
 <h3 id="using-the-set-startend-coordinate-buttons">Using the Set Start/End Coordinate Buttons<a class="headerlink" href="#using-the-set-startend-coordinate-buttons" title="Permanent link">&para;</a></h3>
-<p><img width="1469" height="835" alt="image" src="https://github.com/user-attachments/assets/37d88ee7-2247-4723-8bab-1c06d49b3621" /></p>
-<p>As can be seen above, these two buttons correspond to their own entries. 
-When clicking either entry, the cursor will turn into a crosshair and the next click on the map will enter the relevant coordinate into the desired entry.
-For cleaner UI and a better UX, the current active entry is always highlighted via a blue border, as well as a relevant placeholder message, as can be seen below.</p>
-<p><img width="1470" height="834" alt="image" src="https://github.com/user-attachments/assets/919d961d-703f-4b23-80ee-713c9bcd6952" /></p>
-<p>Pressing the highlighted buttons above will retrieve the coordinates in the middle of the map, shown by the crosshair (which is also highlighted), and place them into their respective start or end coodinate entries</p>
+<p>When clicking either entry, the cursor will turn into a crosshair and the next click on the map will enter the relevant coordinate into the desired entry.
+For cleaner UI and a better UX, the current active entry is always highlighted via a blue border, as well as a relevant placeholder message.</p>
 
 
 

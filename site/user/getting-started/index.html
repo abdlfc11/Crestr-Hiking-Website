@@ -12,7 +12,7 @@
         <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../automatic-routing/">
+        <link rel="next" href="../developers/">
       
       
         
@@ -638,21 +638,37 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#developers" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Developers
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developers
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1719,17 +1735,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#developers" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Developers
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1750,6 +1755,9 @@
 
   <h1 id="__skip">Getting started</h1>
 
+<hr />
+<p><strong>Last updated:</strong> June 2026</p>
+<hr />
 <p>Follow this detailed guide to set up and run <strong>Crestr</strong> on your local machine.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Before starting, ensure you have the following installed:</p>
@@ -1795,12 +1803,47 @@
 <h4 id="follow-the-steps-below-to-set-up-a-env-file">Follow the steps below to set up a .env file<a class="headerlink" href="#follow-the-steps-below-to-set-up-a-env-file" title="Permanent link">&para;</a></h4>
 <h5 id="make-a-file-named-env-and-copy-the-contents-from-the-exampleenv-file">Make a file named '.env' and copy the contents from the 'example.env' file<a class="headerlink" href="#make-a-file-named-env-and-copy-the-contents-from-the-exampleenv-file" title="Permanent link">&para;</a></h5>
 <p>The contents of the example.env file is shown below
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">FLASK_SECRET_KEY</span><span class="o">=</span>dev_secret_key
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">LOCATIONIQ_API_KEY</span><span class="o">=</span>your_own_key
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">DATABASE_URI</span><span class="o">=</span>postgresql://pick_a_username:pick_a_password@db:5432/pick_a_name_for_your_database
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">POSTGRES_USER</span><span class="o">=</span>pick_a_username
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>pick_a_password
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nv">POSTGRES_DB</span><span class="o">=</span>pick_a_name_for_your_database
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Flask Configuration, a long random string of integers and characters </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">FLASK_SECRET_KEY</span><span class="o">=</span>8f3c9b7a2e5d1f4a6b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># LocationIQ API Key (Get your own free key at https://locationiq.com)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">LOCATIONIQ_API_KEY</span><span class="o">=</span>pk.abcdefghijklmnopqrstuvwxyz1234567890
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># PostgreSQL Configurations / user details</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nv">POSTGRES_USER</span><span class="o">=</span>crestr_dev
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secure_hiking_pass_2025
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nv">POSTGRES_DB</span><span class="o">=</span>crestr_hiking
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># pgAdmin </span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nv">PGADMIN_EMAIL</span><span class="o">=</span>random_email
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nv">PGADMIN_PASS</span><span class="o">=</span>random_password
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nv">PGADMIN_SERVER_MODE</span><span class="o">=</span>False
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nv">PGADMIN_MASTER_REQ</span><span class="o">=</span>False
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="nv">PGADMIN_PORT</span><span class="o">=</span><span class="m">5050</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="c1"># Graph used for pathfinding</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="c1"># Can be used by self hosters to use alternative regions as desired</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="c1"># Graphs can be generated by sourcing .osm.pbf files from Geofabric and sourcing elevation files from the elevation library</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="c1"># See either the docs on how to use this or view the graph generation files directly in ./graph_generation</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="nv">GRAPH_PATH</span><span class="o">=</span>graph_generation/elevation_populated_graph.pkl
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="c1"># Database Connection URIs</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nv">DATABASE_URI</span><span class="o">=</span>postgresql://crestr_dev:secure_hiking_pass_2025@db:5432/crestr_hiking
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="nv">LOCAL_DATABASE_URI</span><span class="o">=</span>postgresql://crestr_dev:secure_hiking_pass_2025@localhost:5432/crestr_hiking
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="c1"># Umami (analytics)</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="c1"># Specific Website ID provided by Umami</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="nv">UMAMI_WEBSITE_ID</span><span class="o">=</span>get_ID_from_umami
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="c1"># Umami script.js url, defaults to localhost:3000</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="nv">UMAMI_SCRIPT_URL</span><span class="o">=</span>http://localhost:3000/script.js
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="c1"># Umami Database</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="nv">UMAMI_DB_PASSWORD</span><span class="o">=</span>change_this_to_a_strong_password
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="c1"># Umami Application Secret (generate a strong one)</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="nv">UMAMI_APP_SECRET</span><span class="o">=</span>your_very_long_random_secret_here
 </span></code></pre></div></p>
 <p>The app will work fine with these values unchanged excepting the searching for an area feature, 
 as this is achieved via the <code>LOCATIONIQ_API_KEY</code> of which you will need to retrieve your own from 
@@ -1817,7 +1860,8 @@ as this is achieved via the <code>LOCATIONIQ_API_KEY</code> of which you will ne
 <h3 id="4-access-the-app">4. Access the App<a class="headerlink" href="#4-access-the-app" title="Permanent link">&para;</a></h3>
 <p>Wait until the containers are running
 <br>
-Once they are, the app should  be accessible via <a href="http://localhost:5000">localhost:5000</a>, opening on the Crestr homepage</p>
+Once they are, the app should  be accessible via <a href="http://localhost:5000">localhost:5000</a>, opening on the map. 
+You may want to make an account to save routes and points by visiting <a href="http://localhost:5000/register">localhost:5000/register</a></p>
 <h3 id="5-common-issues-troubleshooting">5. Common Issues + Troubleshooting<a class="headerlink" href="#5-common-issues-troubleshooting" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1841,33 +1885,6 @@ Once they are, the app should  be accessible via <a href="http://localhost:5000"
 </tr>
 </tbody>
 </table>
-<h2 id="developers">Developers<a class="headerlink" href="#developers" title="Permanent link">&para;</a></h2>
-<p>If you want to run the app locally you can do so with the commands below:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Clone the project</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/abdlfc11/Crestr-Hiking-App.git
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Navigate into the project folder</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">cd</span><span class="w"> </span>Crestr-Hiking-App
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Create a virtual environment</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Activate virtual environment</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># Windows:</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># macOS/Linux:</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1"># Install dependencies</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1"># Run the Flask app</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="nb">cd</span><span class="w"> </span>src
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>python<span class="w"> </span>app.py
-</span></code></pre></div>
-<p>The app should then be accessible at <a href="http://localhost:5000">localhost:5000</a></p>
 
 
 

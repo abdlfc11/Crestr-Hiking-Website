@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../manual-routing/">
+        <link rel="prev" href="../getting-started/">
       
       
-        <link rel="next" href="../../technical/action_log_codes/">
+        <link rel="next" href="../automatic-routing/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Exporting Routes in Crestr - Crestr Documentation</title>
+        <title>Developers - Crestr Documentation</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exporting-routes-in-crestr" class="md-skip">
+        <a href="#prerequisites" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exporting Routes in Crestr
+              Developers
             
           </span>
         </div>
@@ -474,10 +474,34 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../developers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developers
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -492,6 +516,136 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Prerequisites
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Clone the Repository
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-your-env-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Set Up Your <code>.env</code> File
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Set Up Your .env File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-docker-composeyml-reads-from-env-not-exampleenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Important: <code>docker-compose.yml</code> reads from <code>.env</code>, not <code>example.env</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-build-and-start-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Build and Start the App
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Build and Start the App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-full-stack-via-docker-recommended-for-working-on-the-full-app-db-analytics-pgadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Option A — Full stack via Docker (recommended for working on the full app, DB, analytics, pgAdmin)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-flask-app-run-natively-no-docker-useful-for-fast-backend-only-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Option B — Flask app run natively (no Docker), useful for fast backend-only iteration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-access-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Access the App
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-common-issues-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Common Issues + Troubleshooting
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -555,36 +709,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Exporting Routes
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../exporting-routes/" class="md-nav__link">
         
   
   
@@ -599,88 +727,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#supported-export-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Supported Export Formats
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-export-a-route" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        How to Export a Route
-      </span>
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How to Export a Route">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#saved-routes-dashboard" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Saved Routes Dashboard
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-details-included" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        File Details Included
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#need-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Need Help?
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1510,8 +1556,6 @@
                     
                     
                     
-                      
-                    
                     
                       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
                       <div class="md-sidebar-button__wrapper">
@@ -1527,8 +1571,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1537,10 +1579,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-export-formats" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Supported Export Formats
+        Prerequisites
       </span>
     </span>
   </a>
@@ -1548,22 +1590,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-export-a-route" class="md-nav__link">
+  <a href="#1-clone-the-repository" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        How to Export a Route
+        1. Clone the Repository
       </span>
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to Export a Route">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-your-env-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Set Up Your <code>.env</code> File
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Set Up Your .env File">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#saved-routes-dashboard" class="md-nav__link">
+  <a href="#important-docker-composeyml-reads-from-env-not-exampleenv" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Saved Routes Dashboard
+        Important: <code>docker-compose.yml</code> reads from <code>.env</code>, not <code>example.env</code>
       </span>
     </span>
   </a>
@@ -1576,10 +1629,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-details-included" class="md-nav__link">
+  <a href="#3-build-and-start-the-app" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        File Details Included
+        3. Build and Start the App
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Build and Start the App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-full-stack-via-docker-recommended-for-working-on-the-full-app-db-analytics-pgadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Option A — Full stack via Docker (recommended for working on the full app, DB, analytics, pgAdmin)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-flask-app-run-natively-no-docker-useful-for-fast-backend-only-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Option B — Flask app run natively (no Docker), useful for fast backend-only iteration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-access-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Access the App
       </span>
     </span>
   </a>
@@ -1587,10 +1679,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#need-help" class="md-nav__link">
+  <a href="#5-common-issues-troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Need Help?
+        5. Common Issues + Troubleshooting
       </span>
     </span>
   </a>
@@ -1615,78 +1707,176 @@
   
 
 
+  <h1 id="__skip">Developers</h1>
+
 <hr />
-<p><strong>Last updated:</strong> June 2026</p>
+<p><strong>Last updated:</strong> July 2026</p>
 <hr />
-<h1 id="exporting-routes-in-crestr">Exporting Routes in Crestr<a class="headerlink" href="#exporting-routes-in-crestr" title="Permanent link">&para;</a></h1>
-<p><strong>Easily save and share your routes</strong> with industry-standard file formats.</p>
-<p>Crestr lets you export any saved route as either <strong>GPX</strong> or <strong>GeoJSON</strong>, so you can use them in GPS devices, mapping software, GIS tools, or other apps.</p>
+<p>Follow this guide to set up and run <strong>Crestr</strong> locally for development.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before starting, ensure you have the following installed:</p>
+<ul>
+<li>
+<p><strong>Git</strong> - To clone the repository
+  <a href="https://git-scm.com/downloads">Download Git</a></p>
+</li>
+<li>
+<p><strong>Docker</strong> &amp; <strong>Docker Compose</strong> - The app runs locally via Docker containers</p>
+<ul>
+<li>Docker Desktop: <a href="https://docs.docker.com/get-docker/">Install Docker</a></li>
+<li>Docker Compose is included with Docker Desktop (v2+)</li>
+</ul>
+</li>
+<li>
+<p><strong>Python 3.x</strong> - If running the Flask app outside of Docker</p>
+</li>
+</ul>
 <hr />
-<h2 id="supported-export-formats">Supported Export Formats<a class="headerlink" href="#supported-export-formats" title="Permanent link">&para;</a></h2>
+<h2 id="1-clone-the-repository">1. Clone the Repository<a class="headerlink" href="#1-clone-the-repository" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Clone the project</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/abdlfc11/Crestr-Hiking-App.git
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Navigate into the project folder</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">cd</span><span class="w"> </span>Crestr-Hiking-App
+</span></code></pre></div>
+<p>You should see a project structure similar to this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Crestr-Hiking-App/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── docker-compose.yml
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── Dockerfile
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── src/
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── app.py
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── pathfinder.py
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   └── config.py
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>|   └── ...
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├── data/
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├── README.md
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>└── requirements.txt
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>└── .env.example
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>└── ...
+</span></code></pre></div>
+<h2 id="2-set-up-your-env-file">2. Set Up Your <code>.env</code> File<a class="headerlink" href="#2-set-up-your-env-file" title="Permanent link">&para;</a></h2>
+<p>Create a file named <code>.env</code> in the project root and copy the contents of <code>example.env</code> into it, then adjust values as needed.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Flask Configuration, a long random string of integers and characters</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">FLASK_SECRET_KEY</span><span class="o">=</span>8f3c9b7a2e5d1f4a6b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># LocationIQ API Key (Get your own free key at https://locationiq.com)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">LOCATIONIQ_API_KEY</span><span class="o">=</span>pk.abcdefghijklmnopqrstuvwxyz1234567890
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># PostgreSQL Configurations / user details</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nv">POSTGRES_USER</span><span class="o">=</span>crestr_dev
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secure_hiking_pass_2025
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nv">POSTGRES_DB</span><span class="o">=</span>crestr_hiking
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># pgAdmin</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nv">PGADMIN_EMAIL</span><span class="o">=</span>random_email
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nv">PGADMIN_PASS</span><span class="o">=</span>random_password
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nv">PGADMIN_SERVER_MODE</span><span class="o">=</span>False
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nv">PGADMIN_MASTER_REQ</span><span class="o">=</span>False
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="nv">PGADMIN_PORT</span><span class="o">=</span><span class="m">5050</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="c1"># Graph used for pathfinding</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="c1"># Can be used to point at alternative regions as desired</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="c1"># Graphs can be generated by sourcing .osm.pbf files from Geofabrik and elevation</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="c1"># files from the elevation library — see ./graph_generation and its docs</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="nv">GRAPH_PATH</span><span class="o">=</span>graph_generation/elevation_populated_graph.pkl
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="c1"># Database Connection URIs</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nv">DATABASE_URI</span><span class="o">=</span>postgresql://crestr_dev:secure_hiking_pass_2025@db:5432/crestr_hiking
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="nv">LOCAL_DATABASE_URI</span><span class="o">=</span>postgresql://crestr_dev:secure_hiking_pass_2025@localhost:5432/crestr_hiking
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="c1"># Umami (analytics)</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="c1"># Specific Website ID provided by Umami</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="nv">UMAMI_WEBSITE_ID</span><span class="o">=</span>get_ID_from_umami
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="c1"># Umami script.js url, defaults to localhost:3000</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="nv">UMAMI_SCRIPT_URL</span><span class="o">=</span>http://localhost:3000/script.js
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="c1"># Umami Database</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="nv">UMAMI_DB_PASSWORD</span><span class="o">=</span>change_this_to_a_strong_password
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="c1"># Umami Application Secret (generate a strong one)</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="nv">UMAMI_APP_SECRET</span><span class="o">=</span>your_very_long_random_secret_here
+</span></code></pre></div>
+<p>The app will work fine with these values unchanged, aside from the area search feature, which requires your own <code>LOCATIONIQ_API_KEY</code> from <a href="https://locationiq.com">LocationIQ</a>.</p>
+<h3 id="important-docker-composeyml-reads-from-env-not-exampleenv">Important: <code>docker-compose.yml</code> reads from <code>.env</code>, not <code>example.env</code><a class="headerlink" href="#important-docker-composeyml-reads-from-env-not-exampleenv" title="Permanent link">&para;</a></h3>
+<p>Only the <code>db</code> and <code>web</code> services load <code>example.env</code> directly, via their <code>env_file</code> blocks. 
+The <code>umami-db</code>, <code>umami</code>, and <code>pgadmin</code> services instead reference variables with <code>${VAR}</code> syntax directly in <code>docker-compose.yml</code> (e.g. <code>${UMAMI_DB_PASSWORD}</code>, <code>${PGADMIN_EMAIL}</code>).
+ Docker Compose only resolves this interpolation syntax from a <code>.env</code> file in the project root (or your shell environment), this means it will <strong>not</strong> pick these up from <code>example.env</code>.</p>
+<p>This means that even though <code>example.env</code> is checked into the repo, <strong>you must create your own <code>.env</code> file</strong> at the project root (as described above)
+or the <code>umami</code>, <code>umami-db</code>, and <code>pgadmin</code> services will fail to start / start with blank credentials.</p>
+<p>If you only need the core app and database (<code>web</code> + <code>db</code>) and don't care about analytics or pgAdmin, <code>example.env</code> alone is sufficient since those two services load it directly
+via <code>env_file</code>. For everything else, <code>.env</code> is required.</p>
+<h2 id="3-build-and-start-the-app">3. Build and Start the App<a class="headerlink" href="#3-build-and-start-the-app" title="Permanent link">&para;</a></h2>
+<h3 id="option-a-full-stack-via-docker-recommended-for-working-on-the-full-app-db-analytics-pgadmin">Option A — Full stack via Docker (recommended for working on the full app, DB, analytics, pgAdmin)<a class="headerlink" href="#option-a-full-stack-via-docker-recommended-for-working-on-the-full-app-db-analytics-pgadmin" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--build
+</span></code></pre></div>
+<p>Useful variants:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d<span class="w">          </span><span class="c1"># build and start in the background (detached)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>--force-recreate<span class="w">  </span><span class="c1"># force rebuild and restart all services</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>docker-compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w">                </span><span class="c1"># follow logs in real time</span>
+</span></code></pre></div>
+<p>For faster local iteration, uncomment the debugging environment variables under the <code>web</code> service in <code>docker-compose.yml</code>:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># - FLASK_DEBUG=1</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># - LOAD_GRAPH_ON_IMPORT=0    # 0 skips graph loading on import for fast hot-reloads</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># - FLASK_ENV=development     # deprecated, likely to switch to checking FLASK_DEBUG instead</span>
+</span></code></pre></div>
+<p>You'll also want to swap the <code>command:</code> on the <code>web</code> service from the gunicorn prod command to the Flask dev server for easier debugging:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">### command: gunicorn -c src/gunicorn.config.py src.app:app ### prod</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flask run --host=0.0.0.0 --port=5000 --debug</span><span class="w"> </span><span class="c1">### dev — better logs/errors</span>
+</span></code></pre></div>
+<h3 id="option-b-flask-app-run-natively-no-docker-useful-for-fast-backend-only-iteration">Option B — Flask app run natively (no Docker), useful for fast backend-only iteration<a class="headerlink" href="#option-b-flask-app-run-natively-no-docker-useful-for-fast-backend-only-iteration" title="Permanent link">&para;</a></h3>
+<p>You'll still need Postgres running (e.g. via <code>docker-compose up db</code>), then:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Create a virtual environment</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Activate it</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># Windows:</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># macOS/Linux:</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># Install dependencies</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># Run the Flask app</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nb">cd</span><span class="w"> </span>src
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>python<span class="w"> </span>app.py
+</span></code></pre></div>
+<p>Make sure <code>LOCAL_DATABASE_URI</code> in your <code>.env</code> points at <code>localhost</code> (not the <code>db</code> service hostname), since you're running outside the Docker network.</p>
+<h2 id="4-access-the-app">4. Access the App<a class="headerlink" href="#4-access-the-app" title="Permanent link">&para;</a></h2>
+<p>Once containers/services are up, the app is accessible at <a href="http://localhost:5000">localhost:5000</a>, opening on the map.</p>
+<p>Create an account to save routes and points at <a href="http://localhost:5000/register">localhost:5000/register</a>.</p>
+<p>Other local services:
+- Umami analytics: <a href="http://localhost:3000">localhost:3000</a>
+- pgAdmin: <a href="http://localhost:5050">localhost:5050</a> (or whatever <code>PGADMIN_PORT</code> you set)</p>
+<h2 id="5-common-issues-troubleshooting">5. Common Issues + Troubleshooting<a class="headerlink" href="#5-common-issues-troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Format</th>
-<th>Best For</th>
-<th>File Extension</th>
-<th>Description</th>
+<th style="text-align: left;">Issue</th>
+<th style="text-align: left;">Solution</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>GPX</strong></td>
-<td>GPS devices, Garmin, Strava, Komoot</td>
-<td><code>.gpx</code></td>
-<td>Universal GPS track format with waypoints, tracks, and metadata</td>
+<td style="text-align: left;">Port 5000 already in use</td>
+<td style="text-align: left;">Change the port mapping in <code>docker-compose.yml</code></td>
 </tr>
 <tr>
-<td><strong>GeoJSON</strong></td>
-<td>Developers, QGIS, web maps, analysis</td>
-<td><code>.geojson</code></td>
-<td>Modern, lightweight geospatial format</td>
+<td style="text-align: left;">Docker permission error</td>
+<td style="text-align: left;">Run with <code>sudo</code> (Linux) or ensure Docker Desktop is running</td>
+</tr>
+<tr>
+<td style="text-align: left;">Build fails</td>
+<td style="text-align: left;">Run <code>docker system prune -f</code> and try again</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>umami</code>/<code>pgadmin</code> won't start or has blank credentials</td>
+<td style="text-align: left;">Confirm you have a <code>.env</code> file (not just <code>example.env</code>) in the project root — see Step 2</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="how-to-export-a-route">How to Export a Route<a class="headerlink" href="#how-to-export-a-route" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open the <strong>Saved Routes</strong> dashboard in Crestr.</li>
-<li>Find the route you want to export.</li>
-<li>
-<p>Click the appropriate download button:</p>
-</li>
-<li>
-<p><strong>GPX</strong> button → downloads as <code>.gpx</code></p>
-</li>
-<li><strong>GeoJSON</strong> button → downloads as <code>.geojson</code></li>
-</ol>
-<hr />
-<h3 id="saved-routes-dashboard">Saved Routes Dashboard<a class="headerlink" href="#saved-routes-dashboard" title="Permanent link">&para;</a></h3>
-<p align="center">
-    <img width="1470" height="832" alt="image" src="https://images.crestr.co.uk/Saved-Routes-Dashboard.png"/>
-    <br> 
-</p>
-
-<blockquote>
-<p><em>The two download buttons (GPX and GeoJSON) are highlighted with a green background.</em></p>
-</blockquote>
-<hr />
-<h2 id="file-details-included">File Details Included<a class="headerlink" href="#file-details-included" title="Permanent link">&para;</a></h2>
-<p>Exported files contain:</p>
-<ul>
-<li>Route name and description</li>
-<li>Full track points with timestamps (when available)</li>
-<li>Elevation data</li>
-<li>Waypoints / markers</li>
-<li>Metadata (created date, Crestr user info)</li>
-</ul>
-<hr />
-<h2 id="need-help">Need Help?<a class="headerlink" href="#need-help" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Having trouble with the exported file? Check the format compatibility of your target app.</li>
-<li>Want a specific feature added (e.g., KML export, batch export)? Open an issue on GitHub or reach out to the developer at <a href="mailto:abdul@crestr.co.uk">abdul@crestr.co.uk</a></li>
-</ul>
-<hr />
 
 
 
