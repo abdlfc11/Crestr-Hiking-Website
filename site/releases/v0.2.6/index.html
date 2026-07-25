@@ -1191,6 +1191,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="What Changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reusable-modal-component-authentication-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>Reusable Modal Component &amp; Authentication UX</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sliding-panel-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>Sliding Panel Design</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-consistency-theming" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>CSS Consistency &amp; Theming</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>Bug Fixes &amp; Reliability</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1544,6 +1594,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="What Changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reusable-modal-component-authentication-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>Reusable Modal Component &amp; Authentication UX</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sliding-panel-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>Sliding Panel Design</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-consistency-theming" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>CSS Consistency &amp; Theming</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <strong>Bug Fixes &amp; Reliability</strong>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1569,21 +1669,29 @@
 <h2 id="summary"><strong>Summary</strong><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>This release introduces a reusable modal component and a login modal that guides unauthenticated users toward signing in when they try to save or import routes, adds a prominent login button to the sidenav for guests, switches sliding panels to solid colours for improved focus and readability, fully aligns modal and auth styles with the design-token system, and fixes coordinate handling so WGS84 (Lat, Lon) inputs work correctly for routing.</p>
 <h2 id="what-changed"><strong>What Changed</strong><a class="headerlink" href="#what-changed" title="Permanent link">&para;</a></h2>
-<p><strong>Reusable Modal Component &amp; Authentication UX</strong><br />
-* Extracted the point-delete confirmation dialog styles from <code>map.css</code> into a new shared <code>components/modal.css</code>, renaming classes to generic <code>modal-*</code> names so the same component can be reused for future dialogs (login, delete route, etc.).<br />
-* Added an authentication-wall / login modal that appears when a guest user attempts to save a route, view saved routes, or import a route, replacing the previous tooltips.<br />
-* Hid the “Delete Account” and “Log Out” options in the settings panel for unauthenticated users to reduce visual clutter.<br />
-* Added a clear login button at the bottom of the sliding navigation bar that is only shown to guests, giving them an obvious path to the login page without needing to know the URL.</p>
-<p><strong>Sliding Panel Design</strong><br />
-* Replaced the glassmorphism (translucent) backgrounds of the Import Route, Saved Routes and Settings sliding panels with solid colours driven by design tokens.<br />
-* The change improves content focus, reduces visual distraction from the map behind the panels, and automatically adapts to light/dark theme.</p>
-<p><strong>CSS Consistency &amp; Theming</strong><br />
-* Updated <code>modal.css</code> and <code>auth.css</code> to use design tokens from <code>tokens.css</code> instead of hardcoded colours and redundant <code>html.dark</code> rules.<br />
-* Added new token values needed by the solid-panel redesign and the modal component, ensuring consistent theming and easier future maintenance.</p>
-<p><strong>Bug Fixes &amp; Reliability</strong><br />
-* Fixed routing so that users can enter WGS84 (latitude/longitude) coordinates without receiving false “outside Cumbria” errors.<br />
-* Added an <code>isLonLat()</code> utility that detects whether coordinates are already in Lat/Lon form and skips the unnecessary Web-Mercator conversion.<br />
-* Corrected corresponding backend conversion and a naming bug that previously prevented route creation even after the Cumbria check was resolved.</p>
+<h3 id="reusable-modal-component-authentication-ux"><strong>Reusable Modal Component &amp; Authentication UX</strong><a class="headerlink" href="#reusable-modal-component-authentication-ux" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Extracted the point-delete confirmation dialog styles from <code>map.css</code> into a new shared <code>components/modal.css</code>, renaming classes to generic <code>modal-*</code> names so the same component can be reused for future dialogs (login, delete route, etc.).  </li>
+<li>Added an authentication-wall / login modal that appears when a guest user attempts to save a route, view saved routes, or import a route, replacing the previous tooltips.  </li>
+<li>Hid the “Delete Account” and “Log Out” options in the settings panel for unauthenticated users to reduce visual clutter.  </li>
+<li>Added a clear login button at the bottom of the sliding navigation bar that is only shown to guests, giving them an obvious path to the login page without needing to know the URL.</li>
+</ul>
+<h3 id="sliding-panel-design"><strong>Sliding Panel Design</strong><a class="headerlink" href="#sliding-panel-design" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Replaced the glassmorphism (translucent) backgrounds of the Import Route, Saved Routes and Settings sliding panels with solid colours driven by design tokens.  </li>
+<li>The change improves content focus, reduces visual distraction from the map behind the panels, and automatically adapts to light/dark theme.</li>
+</ul>
+<h3 id="css-consistency-theming"><strong>CSS Consistency &amp; Theming</strong><a class="headerlink" href="#css-consistency-theming" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Updated <code>modal.css</code> and <code>auth.css</code> to use design tokens from <code>tokens.css</code> instead of hardcoded colours and redundant <code>html.dark</code> rules.  </li>
+<li>Added new token values needed by the solid-panel redesign and the modal component, ensuring consistent theming and easier future maintenance.</li>
+</ul>
+<h3 id="bug-fixes-reliability"><strong>Bug Fixes &amp; Reliability</strong><a class="headerlink" href="#bug-fixes-reliability" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixed routing so that users can enter WGS84 (latitude/longitude) coordinates without receiving false “outside Cumbria” errors.  </li>
+<li>Added an <code>isLonLat()</code> utility that detects whether coordinates are already in Lat/Lon form and skips the unnecessary Web-Mercator conversion.  </li>
+<li>Corrected corresponding backend conversion and a naming bug that previously prevented route creation even after the Cumbria check was resolved.</li>
+</ul>
 
 
 
