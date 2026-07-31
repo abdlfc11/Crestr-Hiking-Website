@@ -1819,7 +1819,7 @@ how the major components interact, and the design principles guiding development
 <li><strong>Frontend</strong>: Static HTML/CSS/JavaScript with OpenLayers for interactive mapping</li>
 <li><strong>Data Processing Pipeline</strong>: Python scripts that build and enrich the trail graph</li>
 <li><strong>Routing Engine</strong>: Custom A* implementation running in Python (called via backend)</li>
-<li><strong>Backend</strong>: Lightweight Flask application serving the API and static documentation</li>
+<li><strong>Backend</strong>: Lightweight FastAPI application serving the API</li>
 <li><strong>Data Storage</strong>: Precomputed iGraph graph (Pickle) + OSM-derived data</li>
 </ul>
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
@@ -1885,8 +1885,6 @@ The application avoids heavy databases or real-time servers in favour of precomp
 <h2 id="future-evolution">Future Evolution<a class="headerlink" href="#future-evolution" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Tile-based processing</li>
-<li>Move toward a more scalable backend (FastAPI + optional database).</li>
-<li>Containerised deployment (Docker) for easier updates.</li>
 <li>Potential internationalisation and sponsorship pathway for production use.</li>
 </ul>
 <h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>

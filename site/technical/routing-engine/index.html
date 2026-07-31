@@ -1808,13 +1808,13 @@
 
 <h1 id="routing-engine">Routing Engine<a class="headerlink" href="#routing-engine" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> June 2026</p>
+<p><strong>Last updated:</strong> July 2026</p>
 <hr />
-<p>The core of Crestr’s route generation is a custom <strong>A* pathfinding</strong> implementation, 
+<p>The core of Crestr’s route generation is a custom <strong>A* pathfinding</strong> implementation,
 heavily optimised for large hiking networks and realistic hiking costs.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The routing engine finds the lowest-cost path between two points on the enriched graph while respecting user preferences
-such as minimum slope tolerance. </p>
+such as minimum slope tolerance.</p>
 <p>It combines:</p>
 <ul>
 <li>Accurate <strong>Naismith-based edge costs</strong> (from the elevation pipeline)</li>
@@ -1857,24 +1857,16 @@ such as minimum slope tolerance. </p>
 </ol>
 <h2 id="design-decisions">Design Decisions<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>Why A*?</strong><br />
-  It guarantees the optimal path when using an admissible heuristic, while being significantly faster than Dijkstra in practice.
-  The use of a heuristic allows me to tune the algorithm to the specific needs of my app making pathfinding highly customisable.</p>
-</li>
-<li>
-<p><strong>Precomputed Costs</strong><br />
-  All elevation, terrain, and Naismith calculations are done once during preprocessing.
-  The routing engine only reads these values.</p>
-</li>
-<li>
-<p><strong>Scalability</strong><br />
-  The combination of KDTree + subgraph extraction allows the engine to scale to 1M+ node graphs without excessive memory or CPU usage.</p>
-</li>
-<li>
-<p><strong>Customisability</strong><br />
-  The <code>min_slope</code> parameter enables future features such as “avoid steep sections”.</p>
-</li>
+<li><strong>Why A*?</strong><br />
+It guarantees the optimal path when using an admissible heuristic, while being significantly faster than Dijkstra in practice.
+The use of a heuristic allows me to tune the algorithm to the specific needs of my app making pathfinding highly customisable.</li>
+<li><strong>Precomputed Costs</strong><br />
+All elevation, terrain, and Naismith calculations are done once during preprocessing.
+The routing engine only reads these values.</li>
+<li><strong>Scalability</strong><br />
+The combination of KDTree + subgraph extraction allows the engine to scale to 1M+ node graphs without excessive memory or CPU usage.</li>
+<li><strong>Customisability</strong><br />
+The <code>min_slope</code> parameter enables future features such as “avoid steep sections”.</li>
 </ul>
 <h2 id="performance-characteristics">Performance Characteristics<a class="headerlink" href="#performance-characteristics" title="Permanent link">&para;</a></h2>
 <ul>

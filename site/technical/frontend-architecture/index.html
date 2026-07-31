@@ -1867,14 +1867,14 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>frontend/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── map.js                           # OpenLayers map initialisation and core layers
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── ui.js                            # Main UI logic, mode switching, event handlers
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── auth.js                          # Login, registration, logout, account management
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── Auth/                            # Login, registration, logout, account management
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── settings.js / settingsState.js   # User preferences (units, theme)
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── routes/                          # Route creation, saving, loading, state
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── saved_points/                    # Saved location markers
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── cursorManager.js                 # Smart cursor control during route creation
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── elevationChart.js                # Dynamic elevation profile
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── importRoute.js                   # GPX/KML/FIT/GeoJSON import
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└── utils.js                         # Shared helpers (formatting, coordinate rounding, etc.)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── Utils/                           # Shared helpers (formatting, coordinate rounding, etc.)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── saved_points/                    # Saved location markers
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── cursorManager.js                 # Smart cursor control during route creation
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── elevationChart.js                # Dynamic elevation profile
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── importRoute.js                   # GPX/KML/FIT/GeoJSON import             
 </span></code></pre></div>
 <h2 id="key-design-patterns">Key Design Patterns<a class="headerlink" href="#key-design-patterns" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1906,7 +1906,7 @@
 <ol>
 <li>User interaction on map</li>
 <li>Coordinate processing and validation</li>
-<li>API call to Flask backend (<code>/calculate_path</code>, etc.)</li>
+<li>API call to FastAPI backend (<code>/calculate-path</code>, etc.)</li>
 <li>Response &rarr; update map layers, stats panel, elevation chart</li>
 <li>Optional persistence to PostgreSQL via backend</li>
 </ol>

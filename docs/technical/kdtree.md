@@ -2,7 +2,7 @@
 
 ---
 
-**Last updated:** June 2026
+**Last updated:** July 2026
 
 ---
 
@@ -11,7 +11,7 @@ This is a critical performance component of the routing engine.
 
 ## What is a KDTree?
 
-A KDTree (K-Dimensional Tree) is a space-partitioning data structure that organises points in a k-dimensional space. 
+A KDTree (K-Dimensional Tree) is a space-partitioning data structure that organises points in a k-dimensional space.
 It allows efficient nearest-neighbour searches and range queries.
 
 In Crestr, we use the `scipy.spatial.KDTree` implementation, which is well-suited for 2D geospatial coordinates.

@@ -18,7 +18,7 @@ Crestr follows a **static-first, precomputed** architecture optimised for perfor
 - **Frontend**: Static HTML/CSS/JavaScript with OpenLayers for interactive mapping
 - **Data Processing Pipeline**: Python scripts that build and enrich the trail graph
 - **Routing Engine**: Custom A* implementation running in Python (called via backend)
-- **Backend**: Lightweight Flask application serving the API and static documentation
+- **Backend**: Lightweight FastAPI application serving the API
 - **Data Storage**: Precomputed iGraph graph (Pickle) + OSM-derived data
 
 ## Data Flow
@@ -100,8 +100,6 @@ See [Tech Stack](./tech-stack.md) for full details.
 ## Future Evolution
 
 - Tile-based processing
-- Move toward a more scalable backend (FastAPI + optional database).
-- Containerised deployment (Docker) for easier updates.
 - Potential internationalisation and sponsorship pathway for production use.
 
 ## Related Documents

@@ -959,17 +959,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#file-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        File Handling
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#other" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1773,17 +1762,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#file-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        File Handling
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#other" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1874,15 +1852,15 @@
 
 <h1 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> June 2026</p>
+<p><strong>Last updated:</strong> July 2026</p>
 <hr />
-<p>The backend of Crestr is a lightweight Python web application built with <strong>Flask</strong> (with plans to migrate to FastAPI). 
+<p>The backend of Crestr is a lightweight Python web application built with <strong>FastAPI</strong>.<br />
 It serves the interactive map, handles authentication, stores user data, and executes routing requests.</p>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <p>The backend follows a classic monolithic structure suitable for the current scale of the application:</p>
 <ul>
-<li><strong>Flask App</strong> (<code>app.py</code>): Main application with routes and auth.</li>
-<li><strong>Pathfinding Module</strong> (<code>pathfinder.py</code>): Contains the A* routing engine and spatial helpers.</li>
+<li><strong>FastAPI App</strong> (<code>src/fastapi_app.py</code>): Main application with routes and auth.</li>
+<li><strong>Pathfinding Module</strong> (<code>src/Pathfinding/pathfinder.py</code> and <code>src/Pathfinding/NodeFinder.py</code>) : Contains the A* routing engine and spatial helpers.</li>
 <li><strong>Database Models</strong> (<code>models.py</code>): SQLModel definitions for PostgreSQL.</li>
 <li><strong>NodeFinder Service</strong>: Central class managing graph loading, coordinate conversions, and route building.</li>
 </ul>
@@ -1898,28 +1876,24 @@ It serves the interactive map, handles authentication, stores user data, and exe
 <h2 id="key-endpoints">Key Endpoints<a class="headerlink" href="#key-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>POST /login</code></li>
-<li><code>POST /registering</code></li>
-<li><code>POST /logout</code></li>
-<li><code>POST /validate-beta-code</code></li>
+<li><code>POST /auth/login</code></li>
+<li><code>POST /auth/register</code></li>
+<li><code>POST /auth/logout</code></li>
 </ul>
 <h3 id="routing">Routing<a class="headerlink" href="#routing" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>POST /calculate_path</code> &rarr; Main endpoint that returns an optimised hiking route as GeoJSON</li>
-<li><code>POST /save_route</code> &rarr; Persists a generated route to the database</li>
-<li><code>POST /load_route</code> &rarr; Retrieves a saved route</li>
-<li><code>POST /delete_route</code></li>
+<li><code>POST /routing/calculate-path</code> &rarr; Main endpoint that returns an optimised hiking route as GeoJSON</li>
+<li><code>POST /routing/save-route</code> &rarr; Persists a generated route to the database</li>
+<li><code>POST /routing/load-route</code> &rarr; Retrieves a saved route</li>
+<li><code>POST /routing/delete-route</code> &rarr; Deletes a route via route name (also ensures current user owns route)</li>
+<li><code>POST /routing/download-route</code> &rarr; Returns GPX or GeoJSON file</li>
+<li><code>POST /routing/import-route-file</code> –-&gt; Supports GPX, FIT, KML, and GeoJSON uploads</li>
 </ul>
 <h3 id="points-of-interest">Points of Interest<a class="headerlink" href="#points-of-interest" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>POST /save_point</code></li>
-<li><code>GET /get_saved_points</code></li>
-<li><code>POST /delete_point</code></li>
-</ul>
-<h3 id="file-handling">File Handling<a class="headerlink" href="#file-handling" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>POST /download_route</code> &rarr; Returns GPX or GeoJSON file</li>
-<li><code>POST /import_route_file</code> –-&gt; Supports GPX, FIT, KML, and GeoJSON uploads</li>
+<li><code>POST /points/save_point</code></li>
+<li><code>GET /points/get_saved_points</code></li>
+<li><code>POST /points/delete_point</code></li>
 </ul>
 <h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1928,29 +1902,25 @@ It serves the interactive map, handles authentication, stores user data, and exe
 </ul>
 <h2 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>PostgreSQL</strong> with <strong>SQLModel</strong> </li>
-<li>Main tables: <code>user</code>, <code>route</code>, <code>point</code>, <code>settings</code>, <code>betacode</code></li>
+<li><strong>PostgreSQL</strong> with <strong>SQLModel</strong></li>
+<li>Main tables: <code>user</code>, <code>route</code>, <code>point</code>, <code>settings</code>, <code>session_table</code>, <code>action_log</code> and <code>issues</code></li>
 <li>Routes and points are scoped to individual users</li>
 </ul>
 <h2 id="design-highlights">Design Highlights<a class="headerlink" href="#design-highlights" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Rate Limiting</strong>: Implemented via Flask-Limiter to protect against abuse.</li>
+<li><strong>Rate Limiting</strong>: Implemented via <a href="https://pypi.org/project/fastapi-limiter/">FastAPI-Limiter</a> to protect against abuse.</li>
 <li><strong>Coordinate Handling</strong>: Robust conversion between Web Mercator, WGS84, and BNG using <a href="https://pypi.org/project/pyproj/">pyproj</a>.</li>
 <li><strong>Graph Management</strong>: Lazy loading of the large trail graph with KDTree optimisation.</li>
 <li><strong>Error Handling</strong>: Consistent JSON responses and custom error pages.</li>
-<li><strong>Session Security</strong>: Configured with secure defaults (ready for HTTPS).</li>
+<li><strong>Use of Sessions Table</strong>: Mixed with Cookies to send cryptographic session IDs which are sent back to the backend on each (authentication-required) API call</li>
 </ul>
 <h2 id="current-limitations">Current Limitations<a class="headerlink" href="#current-limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Flask is used for simplicity, but the codebase already has the start of the creation FastAPI components in some areas.</li>
-<li>All routing runs synchronously &rarr; acceptable for current usage but will need review at scale.</li>
-<li>Beta code system is temporary.</li>
+<li>All routing runs synchronously &rarr; FastAPI refactor has been shipped and so asynchronous calls should be started to be designed</li>
 </ul>
 <h2 id="future-migration-path">Future Migration Path<a class="headerlink" href="#future-migration-path" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Full migration to <strong>FastAPI</strong> for better performance, automatic documentation, and async support.</li>
-<li>Move heavy pathfinding to a separate microservice or background worker if needed.</li>
-<li>Add proper API authentication (JWT) for potential mobile or third-party integrations.</li>
+<li>Move heavy pathfinding to a separate micro-service or background worker if needed.</li>
 </ul>
 <h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>
 <ul>

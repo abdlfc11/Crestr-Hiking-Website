@@ -1830,9 +1830,9 @@
 
 <h1 id="tech-stack">Tech Stack<a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> June 2026</p>
+<p><strong>Last updated:</strong> July 2026</p>
 <hr />
-<p>This document outlines the current technology choices for Crestr. The stack prioritises simplicity and performance for geospatial operations, 
+<p>This document outlines the current technology choices for Crestr. The stack prioritises simplicity and performance for geospatial operations,
 and maintainability while working within the constraints of a solo-developed project.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <table>
@@ -1851,7 +1851,7 @@ and maintainability while working within the constraints of a solo-developed pro
 </tr>
 <tr>
 <td>Backend</td>
-<td>Python, Flask (primary), FastAPI (exploratory)</td>
+<td>Python and FastAPI</td>
 <td>Web framework layer</td>
 </tr>
 <tr>
@@ -1871,7 +1871,7 @@ and maintainability while working within the constraints of a solo-developed pro
 </tr>
 <tr>
 <td>Authentication</td>
-<td>Flask session-based authentication</td>
+<td>Sessions PostgreSQL table + Cookies</td>
 <td>User session management</td>
 </tr>
 </tbody>
@@ -1879,14 +1879,14 @@ and maintainability while working within the constraints of a solo-developed pro
 <h2 id="detailed-breakdown">Detailed Breakdown<a class="headerlink" href="#detailed-breakdown" title="Permanent link">&para;</a></h2>
 <h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>HTML, CSS, JavaScript</strong>: Core web technologies. No heavy frameworks at present to keep bundle size small and performance high on mobile devices during hikes.</li>
+<li><strong>HTML, CSS, JavaScript</strong>: Core web technologies. No heavy frameworks at present to keep bundle size small and performance high</li>
 <li><strong>OpenLayers</strong>: Chosen for interactive mapping capabilities, vector layer support, and strong OSM integration. Provides the foundation for route display and user interaction.</li>
 </ul>
 <h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Python</strong>: Primary language due to strong ecosystem support for geospatial libraries and rapid development.</li>
 <li><strong>Flask</strong>: Current main web framework. Lightweight, flexible, and sufficient for the current scope.</li>
-<li><strong>FastAPI</strong>: Being evaluated for potential migration. Offers better performance, automatic OpenAPI documentation, and modern async support. The project currently uses only Flask.</li>
+<li><strong>FastAPI</strong>: Current main web framework after migrating from Flask, which offers better performance, automatic OpenAPI documentation, and modern async support.</li>
 </ul>
 <h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1895,7 +1895,7 @@ and maintainability while working within the constraints of a solo-developed pro
 </ul>
 <h3 id="core-algorithms">Core Algorithms<a class="headerlink" href="#core-algorithms" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>A* Pathfinding</strong>: Custom implementation tailored to hiking constraints (elevation, terrain difficulty, preferences).</li>
+<li><strong>A * Pathfinding</strong>: Custom implementation tailored to hiking constraints (elevation, terrain difficulty, preferences).</li>
 <li><strong>KDTree</strong>: Used for efficient spatial nearest-neighbour searches when indexing OSM data.</li>
 </ul>
 <h3 id="data-sources">Data Sources<a class="headerlink" href="#data-sources" title="Permanent link">&para;</a></h3>
@@ -1905,7 +1905,7 @@ and maintainability while working within the constraints of a solo-developed pro
 </ul>
 <h3 id="authentication-security">Authentication &amp; Security<a class="headerlink" href="#authentication-security" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Flask sessions</strong>: Simple server-side session management. Suitable for current user base but will need review before scaling (consider JWT or OAuth2 for API clients).</li>
+<li><strong>Session pSQL table + Cookies:</strong> Upon Login a cookie is sent containing a cryptographic session ID, this is compared to the session ID in the pSQL table upon each API call which requires authentication, this method keeps users logged in for 7 days (can be easily edited)</li>
 </ul>
 <h2 id="design-principles">Design Principles<a class="headerlink" href="#design-principles" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1915,12 +1915,10 @@ and maintainability while working within the constraints of a solo-developed pro
 </ul>
 <h2 id="future-considerations">Future Considerations<a class="headerlink" href="#future-considerations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Evaluate migration from Flask to FastAPI once API surface grows.</li>
 <li>Introduce PostGIS for advanced spatial queries.</li>
-<li>Review authentication model for security best practices before handling sensitive user data or payments.</li>
 </ul>
 <h2 id="rationale">Rationale<a class="headerlink" href="#rationale" title="Permanent link">&para;</a></h2>
-<p>Choices were driven by the need for strong geospatial capabilities, developer velocity, and long-term maintainability. 
+<p>Choices were driven by the need for strong geospatial capabilities, developer velocity, and long-term maintainability.
 The current stack allows rapid iteration while avoiding unnecessary complexity.</p>
 
 

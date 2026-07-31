@@ -2,17 +2,17 @@
 
 ---
 
-**Last updated:** June 2026
+**Last updated:** July 2026
 
 ---
 
-The core of Crestr’s route generation is a custom **A\* pathfinding** implementation, 
+The core of Crestr’s route generation is a custom **A* pathfinding** implementation,
 heavily optimised for large hiking networks and realistic hiking costs.
 
 ## Overview
 
 The routing engine finds the lowest-cost path between two points on the enriched graph while respecting user preferences
-such as minimum slope tolerance. 
+such as minimum slope tolerance.
 
 It combines:
 
@@ -24,7 +24,7 @@ It combines:
 
 ### 1. AStarRouteFinder Class
 
-The main implementation of the A\* algorithm:
+The main implementation of the A* algorithm:
 
 - **Priority Queue** (`nodes_left`): Uses `heapq` to always expand the most promising node next.
 - **Cost Tracking**:
@@ -56,24 +56,21 @@ These optimisations make routing feel instantaneous even on a dense national tra
 
 1. Snap start and end coordinates to the nearest trail nodes using KDTree.
 2. Build a focused subgraph around the route corridor.
-3. Run A\* on the subgraph using precomputed edge costs.
+3. Run A* on the subgraph using precomputed edge costs.
 4. Reconstruct and return the path.
 
 ## Design Decisions
 
-- **Why A\*?**  
-  It guarantees the optimal path when using an admissible heuristic, while being significantly faster than Dijkstra in practice.
-  The use of a heuristic allows me to tune the algorithm to the specific needs of my app making pathfinding highly customisable.
-
+- **Why A*?**  
+It guarantees the optimal path when using an admissible heuristic, while being significantly faster than Dijkstra in practice.
+The use of a heuristic allows me to tune the algorithm to the specific needs of my app making pathfinding highly customisable.
 - **Precomputed Costs**  
-  All elevation, terrain, and Naismith calculations are done once during preprocessing.
-  The routing engine only reads these values.
-
+All elevation, terrain, and Naismith calculations are done once during preprocessing.
+The routing engine only reads these values.
 - **Scalability**  
-  The combination of KDTree + subgraph extraction allows the engine to scale to 1M+ node graphs without excessive memory or CPU usage.
-
+The combination of KDTree + subgraph extraction allows the engine to scale to 1M+ node graphs without excessive memory or CPU usage.
 - **Customisability**  
-  The `min_slope` parameter enables future features such as “avoid steep sections”.
+The `min_slope` parameter enables future features such as “avoid steep sections”.
 
 ## Performance Characteristics
 
@@ -83,7 +80,7 @@ These optimisations make routing feel instantaneous even on a dense national tra
 
 ## Future Improvements
 
-- Bidirectional A\* for even faster searches.
+- Bidirectional A* for even faster searches.
 - Support for multi-criteria optimisation (e.g. shortest vs least ascent).
 - Caching of common routes.
 - Real-time dynamic obstacles or closures.
@@ -95,3 +92,4 @@ These optimisations make routing feel instantaneous even on a dense national tra
 - [KDTree](./kdtree.md)
 - [Elevation Pipeline](./elevation.md)
 - [Architecture Overview](./architecture.md)
+

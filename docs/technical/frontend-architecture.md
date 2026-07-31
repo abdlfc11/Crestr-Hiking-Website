@@ -4,7 +4,7 @@
 
 **Last updated:** June 2026
 
---- 
+---
 
 The frontend of Crestr is a **single-page application** built with vanilla JavaScript and **OpenLayers** for mapping. It provides an interactive hiking route planner with manual and automatic routing modes.
 
@@ -23,16 +23,15 @@ No heavy frontend frameworks are used, keeping the bundle size small and perform
 frontend/
 ├── map.js                           # OpenLayers map initialisation and core layers
 ├── ui.js                            # Main UI logic, mode switching, event handlers
-├── auth.js                          # Login, registration, logout, account management
+├── Auth/                            # Login, registration, logout, account management
 ├── settings.js / settingsState.js   # User preferences (units, theme)
 ├── routes/                          # Route creation, saving, loading, state
+├── Utils/                           # Shared helpers (formatting, coordinate rounding, etc.)
 ├── saved_points/                    # Saved location markers
 ├── cursorManager.js                 # Smart cursor control during route creation
 ├── elevationChart.js                # Dynamic elevation profile
-├── importRoute.js                   # GPX/KML/FIT/GeoJSON import
-└── utils.js                         # Shared helpers (formatting, coordinate rounding, etc.)
+├── importRoute.js                   # GPX/KML/FIT/GeoJSON import             
 ```
-
 
 ## Key Design Patterns
 
@@ -65,7 +64,7 @@ frontend/
 
 1. User interaction on map
 2. Coordinate processing and validation
-3. API call to Flask backend (`/calculate_path`, etc.)
+3. API call to FastAPI backend (`/calculate-path`, etc.)
 4. Response --> update map layers, stats panel, elevation chart
 5. Optional persistence to PostgreSQL via backend
 
@@ -94,3 +93,4 @@ frontend/
 - [Tech Stack](./tech-stack.md)
 - [Backend API](./backend-api.md)
 - [Routing Engine](./routing-engine.md)
+

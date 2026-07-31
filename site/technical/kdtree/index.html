@@ -1764,12 +1764,12 @@
 
 <h1 id="kdtree-spatial-indexing">KDTree Spatial Indexing<a class="headerlink" href="#kdtree-spatial-indexing" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> June 2026</p>
+<p><strong>Last updated:</strong> July 2026</p>
 <hr />
 <p>Crestr uses a <strong>KDTree</strong> to enable fast spatial queries on the trail network.
 This is a critical performance component of the routing engine.</p>
 <h2 id="what-is-a-kdtree">What is a KDTree?<a class="headerlink" href="#what-is-a-kdtree" title="Permanent link">&para;</a></h2>
-<p>A KDTree (K-Dimensional Tree) is a space-partitioning data structure that organises points in a k-dimensional space. 
+<p>A KDTree (K-Dimensional Tree) is a space-partitioning data structure that organises points in a k-dimensional space.
 It allows efficient nearest-neighbour searches and range queries.</p>
 <p>In Crestr, we use the <code>scipy.spatial.KDTree</code> implementation, which is well-suited for 2D geospatial coordinates.</p>
 <p><strong>Key Properties:</strong></p>
