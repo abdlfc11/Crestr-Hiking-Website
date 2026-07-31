@@ -285,7 +285,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../releases/v0.2.7/" class="md-tabs__link">
+        <a href="../../releases/v0.2.8/" class="md-tabs__link">
           
   
   Releases
@@ -1543,6 +1543,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../releases/v0.2.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.8
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../releases/v0.2.7/" class="md-nav__link">
         
   
@@ -2316,18 +2343,18 @@
 <h1 id="action-log-reference">Action Log Reference<a class="headerlink" href="#action-log-reference" title="Permanent link">&para;</a></h1>
 <p>This document catalogs the system-level event codes logged to the <code>ActionLog</code> table. Each code represents an action or system endpoint, with the <code>outcome</code> column determining whether the event tracks a successful operation/metric or an application failure.</p>
 <h2 id="why">Why<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
-<p>For self-hosters and open-source contributors, troubleshooting a headless backend or a multi-container network can feel like working in the dark. </p>
+<p>For self-hosters and open-source contributors, troubleshooting a headless backend or a multi-container network can feel like working in the dark.</p>
 <p>By default, this project includes a <strong>pgAdmin</strong> instance exposed via your <code>docker-compose.yml</code> file (accessible at <code>http://localhost:5050</code>). The <code>ActionLog</code> table within your Postgres database serves as a transparent, centralised dashboard for your entire application's health.</p>
 <h3 id="how-to-use-this-with-pgadmin">How to Use this with pgAdmin:<a class="headerlink" href="#how-to-use-this-with-pgadmin" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Open your browser and navigate to <code>http://localhost:5050</code>.</li>
 <li>Connect to your application database and locate the <code>action_log</code> table.</li>
-<li>Run a quick query to see recent system activity, performance benchmarks, or tracebacks:
-   <code>sql
-   SELECT action, outcome, duration_ms, error_code, info 
-   FROM public.action_log 
-   ORDER BY created_at DESC;</code></li>
+<li>Run a quick query to see recent system activity, performance benchmarks, or tracebacks:</li>
 </ol>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">action</span><span class="p">,</span><span class="w"> </span><span class="n">outcome</span><span class="p">,</span><span class="w"> </span><span class="n">duration_ms</span><span class="p">,</span><span class="w"> </span><span class="n">error_code</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="w"> </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="n">action_log</span><span class="w"> </span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">created_at</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="benefits-for-self-hosters">Benefits for Self-Hosters:<a class="headerlink" href="#benefits-for-self-hosters" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Instant Diagnosis:</strong> Instead of digging through raw, unformatted Docker container logs, you can quickly check the error_code column to identify exactly why a feature (like a map tile loading or account creation) is failing in your local environment.</li>
@@ -2342,13 +2369,9 @@
 <h2 id="rate-limiting">Rate Limiting<a class="headerlink" href="#rate-limiting" title="Permanent link">&para;</a></h2>
 <h3 id="rate_limit_hit"><code>RATE_LIMIT_HIT</code><a class="headerlink" href="#rate_limit_hit" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>Context:</strong> Triggered when the user performs too many requests, 
-    for example, generating routes too fast in a short space of time</p>
-</li>
-<li>
-<p><strong>On Success :</strong> (Inapplicable)</p>
-</li>
+<li><strong>Context:</strong> Triggered when the user performs too many requests,
+for example, generating routes too fast in a short space of time</li>
+<li><strong>On Success :</strong> (Inapplicable)</li>
 <li><strong>On Failure :</strong> (Inapplicable)</li>
 </ul>
 <h2 id="authentication-user-accounts">Authentication &amp; User Accounts<a class="headerlink" href="#authentication-user-accounts" title="Permanent link">&para;</a></h2>
@@ -2390,11 +2413,11 @@
 <h3 id="no_path_found"><code>NO_PATH_FOUND</code><a class="headerlink" href="#no_path_found" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Context:</strong> Triggered when the routing engine processes coordinates successfully but cannot link them together.</li>
-<li><strong>On Failure (<code>outcome: false</code>):</strong> Expected failure. Happens when no points are found as given coords are out of bounds (<strong>most likely cause</strong>) or points are entirely isolated from known road networks or maps segments are physically disconnected. </li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Expected failure. Happens when no points are found as given coords are out of bounds (<strong>most likely cause</strong>) or points are entirely isolated from known road networks or maps segments are physically disconnected.</li>
 </ul>
 <h3 id="path_created"><code>PATH_CREATED</code><a class="headerlink" href="#path_created" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Context:</strong> Triggered during automated route path generation or manual routing (path generated between segments). </li>
+<li><strong>Context:</strong> Triggered during automated route path generation or manual routing (path generated between segments).</li>
 <li><strong>On Success (<code>outcome: true</code>):</strong> Path processed successfully. The <code>duration_ms</code> tracks how fast the routing engine responded.</li>
 <li><strong>On Failure (<code>outcome: false</code>):</strong> Engine crashed mid-calculation, likely due to a timeout or a memory limit overflow from overly dense coordinate data.</li>
 </ul>
