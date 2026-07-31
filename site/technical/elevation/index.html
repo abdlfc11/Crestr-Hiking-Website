@@ -1010,10 +1010,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#precomputation-vs-runtime" class="md-nav__link">
+  <a href="#pre-computation-vs-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <strong>Precomputation vs Runtime</strong>
+        <strong>Pre-computation vs Runtime</strong>
       </span>
     </span>
   </a>
@@ -1885,10 +1885,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#precomputation-vs-runtime" class="md-nav__link">
+  <a href="#pre-computation-vs-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <strong>Precomputation vs Runtime</strong>
+        <strong>Pre-computation vs Runtime</strong>
       </span>
     </span>
   </a>
@@ -1942,24 +1942,18 @@
 
 <h1 id="elevation-pipeline">Elevation Pipeline<a class="headerlink" href="#elevation-pipeline" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> June 2026</p>
+<p><strong>Last updated:</strong> July 2026</p>
 <hr />
-<p>This document explains how Crestr enriches the pathfinding graph with elevation data and 
+<p>This document explains how Crestr enriches the pathfinding graph with elevation data and
 uses it to produce realistic hiking times and route costs.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The elevation pipeline is a one-time preprocessing step that:</p>
 <ol>
-<li>
-<p>Attaches accurate elevation values to every node in the graph.</p>
-</li>
-<li>
-<p>Calculates realistic travel times for every edge using an enhanced version of <strong>Naismith's Rule</strong>.</p>
-</li>
-<li>
-<p>Adjusts costs based on terrain difficulty, surface type, and trail visibility.</p>
-</li>
+<li>Attaches accurate elevation values to every node in the graph.</li>
+<li>Calculates realistic travel times for every edge using an enhanced version of <strong>Naismith's Rule</strong>.</li>
+<li>Adjusts costs based on terrain difficulty, surface type, and trail visibility.</li>
 </ol>
-<p>The result is a <code>better_path_graph.pkl</code> file that the routing engine uses for A* pathfinding.</p>
+<p>The result is a <code>elevated_populated_igraph.pkl</code> file that the routing engine uses for A* pathfinding.</p>
 <h2 id="process-steps">Process Steps<a class="headerlink" href="#process-steps" title="Permanent link">&para;</a></h2>
 <h3 id="1-node-elevation-assignment">1. Node Elevation Assignment<a class="headerlink" href="#1-node-elevation-assignment" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2000,32 +1994,33 @@ uses it to produce realistic hiking times and route costs.</p>
 <li><code>surface</code></li>
 </ul>
 <h3 id="3-final-cost-assignment">3. Final Cost Assignment<a class="headerlink" href="#3-final-cost-assignment" title="Permanent link">&para;</a></h3>
-<p>Each edge receives a <code>cost</code> value in <strong>seconds</strong> (used directly by the A* algorithm). </p>
+<p>Each edge receives a <code>cost</code> value in <strong>seconds</strong> (used directly by the A* algorithm).</p>
 <p>Additional attributes stored for filtering and debugging:</p>
 <ul>
 <li><code>slope</code></li>
 <li><code>terrain_factor</code></li>
-<li><code>ascent</code> / <code>descent</code> attributes (used in the assinging of costs to edges)</li>
+<li><code>ascent</code> / <code>descent</code> attributes (used in the assigning of costs to edges)</li>
 </ul>
 <h2 id="key-files">Key Files<a class="headerlink" href="#key-files" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>Cumbria-Elevation-File.tif</code> – Source DEM raster</li>
-<li><code>Pathfinding/new_path_graph.pkl</code> – Input graph</li>
-<li><code>Pathfinding/better_path_graph.pkl</code> – Output enriched graph</li>
+<li><code>Pathfinding/unpopulated_igraph.pkl</code> – Input graph</li>
+<li><code>Pathfinding/elevation_populated_igraph.pkl</code> – Output enriched graph</li>
 </ul>
 <h2 id="design-decisions">Design Decisions<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h2>
 <h3 id="why-naismiths-rule"><strong>Why Naismith's Rule?</strong><a class="headerlink" href="#why-naismiths-rule" title="Permanent link">&para;</a></h3>
 <ul>
-<li>It is a well-established hiking-specific model that balances distance and elevation. </li>
+<li>It is a well-established hiking-specific model that balances distance and elevation.</li>
 <li>Our version improves accuracy by incorporating slope-dependent walking speed and terrain multipliers.</li>
 </ul>
-<h3 id="precomputation-vs-runtime"><strong>Precomputation vs Runtime</strong><a class="headerlink" href="#precomputation-vs-runtime" title="Permanent link">&para;</a></h3>
+<h3 id="pre-computation-vs-runtime"><strong>Pre-computation vs Runtime</strong><a class="headerlink" href="#pre-computation-vs-runtime" title="Permanent link">&para;</a></h3>
 <ul>
 <li>All elevation work is done once during preprocessing. This keeps routing queries extremely fast.</li>
 </ul>
 <h3 id="accuracy-trade-offs"><strong>Accuracy Trade-offs</strong><a class="headerlink" href="#accuracy-trade-offs" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The pipeline uses a single DEM file. Future improvements could include higher-resolution rasters or dynamic fetching for other regions.</li>
+<li>The DEM file used does not account for the Orkney Isles, as a result of data degradation (mapped to 60° North Latitude and Orkney Isles sit at 58-59° North Latitude)</li>
 </ul>
 <h2 id="future-enhancements">Future Enhancements<a class="headerlink" href="#future-enhancements" title="Permanent link">&para;</a></h2>
 <ul>

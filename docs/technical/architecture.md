@@ -2,11 +2,11 @@
 
 ---
 
-**Last updated:** June 2026
+**Last updated:** July 2026
 
---- 
+---
 
-This document provides a high-level view of Crestr’s system architecture, 
+This document provides a high-level view of Crestr’s system architecture,
 how the major components interact, and the design principles guiding development.
 
 ## High-Level Design
@@ -19,54 +19,44 @@ Crestr follows a **static-first, precomputed** architecture optimised for perfor
 - **Data Processing Pipeline**: Python scripts that build and enrich the trail graph
 - **Routing Engine**: Custom A* implementation running in Python (called via backend)
 - **Backend**: Lightweight Flask application serving the API and static documentation
-- **Data Storage**: Precomputed NetworkX graph (Pickle) + OSM-derived data
+- **Data Storage**: Precomputed iGraph graph (Pickle) + OSM-derived data
 
 ## Data Flow
 
 1. **Raw Data Ingestion**  
-   OpenStreetMap extracts are processed into nodes and edges.
-
+• OpenStreetMap extracts are processed into nodes and edges.  
+• Produces `unpopulated_igraph.pkl`
 2. **Graph Enrichment** (Offline)  
-   • Elevation assignment from DEM raster  
-   • Naismith-based cost calculation  
-   • Terrain factor application  
-   • Produces `better_path_graph.pkl`
-
+• Elevation assignment from DEM raster  
+• Naismith-based cost calculation  
+• Terrain factor application  
+• Produces `elevation_populated_igraph.pkl`
 3. **Routing Request** (Runtime)  
-   User selects start/end on map → Frontend sends coordinates to backend → A* engine returns optimised path.
-
+User selects start/end on map → Frontend sends coordinates to backend → A* engine returns optimised path.
 4. **Response**  
-   Path is returned to the frontend and visualised on the OpenLayers map.
+Path is returned to the frontend and visualised on the OpenLayers map.
 
 ## Key Design Principles
 
 - **Performance First**  
-    Heavy computation (elevation, graph enrichment) is done once during preprocessing. 
-  
-    Runtime routing must feel instant.
-
-- **Separation of Concerns**  
-
-    Data preprocessing is completely decoupled from routing.
-
-    Routing logic is isolated in the `AStarRouteFinder` class.
-
+Heavy computation (elevation, graph enrichment) is done once during preprocessing.
+Runtime routing must feel instant.
+- **Separation of Concerns**
+Data preprocessing is completely decoupled from routing.
+Routing logic is isolated in the `AStarRouteFinder` class.
 - **Spatial Efficiency**  
-    Global KDTree + dynamic subgraph extraction keeps memory and CPU usage low even on large graphs.
-
+Global KDTree + dynamic subgraph extraction keeps memory and CPU usage low even on large graphs.
 - **Simplicity & Maintainability**  
-    Minimal external dependencies. 
-    Core algorithms are custom but easy to reason about and extend.
-
+Minimal external dependencies.
+Core algorithms are custom but easy to reason about and extend.
 - **Static Where Possible**
-    The application avoids heavy databases or real-time servers in favour of precomputed artefacts.
+The application avoids heavy databases or real-time servers in favour of precomputed artefacts.
 
 ## Component Diagram
 
-User 
+User
 
 ↓
-
 
 Frontend: OpenLayers + JS
 
@@ -89,7 +79,6 @@ Preprocessing Pipeline
 ↑
 
 OSM Data + DEM Raster
-
 
 ## Technology Choices Summary
 
@@ -122,5 +111,4 @@ See [Tech Stack](./tech-stack.md) for full details.
 - [KDTree](./kdtree.md)
 - [Elevation Pipeline](./elevation.md)
 - [Data Preprocessing](./data-preprocessing.md)
-
 

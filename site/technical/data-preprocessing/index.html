@@ -1864,7 +1864,7 @@
 
 <h1 id="data-preprocessing">Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> May 2026</p>
+<p><strong>Last updated:</strong> July 2026</p>
 <hr />
 <p>Crestr’s routing engine is built on a preprocessed graph derived from OpenStreetMap (OSM) data.
 This document outlines the full preprocessing pipeline, the structure of the resulting graph, and the reasoning behind the design choices.
@@ -1872,68 +1872,79 @@ The aim is to give contributors a clear understanding of how raw geographic data
 cost‑weighted graph used by the A* routing engine.</p>
 <hr />
 <h2 id="node-and-edge-structure">Node and Edge Structure<a class="headerlink" href="#node-and-edge-structure" title="Permanent link">&para;</a></h2>
-<p>The graph is stored as a directed NetworkX graph. Nodes and edges follow a minimal, performance‑oriented schema.</p>
+<p>The graph is stored as a directed iGraph graph. Nodes and edges follow a minimal, performance‑oriented schema.</p>
 <h3 id="node-structure">Node Structure<a class="headerlink" href="#node-structure" title="Permanent link">&para;</a></h3>
-<p>Nodes are stored as coordinate tuples in British National Grid (EPSG:27700):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Node<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>x:<span class="w"> </span>float,<span class="w"> </span>y:<span class="w"> </span>float<span class="o">)</span>
+<p>Nodes are stored as coordinate tuples in British National Grid (EPSG:27700): Each node is indexed via 0-based indexing, with each having the following attributes:</p>
+<ul>
+<li>Coordinate (in Web Mercator): Stored as a tuple with each coordinate being stored as a float</li>
+<li>Elevation: Stored as a float</li>
+</ul>
+<blockquote>
+<p>Note: Coordinates are likely to be changed to be stored in Lat/Lon format, to make the process of calculating distances easier as well as to align with conventional and industry standards</p>
+</blockquote>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Node</span> <span class="p">:</span> <span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="o">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="s1">&#39;elev&#39;</span>:<span class="w"> </span>float<span class="w"> </span><span class="c1"># elevation in metres</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="o">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="s1">&#39;elev&#39;</span><span class="p">:</span> <span class="nb">float</span> <span class="c1"># elevation in metres</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="s1">&#39;coordinate&#39;</span><span class="p">:</span> <span class="nb">float</span> <span class="c1"># coordinate in web mercator projection (EPSG: 3857) </span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><strong>Example:</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Node<span class="w"> </span>:<span class="w"> </span><span class="o">(</span><span class="m">340590</span>.76,<span class="w"> </span><span class="m">481768</span>.28<span class="o">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Node</span> <span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">{</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>‘elev’:<span class="w"> </span><span class="m">121</span>.0
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="o">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="s1">&#39;elev&#39;</span><span class="p">:</span> <span class="mf">121.0</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="s1">&#39;coordinate&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">357542.43</span><span class="p">,</span> <span class="mf">7256711.32</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="edge-structure-before-elevation-enrichment">Edge Structure (Before Elevation Enrichment)<a class="headerlink" href="#edge-structure-before-elevation-enrichment" title="Permanent link">&para;</a></h3>
 <p>Edges represent <strong>directed segments</strong> between nodes. During graph generation, edges may contain <strong>raw OSM metadata</strong> when available.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Edge<span class="w"> </span>:<span class="w"> </span><span class="o">((</span>x1:<span class="w"> </span>float,<span class="w"> </span>y1:<span class="w"> </span>float<span class="o">)</span>,<span class="w"> </span><span class="o">(</span>x2:<span class="w"> </span>float,<span class="w"> </span>y2:<span class="w"> </span>float<span class="o">))</span>
+<p>Edges are stored in tuple format with two values, the first value is the starting point for the edge and is an integer representing a node in the graph, and the second value is the end point for the edge, also representing a node in the graph.</p>
+<p>Each edge then has a length attribute which is stored as a float as well as the following OSM tag-derived attributes (all in string format):</p>
+<ul>
+<li>sac_scale</li>
+<li>trail_visibility</li>
+<li>surface</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Edge</span> <span class="p">:</span> <span class="p">(</span><span class="n">node_id_1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">node_id_2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">{</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="s1">&#39;length&#39;</span>:<span class="w"> </span><span class="o">[</span>VALUE:<span class="w"> </span>float<span class="o">]</span>,<span class="w"> </span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="s1">&#39;cost&#39;</span>:<span class="w"> </span><span class="o">[</span>VALUE:<span class="w"> </span>float<span class="o">]</span>,<span class="w"> </span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="s1">&#39;slope&#39;</span>:<span class="w"> </span><span class="o">[</span>VALUE:<span class="w"> </span>float<span class="o">]</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">VALUE</span><span class="p">:</span> <span class="nb">float</span><span class="p">],</span> 
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="s1">&#39;sac_scale&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">VALUE</span><span class="p">:</span> <span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="s1">&#39;trail_visibility&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">VALUE</span><span class="p">:</span> <span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="s1">&#39;surface&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">VALUE</span><span class="p">:</span> <span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>These values are taken directly from OSM without transformation. Many edges will <strong>not</strong> contain these tags, as OSM coverage varies.</p>
 <h3 id="edge-structure-after-elevation-enrichment">Edge Structure (After Elevation Enrichment)<a class="headerlink" href="#edge-structure-after-elevation-enrichment" title="Permanent link">&para;</a></h3>
-<p>During elevation enrichment, raw tags are converted into numeric difficulty multipliers. The final graph used by the routing engine stores:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Edge<span class="w"> </span>:<span class="w"> </span><span class="o">((</span>x1:<span class="w"> </span>float,<span class="w"> </span>y1:<span class="w"> </span>float<span class="o">)</span>,<span class="w"> </span><span class="o">(</span>x2:<span class="w"> </span>float,<span class="w"> </span>y2:<span class="w"> </span>float<span class="o">))</span>
+<p>During elevation enrichment, raw tags are converted into numeric difficulty multipliers which is then multiplied with the <code>length</code> attribute to form the <code>cost</code> attribute. The final graph used by the routing engine stores:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Edge</span> <span class="p">:</span> <span class="p">(</span><span class="n">node_id_1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">node_id_2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="o">{</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s1">&#39;length&#39;</span>:<span class="w"> </span><span class="o">[</span>VALUE:<span class="w"> </span>float<span class="o">]</span>,<span class="w"> </span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="s1">&#39;cost&#39;</span>:<span class="w"> </span><span class="o">[</span>VALUE:<span class="w"> </span>float<span class="o">]</span>,<span class="w"> </span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="s1">&#39;slope&#39;</span>:<span class="w"> </span><span class="o">[</span>VALUE:<span class="w"> </span>float<span class="o">]</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">VALUE</span><span class="p">:</span> <span class="nb">float</span><span class="p">],</span> 
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="s1">&#39;cost&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">VALUE</span><span class="p">:</span> <span class="nb">float</span><span class="p">],</span> 
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="s1">&#39;slope&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">VALUE</span><span class="p">:</span> <span class="nb">float</span><span class="p">]</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">}</span>
 </span></code></pre></div>
 <p><strong>Example:</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Edge<span class="w"> </span>:<span class="w"> </span><span class="o">((</span><span class="m">340590</span>.76,<span class="w"> </span><span class="m">481768</span>.28<span class="o">)</span>,<span class="w"> </span><span class="o">(</span><span class="m">340610</span>.26,<span class="w"> </span><span class="m">481735</span>.76<span class="o">))</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Edge</span> <span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="o">{</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span>‘length’:<span class="w"> </span><span class="m">37</span>.9183,
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span>‘cost’:<span class="w"> </span><span class="m">39</span>.0845,
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span>‘slope’:<span class="w"> </span><span class="m">0</span>.0527
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="o">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="err">‘</span><span class="n">length</span><span class="err">’</span><span class="p">:</span> <span class="mf">37.9183</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="err">‘</span><span class="n">cost</span><span class="err">’</span><span class="p">:</span> <span class="mf">39.0845</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="err">‘</span><span class="n">slope</span><span class="err">’</span><span class="p">:</span> <span class="mf">0.0527</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
 <h2 id="preprocessing-pipeline-overview">Preprocessing Pipeline Overview<a class="headerlink" href="#preprocessing-pipeline-overview" title="Permanent link">&para;</a></h2>
 <p>The preprocessing workflow consists of three stages:</p>
 <ol>
-<li>
-<p><strong>Osmium Tag Extraction</strong><br />
-   Ensures that relevant OSM metadata is preserved before parsing.</p>
-</li>
-<li>
-<p><strong>Graph Generation</strong><br />
-   Converts OSM geometries into a directed graph using <a href="https://pyrosm.readthedocs.io/en/latest/">Pyrosm</a>, <a href="https://shapely.readthedocs.io/en/stable/">Shapely</a>, and <a href="https://networkx.org/en/">NetworkX</a>.</p>
-</li>
-<li>
-<p><strong>Elevation Enrichment</strong><br />
-   Adds <a href="https://www.earthdata.nasa.gov/data/instruments/srtm">NASA SRTM</a> elevation data, computes slope, and assigns cost values.</p>
-</li>
+<li><strong>Osmium Tag Extraction</strong><br />
+Ensures that relevant OSM metadata is preserved before parsing.</li>
+<li><strong>Graph Generation</strong><br />
+Converts OSM geometries into a directed graph using <a href="https://pyrosm.readthedocs.io/en/latest/">Pyrosm</a>, <a href="https://shapely.readthedocs.io/en/stable/">Shapely</a>, and <a href="https://igraph.org">iGraph</a></li>
+<li><strong>Elevation Enrichment</strong><br />
+Adds <a href="https://www.earthdata.nasa.gov/data/instruments/srtm">NASA SRTM</a> elevation data, computes slope, and assigns cost values.</li>
 </ol>
 <p>This pipeline produces a clean, lightweight graph optimised for hiking‑focused routing.</p>
 <hr />
@@ -1949,45 +1960,45 @@ cost‑weighted graph used by the A* routing engine.</p>
 <ul>
 <li><strong>Pyrosm</strong> to extract highway geometries</li>
 <li><strong>Shapely</strong> to process LineString and MultiLineString geometry</li>
-<li><strong>NetworkX</strong> to construct the directed graph</li>
+<li><strong>iGraph</strong> to construct the directed graph</li>
 </ul>
-<p>Each OSM way is split into coordinate pairs. Coordinates are rounded to two decimal places to reduce node duplication while maintaining spatial accuracy.</p>
+<p>Each OSM way is split into coordinate pairs. Coordinates are rounded to two decimal places (or 6 decimal places if using Lat/Lon projection) to reduce node duplication while maintaining spatial accuracy.</p>
 <h3 id="node-creation">Node Creation<a class="headerlink" href="#node-creation" title="Permanent link">&para;</a></h3>
-<p>Each coordinate pair becomes a node. At this stage, nodes contain only their coordinates; elevation is added later.</p>
+<p>Each coordinate pair is assigned to the <code>coordinate</code> attribute of a node and at this stage, nodes only consist of a specific integer ID and their <code>coordinate</code> attribute.</p>
 <h3 id="edge-creation">Edge Creation<a class="headerlink" href="#edge-creation" title="Permanent link">&para;</a></h3>
 <p>For each pair of consecutive coordinates, a directed edge is created in both directions. Attributes include:</p>
 <ul>
-<li>length: Euclidean distance in metres</li>
-<li>raw OSM tags (if present): sac_scale, surface, trail_visibility</li>
+<li><code>length</code>: Euclidean distance in metres</li>
+<li>raw OSM tags (if present): <code>sac_scale</code>, <code>surface</code>, <code>trail_visibility</code></li>
 </ul>
 <p>These tags remain as raw strings until elevation enrichment.</p>
 <hr />
 <h2 id="elevation-enrichment">Elevation Enrichment<a class="headerlink" href="#elevation-enrichment" title="Permanent link">&para;</a></h2>
 <p>A second script enriches the graph with elevation data from NASA SRTM tiles. This stage performs three tasks:</p>
 <p><strong>1. Elevation Assignment</strong></p>
-<p>Each node receives an elev attribute in metres.</p>
+<p>Each node receives an <code>elev</code> attribute in metres.</p>
 <p><strong>2. Slope Calculation</strong></p>
 <p>For each edge:</p>
 <p><code>slope = (elevation difference) / length</code>   <strong>(only if length &gt; 0)</strong></p>
 <p><strong>3. Cost Calculation</strong></p>
 <p>A dictionary of difficulty multipliers maps raw OSM tag values to numeric weights.</p>
 <p>The multiplier is applied to ascent or descent depending on elevation change.</p>
-<p>The final cost is stored in the <strong>cost attribute</strong>.</p>
-<p>After enrichment, edges contain only <strong>length, slope, and cost</strong>, as these are the values required by the routing engine.</p>
+<p>The final cost is stored in the <strong><code>cost</code> attribute</strong>.</p>
+<p>After enrichment, edges contain only <strong><code>length</code>, <code>slope</code>, and <code>cost</code></strong>, as these are the values required by the routing engine.</p>
 <hr />
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
-<p>The final output is a <strong>directed, elevation‑aware NetworkX</strong> graph with approximately:</p>
+<p>The final output is a <strong>directed, elevation‑aware iGraph</strong> graph with approximately:</p>
 <ul>
 <li><strong>1,000,000</strong> nodes (for the Cumbria region)</li>
 <li><strong>2,000,000</strong> directed edges</li>
-<li><strong>elevation</strong>, <strong>slope</strong>, and <strong>cost</strong> attributes</li>
+<li><strong><code>elevation</code></strong>, <strong><code>slope</code></strong>, and <strong><code>cost</code></strong> attributes</li>
 </ul>
 <p>This graph is cached on disk and loaded once at backend startup.</p>
 <hr />
 <h2 id="design-rationale">Design Rationale<a class="headerlink" href="#design-rationale" title="Permanent link">&para;</a></h2>
 <p>The preprocessing pipeline is designed to keep the runtime graph as lightweight as possible:</p>
 <ul>
-<li>Nodes store only <strong>coordinates and elevation</strong>.</li>
+<li>Nodes store only <strong><code>coordinates</code> and <code>elevation</code></strong>.</li>
 <li>Edges store only the <strong>attributes required for routing</strong>.</li>
 <li>Raw OSM tags are used only during cost calculation and are <strong>not retained</strong> afterward.</li>
 <li>The graph is <strong>fully deterministic and reproducible</strong> from the preprocessing scripts.</li>

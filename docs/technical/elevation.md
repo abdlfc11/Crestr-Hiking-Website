@@ -2,11 +2,11 @@
 
 ---
 
-**Last updated:** June 2026
+**Last updated:** July 2026
 
 ---
 
-This document explains how Crestr enriches the pathfinding graph with elevation data and 
+This document explains how Crestr enriches the pathfinding graph with elevation data and
 uses it to produce realistic hiking times and route costs.
 
 ## Overview
@@ -14,12 +14,10 @@ uses it to produce realistic hiking times and route costs.
 The elevation pipeline is a one-time preprocessing step that:
 
 1. Attaches accurate elevation values to every node in the graph.
-
 2. Calculates realistic travel times for every edge using an enhanced version of **Naismith's Rule**.
-
 3. Adjusts costs based on terrain difficulty, surface type, and trail visibility.
 
-The result is a `better_path_graph.pkl` file that the routing engine uses for A* pathfinding.
+The result is a `elevated_populated_igraph.pkl` file that the routing engine uses for A* pathfinding.
 
 ## Process Steps
 
@@ -34,66 +32,74 @@ The result is a `better_path_graph.pkl` file that the routing engine uses for A*
 
 For every edge in the graph, the pipeline performs the following calculations:
 
-####**Horizontal Distance Correction**  
-  - Accounts for Web Mercator distortion using the cosine of the midpoint latitude.
+#### **Horizontal Distance Correction**
 
-####**Elevation Difference & Slope**  
-  - Computes the vertical gain/loss and slope ratio between the two nodes.
+- Accounts for Web Mercator distortion using the cosine of the midpoint latitude.
 
-####**Naismith's Rule (Enhanced)**  
-  Calculates realistic travel time by combining:
+#### **Elevation Difference & Slope**
 
-  - Flat walking time based on adjusted speed
-  - Additional time for ascent (+10m = +1 minute)
-  - Additional time for descent (+7.5m = +1 minute)
+- Computes the vertical gain/loss and slope ratio between the two nodes.
 
-  Walking speed is dynamically adjusted according to slope steepness:
+#### **Naismith's Rule (Enhanced)**
 
-  - less than 5°: 1.4 m/s (gentle)
-  - 5–12°: 1.1 m/s (moderate)
-  - 12–25°: 0.8 m/s (steep)
-  - over 25°: 0.5 m/s (extreme / scrambling)
+  
+Calculates realistic travel time by combining:
 
-####**Terrain Difficulty Multiplier**  
-  Further adjusts cost using OSM tags:
+- Flat walking time based on adjusted speed
+- Additional time for ascent (+10m = +1 minute)
+- Additional time for descent (+7.5m = +1 minute)
 
-  - `sac_scale`
-  - `trail_visibility`
-  - `surface`
+Walking speed is dynamically adjusted according to slope steepness:
+
+- less than 5°: 1.4 m/s (gentle)
+- 5–12°: 1.1 m/s (moderate)
+- 12–25°: 0.8 m/s (steep)
+- over 25°: 0.5 m/s (extreme / scrambling)
+
+#### **Terrain Difficulty Multiplier**
+
+  
+Further adjusts cost using OSM tags:
+
+- `sac_scale`
+- `trail_visibility`
+- `surface`
 
 ### 3. Final Cost Assignment
 
-Each edge receives a `cost` value in **seconds** (used directly by the A* algorithm). 
+Each edge receives a `cost` value in **seconds** (used directly by the A* algorithm).
 
 Additional attributes stored for filtering and debugging:
 
 - `slope`
 - `terrain_factor`
-- `ascent` / `descent` attributes (used in the assinging of costs to edges)
+- `ascent` / `descent` attributes (used in the assigning of costs to edges)
 
 ## Key Files
 
 - `Cumbria-Elevation-File.tif` – Source DEM raster
-- `Pathfinding/new_path_graph.pkl` – Input graph
-- `Pathfinding/better_path_graph.pkl` – Output enriched graph
+- `Pathfinding/unpopulated_igraph.pkl` – Input graph
+- `Pathfinding/elevation_populated_igraph.pkl` – Output enriched graph
 
 ## Design Decisions
 
-###**Why Naismith's Rule?**  
+### **Why Naismith's Rule?**
 
-  - It is a well-established hiking-specific model that balances distance and elevation. 
-  - Our version improves accuracy by incorporating slope-dependent walking speed and terrain multipliers.
+- It is a well-established hiking-specific model that balances distance and elevation.
+- Our version improves accuracy by incorporating slope-dependent walking speed and terrain multipliers.
 
-###**Precomputation vs Runtime**  
+### **Pre-computation vs Runtime**
 
-  - All elevation work is done once during preprocessing. This keeps routing queries extremely fast.
+- All elevation work is done once during preprocessing. This keeps routing queries extremely fast.
 
-###**Accuracy Trade-offs**  
+### **Accuracy Trade-offs**
 
-  - The pipeline uses a single DEM file. Future improvements could include higher-resolution rasters or dynamic fetching for other regions.
+- The pipeline uses a single DEM file. Future improvements could include higher-resolution rasters or dynamic fetching for other regions.
+- The DEM file used does not account for the Orkney Isles, as a result of data degradation (mapped to 60° North Latitude and Orkney Isles sit at 58-59° North Latitude)
 
 ## Future Enhancements
 
 - Support for multiple regional DEMs
 - Integration of more advanced cost models (e.g. Tobler's Hiking Function)
 - Real-time slope-based filtering options in the UI
+
