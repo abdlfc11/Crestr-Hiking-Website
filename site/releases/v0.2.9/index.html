@@ -6,11 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Documentation for Crest, a free open-source hiking route planner for Cumbria, UK.">
       
       
+        <meta name="author" content="Abdul">
       
-        <link rel="prev" href="../../releases/v0.1.0/">
       
+        <link rel="canonical" href="https://docs.crestr.co.uk/releases/v0.2.9/">
+      
+      
+        <link rel="prev" href="../../roadmap/2027/">
+      
+      
+        <link rel="next" href="../v0.2.8/">
       
       
         
@@ -21,7 +29,7 @@
     
     
       
-        <title>Privacy Policy - Crestr Documentation</title>
+        <title>Release Notes: v0.2.9 - Crestr Documentation</title>
       
     
     
@@ -68,7 +76,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -77,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#privacy-policy" class="md-skip">
+        <a href="#release-notes-v029" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Privacy Policy
+              Release Notes: v0.2.9
             
           </span>
         </div>
@@ -123,9 +131,19 @@
     
     
     
-    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Switch to Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Switch to Dark Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -133,7 +151,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Switch to Light Mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Switch to Light Mode"  type="radio" name="__palette" id="__palette_2">
     
       <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
@@ -274,28 +292,6 @@
   
   
   
-  
-    
-      
-    
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../releases/v0.2.8/" class="md-tabs__link">
-          
-  
-  Releases
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
     
   
   
@@ -308,7 +304,7 @@
         <a href="././" class="md-tabs__link">
           
   
-  Privacy Policy
+  Releases
 
         </a>
       </li>
@@ -1053,335 +1049,6 @@
       
   
   
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Releases
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-  Releases
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.8
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.7/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.7
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.6/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.6
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.5/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.5
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.4
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.3
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.2
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.1
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.2.0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.2.0
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/v0.1.0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  v0.1.0
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -1403,17 +1070,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-  Privacy Policy
+  Releases
 
     
   </span>
@@ -1423,12 +1090,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-  Privacy Policy
+  Releases
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -1456,7 +1123,7 @@
   <span class="md-ellipsis">
     
   
-  Policy
+  v0.2.9
 
     
   </span>
@@ -1473,7 +1140,7 @@
   <span class="md-ellipsis">
     
   
-  Policy
+  v0.2.9
 
     
   </span>
@@ -1499,10 +1166,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-information-collection-and-processing" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        1. Information Collection and Processing
+        Summary
       </span>
     </span>
   </a>
@@ -1510,10 +1177,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-legal-basis-and-purpose-of-processing" class="md-nav__link">
+  <a href="#changes" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        2. Legal Basis and Purpose of Processing
+        Changes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-startend-markers-79" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interactive start/end markers (#79)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-system-standardisation-82" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Coordinate system standardisation (#82)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-issue-modal-84" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Report Issue modal (#84)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-privacy-policy-page-86" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dedicated Privacy Policy page (#86)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistent-svg-pins-for-all-route-types-87" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Consistent SVG pins for all route types (#87)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-multi-status-toasts-90" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modern multi-status toasts (#90)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Why this matters
       </span>
     </span>
   </a>
@@ -1521,21 +1271,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-data-retention-and-third-party-disclosure" class="md-nav__link">
+  <a href="#files-changed" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        3. Data Retention and Third-Party Disclosure
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-source-code-and-transparency" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        4. Source Code and Transparency
+        Files changed
       </span>
     </span>
   </a>
@@ -1546,6 +1285,276 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.8
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.7
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.6
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.5
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.4
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.3
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.1
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.2.0
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.1.0
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1599,10 +1608,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-information-collection-and-processing" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        1. Information Collection and Processing
+        Summary
       </span>
     </span>
   </a>
@@ -1610,10 +1619,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-legal-basis-and-purpose-of-processing" class="md-nav__link">
+  <a href="#changes" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        2. Legal Basis and Purpose of Processing
+        Changes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-startend-markers-79" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interactive start/end markers (#79)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-system-standardisation-82" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Coordinate system standardisation (#82)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-issue-modal-84" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Report Issue modal (#84)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-privacy-policy-page-86" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dedicated Privacy Policy page (#86)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistent-svg-pins-for-all-route-types-87" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Consistent SVG pins for all route types (#87)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-multi-status-toasts-90" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modern multi-status toasts (#90)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Why this matters
       </span>
     </span>
   </a>
@@ -1621,21 +1713,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-data-retention-and-third-party-disclosure" class="md-nav__link">
+  <a href="#files-changed" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        3. Data Retention and Third-Party Disclosure
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-source-code-and-transparency" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        4. Source Code and Transparency
+        Files changed
       </span>
     </span>
   </a>
@@ -1660,34 +1741,86 @@
   
 
 
-<h1 id="privacy-policy">Privacy Policy<a class="headerlink" href="#privacy-policy" title="Permanent link">&para;</a></h1>
-<p><strong>Effective Date:</strong> July 11, 2026</p>
-<p>This Privacy Policy governs the data collection and privacy practices of <strong>Crestr</strong>, an open-source hiking route planner for Cumbria.
-We are committed to maintaining robust privacy protections for our users.
-Our data collection is strictly limited to the minimum telemetry necessary to authenticate users and optimise application performance.</p>
-<hr />
-<h3 id="1-information-collection-and-processing">1. Information Collection and Processing<a class="headerlink" href="#1-information-collection-and-processing" title="Permanent link">&para;</a></h3>
-<p>We process two categories of data:</p>
+<h1 id="release-notes-v029">Release Notes: v0.2.9<a class="headerlink" href="#release-notes-v029" title="Permanent link">&para;</a></h1>
+<p><strong>Date: 3rd August 2026</strong></p>
+<p>This merges changes included in the following PRs:</p>
+<p><a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/79">#79</a></p>
+<p><a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/82">#82</a></p>
+<p><a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/84">#84</a></p>
+<p><a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/86">#86</a></p>
+<p><a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/87">#87</a></p>
+<p><a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/90">#90</a></p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Introduced interactive SVG pin markers for start and end points (including drag-to-regenerate behaviour),
+standardised coordinate handling so the UI shows [Lat, Lon], the API uses [Lon, Lat],
+and the map stays in Web Mercator, 
+replaced the dedicated Report Issue page with an in-map modal,
+added a self-contained Privacy Policy page (with Cookie Policy),
+unified SVG pin styling (green start / red end) across automatic, manual and loaded routes,
+and modernised toast notifications to support success, info, warning and error states with theme-aware design.</p>
+<h2 id="changes">Changes<a class="headerlink" href="#changes" title="Permanent link">&para;</a></h2>
+<h3 id="interactive-startend-markers-79">Interactive start/end markers (<a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/79">#79</a>)<a class="headerlink" href="#interactive-startend-markers-79" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Authentication Credentials:</strong> The Application utilises a localised authentication system rather than third-party OAuth providers. To establish an account, we collect a <strong>username and password</strong>. Passwords are encrypted using secure cryptographic hashing algorithms and are utilised solely to authenticate your identity upon login.</li>
-<li><strong>Aggregated Operational Telemetry:</strong> We utilise Umami, a privacy-focused, open-source web analytics platform, to monitor general application usage. Additionally, we generate custom server-side action logs to monitor critical performance indicators, such as pathfinding latency (e.g., generation time in milliseconds) and route distances.</li>
+<li>Added <code>createPoint()</code>, <code>addStartEndPoint()</code> and <code>setUpPointInteraction()</code> helpers so start and end coordinates appear as draggable SVG pins.</li>
+<li>Moving either pin automatically regenerates the route when both endpoints are present.</li>
+<li>Coordinate entry fields now create/update the corresponding map markers and trigger path generation.</li>
+<li>Fixed IntegrityError handling for duplicate point names, coordinate parsing utilities, layer z-ordering and projection order bugs.</li>
 </ul>
-<blockquote>
-<p><strong>Data Isolation Notice:</strong> All operational telemetry and performance metrics are processed in a completely anonymised state. We do not collect, store, or associate real-world geographic coordinates, device identifiers, or network metadata with your account credentials.</p>
-</blockquote>
-<h3 id="2-legal-basis-and-purpose-of-processing">2. Legal Basis and Purpose of Processing<a class="headerlink" href="#2-legal-basis-and-purpose-of-processing" title="Permanent link">&para;</a></h3>
-<p>We process your data under the following legal frameworks:</p>
+<h3 id="coordinate-system-standardisation-82">Coordinate system standardisation (<a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/82">#82</a>)<a class="headerlink" href="#coordinate-system-standardisation-82" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Contractual Necessity:</strong> Processing account credentials is required to provide the core account management services you request.</li>
-<li><strong>Legitimate Interests:</strong> Processing anonymous diagnostics allows us to monitor infrastructure health, debug routing algorithms, and improve application stability.</li>
+<li>All user-facing coordinates are now displayed as [Lat, Lon].</li>
+<li>All frontend to backend payloads use [Lon, Lat] (WGS84).</li>
+<li>OpenLayers map, point and route features remain in Web Mercator ([X, Y]).</li>
+<li>Centralised conversion helpers (<code>toLonLat</code> / <code>fromLonLat</code>) and added validation that rejects obvious Web Mercator values with a clear error message.</li>
+<li>Backward-compatibility: Routes and Points saved as Web Mercator are converted to WGS84 on load.</li>
 </ul>
-<h3 id="3-data-retention-and-third-party-disclosure">3. Data Retention and Third-Party Disclosure<a class="headerlink" href="#3-data-retention-and-third-party-disclosure" title="Permanent link">&para;</a></h3>
+<h3 id="report-issue-modal-84">Report Issue modal (<a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/84">#84</a>)<a class="headerlink" href="#report-issue-modal-84" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Third-Party Transfers:</strong> We do not sell, lease, or distribute user data to third-party commercial entities, marketing networks, or data brokers.</li>
-<li><strong>Data Retention:</strong> Authentication data is retained indefinitely to maintain your account access. You may execute a data deletion request at any time to permanently purge your credentials from our active databases.</li>
+<li>Removed the dedicated <code>/report-an-issue</code> page, template and stylesheet.</li>
+<li>Added an in-map modal (title + description) with validation, submission and success/error handling.</li>
+<li>Updated <code>showError</code>/<code>showToast</code> to accept an optional modal container so toasts appear correctly inside dialogs.</li>
+<li>Improved error-toast styling for light/dark themes.</li>
 </ul>
-<h3 id="4-source-code-and-transparency">4. Source Code and Transparency<a class="headerlink" href="#4-source-code-and-transparency" title="Permanent link">&para;</a></h3>
-<p>As an open-source project, our data handling pipelines, security implementations, and telemetry mechanisms are fully transparent and publicly auditable within our source code repository.</p>
+<h3 id="dedicated-privacy-policy-page-86">Dedicated Privacy Policy page (<a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/86">#86</a>)<a class="headerlink" href="#dedicated-privacy-policy-page-86" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added self-contained <code>privacy-policy.html</code>, CSS and JS (no shared tokens or imports).</li>
+<li>Includes full Privacy Policy + Cookie Policy content and light/dark/system theme toggle.</li>
+<li>Updated all in-app links (register page, map attribution, etc.) to point to the new local route.</li>
+<li>Removed the unused report-an-issue FastAPI route (only the viewing function, the FastAPI route which adds issues to the database is still present).</li>
+</ul>
+<h3 id="consistent-svg-pins-for-all-route-types-87">Consistent SVG pins for all route types (<a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/87">#87</a>)<a class="headerlink" href="#consistent-svg-pins-for-all-route-types-87" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Manual routing and loaded routes now use the same SVG pin markers previously reserved for automatic routing.</li>
+<li>Start pin colour changed to green, end pin colour changed to red for clearer visual distinction.</li>
+</ul>
+<h3 id="modern-multi-status-toasts-90">Modern multi-status toasts (<a href="https://github.com/abdlfc11/Crestr-Hiking-App/pull/90">#90</a>)<a class="headerlink" href="#modern-multi-status-toasts-90" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Renamed <code>showError()</code> to <code>showToast(message, type, modal)</code> supporting <code>error</code>, <code>success</code>, <code>info</code> and <code>warning</code>.</li>
+<li>Redesigned toast appearance (theme tokens, dark-mode support, dismiss controls, progress animation).</li>
+<li>Migrated all previous error call-sites (auth, import, routing, saved points, report-issue, validation, search) to the new API.</li>
+</ul>
+<h2 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Interactive green/red pins make start and end points unmistakable and allow quick route adjustments by dragging.</li>
+<li>Standard Lat/Lon coordinates match everyday mapping conventions and eliminate a long-standing source of user confusion.</li>
+<li>Keeping issue reporting inside the map and providing an in-app Privacy Policy improve UX and reduce context switching.</li>
+<li>Unified pin styling and modern, status-aware toasts give the whole application a more polished, consistent feel.</li>
+</ul>
+<h2 id="files-changed">Files changed<a class="headerlink" href="#files-changed" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>static/js/ui.js</code>, <code>static/js/map.js</code>, <code>static/js/utils/ui-utils.js</code>, <code>static/js/utils/routing-utils.js</code></li>
+<li><code>static/js/saved_points/style.js</code>, <code>static/js/saved_points/savedPoints.js</code></li>
+<li><code>static/js/routes/loadRoute.js</code>, <code>static/js/routes/saveRoute.js</code>, <code>static/js/routing/*</code>, <code>static/js/importRoute.js</code></li>
+<li><code>static/js/auth/auth.js</code>, <code>static/js/report-issue.js</code> (removed), <code>static/js/privacy-policy.js</code></li>
+<li><code>src/Points/points_fastapi.py</code>, <code>src/Points/points_schemas.py</code></li>
+<li><code>src/Routes/routes_fastapi.py</code>, <code>src/Routes/helpers.py</code></li>
+<li><code>src/Search/search_fastapi.py</code>, <code>src/Report_Issue/report_issue_fastapi.py</code>, <code>src/Auth/auth_fastapi.py</code></li>
+<li><code>src/fastapi_app.py</code>, <code>src/constants.py</code></li>
+<li><code>templates/map.html</code>, <code>templates/privacy-policy.html</code>, <code>templates/register.html</code></li>
+<li><code>templates/report-issue.html</code> (removed)</li>
+<li><code>static/css/components/modal.css</code>, <code>static/css/components/form-fields.css</code>, <code>static/css/components/error-toast.css</code></li>
+<li><code>static/css/pages/privacy-policy.css</code>, <code>static/css/base/tokens.css</code></li>
+</ul>
 
 
 
@@ -1726,6 +1859,10 @@ Our data collection is strictly limited to the minimum telemetry necessary to au
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      &copy; 2026 Abdul
+    </div>
+  
   
     Made with
     <a href="https://zensical.org/" target="_blank" rel="noopener">
@@ -1747,7 +1884,7 @@ Our data collection is strictly limited to the minimum telemetry necessary to au
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.sections","navigation.expand","content.code.copy","content.code.annotate","content.tabs.link","navigation.top"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.sections","navigation.expand","navigation.top","content.code.copy","content.code.annotate","content.tabs.link"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
       <script src="../../assets/javascripts/bundle.0df4f2d0.min.js"></script>
