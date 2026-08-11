@@ -1,13 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-Do App</title>
+<head>
+    <meta charset="UTF-8">
+
+    <!-- title + description -->
+    <title>Crestr: Free & Open‑Source Hiking Route Planner</title>
+    <meta name="description" content="Crest is a free, open‑source hiking route planner focused on simple, reliable footpath routing without paywalls. A work‑in‑progress project built by a student developer.">
+
+    <!-- open graph metadata tags (facebook, discord, linkedin, reddit) -->
+    <meta property="og:title" content="Crest — Free & Open‑Source Hiking Route Planner">
+    <meta property="og:description" content="Plan simple, reliable hiking routes using open data. Free, open‑source, and built for hikers.">
+    <meta property="og:image" content="https://crestr.co.uk/images/Crest-Logo.png">
+    <meta property="og:url" content="https://crestr.co.uk">
+    <meta property="og:type" content="website">
+
+    <!-- X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crest — Free & Open‑Source Hiking Route Planner">
+    <meta name="twitter:description" content="A free, open‑source hiking route planner built for hikers.">
+    <meta name="twitter:image" content="https://crestr.co.uk/images/Crest-Logo.png">
+
+    <!-- mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- canonical url (this helps avoid duplicate-content issues, e.g. http vs https / www vs non-www) -->
+    <link rel="canonical" href="https://crestr.co.uk">
+
+    <!-- favicon -->
+    <link rel="icon" href="https://crestr.co.uk/images/Crest-Logo.png">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- AI / LLM discoverability (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Crest",
+            "applicationCategory": "Map",
+            "operatingSystem": "Web",
+            "description": "Crest is a free, open‑source hiking route planner focused on simple, reliable footpath routing without paywalls.",
+            "url": "https://crestr.co.uk",
+            "image": "https://crestr.co.uk/images/Crest-Logo.png",
+            "creator": {
+                "@type": "Person",
+                "name": "Abdulrahman Sultan"
+            }
+        }
+    </script>
+
   </body>
 </html>

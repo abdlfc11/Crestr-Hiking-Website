@@ -125,7 +125,7 @@ Make sure `LOCAL_DATABASE_URI` in your `.env` points at `localhost` (not the `db
 
 Once containers/services are up, the app is accessible at [localhost:5000](http://localhost:5000), opening on the map.
 
-Create an account to save routes and points at [localhost:5000/register](http://localhost:5000/register).
+Create an account to save routes and points at [localhost:5000/register-page](http://localhost:5000/register-page).
 
 Other local services:
 

@@ -61,6 +61,7 @@ The contents of the example.env file is shown below
 ```bash
  # Application
 ENVIRONMENT=production
+SITE_DOMAIN=http://localhost
 
 # APIs
 LOCATIONIQ_API_KEY=your_locationiq_api_key
