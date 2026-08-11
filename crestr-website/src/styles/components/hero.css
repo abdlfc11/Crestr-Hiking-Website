@@ -1,0 +1,103 @@
+/* hero.css */
+
+:root {
+  /* Hero-scoped tokens */
+  --hero-radius: 24px;
+  --hero-shadow: 0 24px 70px rgba(15, 23, 42, 0.18);
+  --hero-overlay-bg: rgba(27, 31, 37, 0.5);
+  --hero-image-url: url(https://images.crestr.co.uk/hero-image.jpg);
+
+  --hero-text-colour: #ffffff;
+  --hero-subtitle-colour: rgba(255, 255, 255, 0.9);
+
+  --hero-cta-shadow: 0 14px 30px -12px rgba(37, 99, 235, 0.5);
+  --hero-cta-shadow-hover: 0 12px 30px -10px rgba(37, 99, 235, 0.45);
+  --hero-cta-transition: transform 0.2s ease-in-out, box-shadow 0.05s ease-in-out;
+}
+
+/* this styles the hero section container */
+#hero-section {
+    width: 96%;
+    max-width: 2200px;
+    margin: 0 auto var(--space-7);
+    height: min(78vh, 760px);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--hero-radius);
+    box-shadow: var(--hero-shadow);
+}
+
+/* this sets the hero background image */
+#hero-image {
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    background-image: var(--hero-image-url);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* this adds a dark overlay on the hero image */
+#hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--hero-overlay-bg);
+}
+
+/* hero text */
+
+#hero-text-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    color: var(--hero-text-colour);
+    padding: var(--space-4) var(--space-6);
+    text-align: center;
+}
+
+#hero-text-container h1 {
+    margin: 0;
+}
+
+.hero-text {
+    color: var(--hero-text-colour);
+    font-size: clamp(1.8rem, 7vw, 5rem);
+    pointer-events: none;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    margin: var(--space-4) 0 0;
+    color: var(--hero-subtitle-colour);
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+#bottom-hero-text {
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(1.55rem, 5.5vw, 4rem);
+    line-height: 1.1;
+}
+
+/* create account button */
+
+.cta-button {
+    margin-top: var(--space-5);
+    height: clamp(10px, 3.8rem, 100px);
+    padding: var(--space-4) var(--space-6);
+    font-size: 1.2rem;
+    min-height: 56px;
+    width: 50%;
+    max-width: 250px;
+}

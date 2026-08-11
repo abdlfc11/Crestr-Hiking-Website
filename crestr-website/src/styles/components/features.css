@@ -1,0 +1,67 @@
+/* features.css */
+
+:root {
+  /* Feature-scoped tokens */
+  --feature-card-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --feature-image-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#feature-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-4) 4rem;
+}
+
+.feature-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    background: var(--colour-surface-solid-opaque);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--feature-card-shadow);
+    border: 1px solid var(--colour-divider);
+    margin: var(--space-6) 0;
+}
+
+/* Heading */
+.feature-heading {
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    font-weight: 700;
+    margin: 0;
+    color: var(--colour-text-primary);
+    text-align: center;
+}
+
+/* Image */
+.feature-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    box-shadow: var(--feature-image-shadow);
+}
+
+/* Description */
+.feature-description {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--colour-text-secondary);
+    text-align: center;
+}
+
+#feature-heading {
+    font-size: clamp(2.2rem, 2.5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--colour-text-primary);
+    margin-bottom: 3.5rem;
+    text-align: center;
+    margin-top: 7rem;
+}

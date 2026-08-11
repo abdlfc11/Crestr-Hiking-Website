@@ -1,0 +1,143 @@
+/* about.css */
+
+:root {
+  /* ── About-scoped tokens ── */
+  --about-group-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  --about-group-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --about-transition-lift: box-shadow 0.3s ease, transform 0.3s ease;
+  --about-accordion-transition:
+      max-height 0.45s var(--ease-standard),
+      opacity 0.35s ease 0.05s,
+      padding-bottom 0.45s var(--ease-standard);
+}
+
+#about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* this styles the about heading */
+#about-heading {
+    font-size: clamp(2.2rem, 2.5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--colour-text-primary);
+    margin-bottom: 3.5rem;
+    text-align: center;
+}
+
+/* this centres each about group container */
+.about-group-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: var(--space-4);
+}
+
+/* this styles each accordion group */
+.about-group {
+    width: 100%;
+    background: var(--colour-surface-solid-opaque);
+    border-radius: var(--radius-md);
+    box-shadow: var(--about-group-shadow);
+    border: 1px solid var(--colour-divider);
+    overflow: hidden;
+    transition: var(--about-transition-lift);
+}
+
+/* this adds hover elevation */
+.about-group:hover {
+    box-shadow: var(--about-group-shadow-hover);
+    transform: translateY(-3px);
+}
+
+/* this styles the accordion header button */
+.about-group-header-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--space-5) var(--space-6);
+    background: var(--colour-surface-solid-opaque);
+    border: none;
+    cursor: pointer;
+    font-size: .8rem;
+    transition: background-colour 0.25s ease;
+    min-height: 60px;
+}
+
+/* this adds hover feedback to header */
+.about-group-header-button:hover {
+    background-color: var(--colour-surface-hover);
+}
+
+/* this styles the header text */
+.about-group-header {
+    margin: 0;
+    font-weight: 600;
+    color: var(--colour-text-primary);
+    flex: 1;
+    text-align: left;
+}
+
+/* this styles the arrow icon */
+.about-group-header-button svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--colour-text-faint);
+    transition: transform 0.4s var(--ease-standard);
+    flex-shrink: 0;
+}
+
+/* this styles the hidden accordion text */
+.about-group-text {
+    overflow: hidden;
+    padding: 0 var(--space-6) 0;
+    color: var(--colour-text-secondary);
+    line-height: 1.65;
+    max-height: 0;
+    opacity: 0;
+    transition: var(--about-accordion-transition);
+}
+
+/* this reveals accordion text when open */
+.about-group.open .about-group-text {
+    max-height: 800px;
+    opacity: 1;
+    padding-bottom: var(--space-6);
+}
+
+/* this rotates the arrow when open */
+.about-group.open svg {
+    transform: rotate(180deg);
+}
+
+/* this adjusts about section for tablets */
+@media (max-width: 768px) {
+    #about-section {
+        padding: 4rem var(--space-4) 5rem;
+    }
+
+    .about-group-header-button {
+        padding: 1.1rem var(--space-5);
+    }
+}
+
+/* this adjusts about section for mobile */
+@media (max-width: 480px) {
+    .about-group-container {
+        margin-bottom: 0.75rem;
+    }
+
+    .about-group-header-button {
+        padding: var(--space-5) 1.1rem;
+    }
+
+    #about-section {
+        padding: 3.5rem 0.8rem 4rem;
+    }
+}

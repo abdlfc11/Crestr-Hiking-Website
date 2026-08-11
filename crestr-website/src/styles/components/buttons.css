@@ -1,0 +1,39 @@
+:root {
+    --btn-shadow: 0 14px 30px -12px rgba(37, 99, 235, 0.5);
+    --btn-shadow-hover: 0 12px 30px -10px rgba(37, 99, 235, 0.45);
+    --btn-transition: transform 0.2s ease-in-out, box-shadow 0.05s ease-in-out;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: var(--space-3) var(--space-5);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    box-shadow: var(--btn-shadow);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--btn-shadow-hover);
+}
+
+.button:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+.button:disabled {
+    opacity: 0.8;
+    box-shadow: none;
+    cursor: default;
+    transform: none;
+}
