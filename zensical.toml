@@ -90,6 +90,9 @@ Home = "index.md"
 
 [[project.nav]]
 "Releases" = [
+    { "v0.2.12" = "releases/v0.2.12.md" },
+    { "v0.2.11" = "releases/v0.2.11.md" },
+    { "v0.2.10" = "releases/v0.2.10.md" },
     { "v0.2.9" = "releases/v0.2.9.md" },
     { "v0.2.8" = "releases/v0.2.8.md" },
     { "v0.2.7" = "releases/v0.2.7.md" },
