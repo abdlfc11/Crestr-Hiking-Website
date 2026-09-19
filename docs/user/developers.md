@@ -1,11 +1,8 @@
----
-
 **Last updated:** July 2026
 
 ---
 
 Follow this guide to set up and run **Crestr** locally for development.
-
 ## Prerequisites
 
 Before starting, ensure you have the following installed:

@@ -7,9 +7,41 @@ copyright = "&copy; 2026 Abdul"
 repo_url = "https://github.com/abdlfc11/Crestr-Hiking-App"
 repo_name = "Crestr Hiking App"
 
-# ----------------------------------------------------------------------------
+# Navigation
+nav = [
+    { Home = "index.md" },
+        { "User Guide" = [
+        { "Getting Started" = "user/getting-started.md" },
+        { "Developers" = "user/developers.md" },
+        { "Automatic Routing" = "user/automatic-routing.md" },
+        { "Manual Routing" = "user/manual-routing.md" },
+        { "Exporting Routes" = "user/exporting-routes.md" }
+    ] },
+    { "Technical" = [
+        { "Action Log Codes" = "technical/action_log_codes.md" },
+        { "Data Preprocessing" = "technical/data-preprocessing.md" },
+        { "Tech Stack" = "technical/tech-stack.md" },
+        { "Architecture Overview" = "technical/architecture.md" },
+        { "Routing Engine (A*)" = "technical/routing-engine.md" },
+        { "KDTree" = "technical/kdtree.md" },
+        { "Elevation Pipeline" = "technical/elevation.md" },
+        { "Backend API" = "technical/backend-api.md" },
+        { "Frontend Architecture" = "technical/frontend-architecture.md" }
+    ] },
+    { "Roadmap" = [
+        { "Overview" = "roadmap/overview.md" },
+        { "2025" = "roadmap/2025.md" },
+        { "2026" = "roadmap/2026.md" },
+        { "2027" = "roadmap/2027.md" }
+    ] },
+    { "Releases" = [
+        { "v0.1 Releases" = "releases/v0.1/v0.1.md" },
+        { "v0.2 Releases" = "releases/v0.2/v0.2.md" },
+        { "v0.3 Releases" = "releases/v0.3/v0.3.md" }
+    ] }
+]
+
 # Theme
-# ----------------------------------------------------------------------------
 [project.theme]
 variant = "modern"
 logo = "assets/images/Crest-Logo.png"
@@ -52,59 +84,6 @@ accent = "amber"
 icon = "material/weather-night"
 name = "Switch to Light Mode"
 
-
-# Navigation
-# ----------------------------------------------------------------------------
-[[project.nav]]
-Home = "index.md"
-
-[[project.nav]]
-"User Guide" = [
-    { "Getting Started" = "user/getting-started.md" },
-    { "Developers" = "user/developers.md" },
-    { "Automatic Routing" = "user/automatic-routing.md" },
-    { "Manual Routing" = "user/manual-routing.md" },
-    { "Exporting Routes" = "user/exporting-routes.md" }
-]
-
-[[project.nav]]
-"Technical" = [
-    { "Action Log Codes" = "technical/action_log_codes.md" },
-    { "Data Preprocessing" = "technical/data-preprocessing.md" },
-    { "Tech Stack" = "technical/tech-stack.md" },
-    { "Architecture Overview" = "technical/architecture.md" },
-    { "Routing Engine (A*)" = "technical/routing-engine.md" },
-    { "KDTree" = "technical/kdtree.md" },
-    { "Elevation Pipeline" = "technical/elevation.md" },
-    { "Backend API" = "technical/backend-api.md" },
-    { "Frontend Architecture" = "technical/frontend-architecture.md" }
-]
-
-[[project.nav]]
-"Roadmap" = [
-    { "Overview" = "roadmap/overview.md" },
-    { "2025" = "roadmap/2025.md" },
-    { "2026" = "roadmap/2026.md" },
-    { "2027" = "roadmap/2027.md" }
-]
-
-[[project.nav]]
-"Releases" = [
-    { "v0.2.12" = "releases/v0.2.12.md" },
-    { "v0.2.11" = "releases/v0.2.11.md" },
-    { "v0.2.10" = "releases/v0.2.10.md" },
-    { "v0.2.9" = "releases/v0.2.9.md" },
-    { "v0.2.8" = "releases/v0.2.8.md" },
-    { "v0.2.7" = "releases/v0.2.7.md" },
-    { "v0.2.6" = "releases/v0.2.6.md" },
-    { "v0.2.5" = "releases/v0.2.5.md" },
-    { "v0.2.4" = "releases/v0.2.4.md" },
-    { "v0.2.3" = "releases/v0.2.3.md" },
-    { "v0.2.2" = "releases/v0.2.2.md" },
-    { "v0.2.1" = "releases/v0.2.1.md" },
-    { "v0.2.0" = "releases/v0.2.0.md" },
-    { "v0.1.0" = "releases/v0.1.0.md" }
-]
 
 [project.markdown_extensions.attr_list]
 [project.markdown_extensions.admonition]
