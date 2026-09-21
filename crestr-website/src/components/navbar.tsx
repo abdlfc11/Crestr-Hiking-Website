@@ -37,7 +37,7 @@ const NavBar = (): React.JSX.Element => {
 
                 <ul id="login-register-navbar-list" className="navbar-list">
                     <li id="login-link" className="navbar-item"><a href="https://app.crestr.co.uk/login-page" className="navbar-link">Login</a></li>
-                    <li id="register-link" className="navbar-item"><a href="https://app.crestr.co.uk/register" className="navbar-link">Register</a></li>
+                    <li id="register-link" className="navbar-item"><a href="https://app.crestr.co.uk/register-page" className="navbar-link">Register</a></li>
                 </ul>
 
                 <ul className="navbar-list">
