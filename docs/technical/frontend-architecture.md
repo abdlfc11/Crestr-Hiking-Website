@@ -2,16 +2,17 @@
 
 ---
 
-**Last updated:** June 2026
+**Last updated:** September 2026
 
 ---
 
-The frontend of Crestr is a **single-page application** built with vanilla JavaScript and **OpenLayers** for mapping. It provides an interactive hiking route planner with manual and automatic routing modes.
+The frontend of Crestr is a **single-page application** built with vanilla Typescript and **OpenLayers** for mapping.
+It provides an interactive hiking route planner with manual and automatic routing modes.
 
 ## Technology Stack
 
 - **OpenLayers** – Interactive mapping, layers, and vector features
-- **Vanilla JavaScript** – Modular ES6 modules with clean separation of concerns
+- **Vanilla Typescript** – Modular ES6 modules with clean separation of concerns
 - **Chart.js** – Elevation profile visualisation
 - **HTML/CSS** – Semantic markup and responsive design
 
@@ -21,12 +22,12 @@ No heavy frontend frameworks are used, keeping the bundle size small and perform
 
 ```
 frontend/
-├── map.js                           # OpenLayers map initialisation and core layers
-├── ui.js                            # Main UI logic, mode switching, event handlers
-├── Auth/                            # Login, registration, logout, account management
+├── init/                            # Map and icon initialisation
+├── ui/                              # Main UI logic, mode switching, event handlers
+├── auth/                            # Login, registration, logout, account management
 ├── settings.js / settingsState.js   # User preferences (units, theme)
 ├── routes/                          # Route creation, saving, loading, state
-├── Utils/                           # Shared helpers (formatting, coordinate rounding, etc.)
+├── utils/                           # Shared helpers (formatting, coordinate rounding, etc.)
 ├── saved_points/                    # Saved location markers
 ├── cursorManager.js                 # Smart cursor control during route creation
 ├── elevationChart.js                # Dynamic elevation profile
@@ -35,17 +36,17 @@ frontend/
 
 ## Key Design Patterns
 
-- **State Management**: Centralised route and settings state (`routeState.js`, `settingsState.js`)
+- **State Management**: Centralised route and settings state (`routeState.ts`, `settingsState.ts`)
 - **Modular Architecture**: Small, focused modules with clear exports
 - **Coordinate Normalisation**: Robust handling of Web Mercator ↔ WGS84 conversions with elevation support
 - **Performance**: Cursor management, layer management, and lazy loading of saved points
 
 ## Core Features
 
-### Routing Modes
+### Routing
 
-- **Automatic Mode**: Click start/end --> A* pathfinding via backend
-- **Manual Mode**: Click-to-draw custom routes with real-time distance/ETA + snap-to-path
+- Click-to-draw custom routes with snap-to-path and real-time distance, ETA and elevation profiles 
+- Basic route editing via moving start, end or intermediary points in a route  
 
 ### Saved Content
 
@@ -56,15 +57,14 @@ frontend/
 ### Visual Feedback
 
 - Dynamic elevation chart (Chart.js)
-- Real-time route statistics (distance, ETA, elevation change)
-- Smart cursor states (grab, crosshair, etc.)
+- Real-time route statistics (distance, ETA, elevation profile)
 - Dark/light/system theme support
 
 ## Data Flow
 
 1. User interaction on map
 2. Coordinate processing and validation
-3. API call to FastAPI backend (`/calculate-path`, etc.)
+3. API call to FastAPI backend (`/routing/calculate-path`, etc.)
 4. Response --> update map layers, stats panel, elevation chart
 5. Optional persistence to PostgreSQL via backend
 
@@ -77,16 +77,16 @@ frontend/
 
 ## Current Limitations
 
-- Vanilla JS requires disciplined module organisation (no reactivity)
+- Vanilla TS requires disciplined module organisation (no reactivity)
 - All state is in-memory + localStorage (server sync on key actions)
 - Some duplication between manual and loaded route display logic
 
 ## Future Improvements
 
 - Consider migrating high-frequency UI updates to a lightweight reactive library if complexity grows
-- Better TypeScript support for larger team collaboration
 - Progressive Web App (PWA) capabilities / WASM for offline route viewing
 - Component-based structure for easier maintenance
+- Better design of app on mobile interfaces 
 
 ## Related Documents
 

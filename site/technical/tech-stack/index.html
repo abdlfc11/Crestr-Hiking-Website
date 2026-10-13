@@ -1557,7 +1557,7 @@
 
 <h1 id="tech-stack">Tech Stack<a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> July 2026</p>
+<p><strong>Last updated:</strong> September 2026</p>
 <hr />
 <p>This document outlines the current technology choices for Crestr. The stack prioritises simplicity and performance for geospatial operations,
 and maintainability while working within the constraints of a solo-developed project.</p>
@@ -1573,7 +1573,7 @@ and maintainability while working within the constraints of a solo-developed pro
 <tbody>
 <tr>
 <td>Frontend</td>
-<td>HTML, CSS, JavaScript, OpenLayers</td>
+<td>HTML, CSS, TypeScript, OpenLayers</td>
 <td>Client-side mapping and UI</td>
 </tr>
 <tr>
@@ -1606,13 +1606,12 @@ and maintainability while working within the constraints of a solo-developed pro
 <h2 id="detailed-breakdown">Detailed Breakdown<a class="headerlink" href="#detailed-breakdown" title="Permanent link">&para;</a></h2>
 <h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>HTML, CSS, JavaScript</strong>: Core web technologies. No heavy frameworks at present to keep bundle size small and performance high</li>
+<li><strong>HTML, CSS, TypeScript</strong>: Core web technologies. No heavy frameworks at present to keep bundle size small and performance high</li>
 <li><strong>OpenLayers</strong>: Chosen for interactive mapping capabilities, vector layer support, and strong OSM integration. Provides the foundation for route display and user interaction.</li>
 </ul>
 <h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Python</strong>: Primary language due to strong ecosystem support for geospatial libraries and rapid development.</li>
-<li><strong>Flask</strong>: Current main web framework. Lightweight, flexible, and sufficient for the current scope.</li>
 <li><strong>FastAPI</strong>: Current main web framework after migrating from Flask, which offers better performance, automatic OpenAPI documentation, and modern async support.</li>
 </ul>
 <h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h3>

@@ -1535,7 +1535,7 @@
 
 <h1 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> July 2026</p>
+<p><strong>Last updated:</strong> September 2026</p>
 <hr />
 <p>This document provides a high-level view of Crestr’s system architecture,
 how the major components interact, and the design principles guiding development.</p>
@@ -1543,7 +1543,7 @@ how the major components interact, and the design principles guiding development
 <p>Crestr follows a <strong>static-first, precomputed</strong> architecture optimised for performance and reliability in a hiking route planning application.</p>
 <h3 id="core-layers">Core Layers<a class="headerlink" href="#core-layers" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Frontend</strong>: Static HTML/CSS/JavaScript with OpenLayers for interactive mapping</li>
+<li><strong>Frontend</strong>: Static HTML/CSS/TypeScript with OpenLayers for interactive mapping</li>
 <li><strong>Data Processing Pipeline</strong>: Python scripts that build and enrich the trail graph</li>
 <li><strong>Routing Engine</strong>: Custom A* implementation running in Python (called via backend)</li>
 <li><strong>Backend</strong>: Lightweight FastAPI application serving the API</li>
@@ -1583,9 +1583,9 @@ The application avoids heavy databases or real-time servers in favour of precomp
 <h2 id="component-diagram">Component Diagram<a class="headerlink" href="#component-diagram" title="Permanent link">&para;</a></h2>
 <p>User</p>
 <p>↓</p>
-<p>Frontend: OpenLayers + JS</p>
+<p>Frontend: OpenLayers + TS</p>
 <p>↓</p>
-<p>Backend: Flask API</p>
+<p>Backend: FastAPI API</p>
 <p>↓</p>
 <p>Routing Engine: A* + KDTree</p>
 <p>↓</p>

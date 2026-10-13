@@ -961,10 +961,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#routing-modes" class="md-nav__link">
+  <a href="#routing" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Routing Modes
+        Routing
       </span>
     </span>
   </a>
@@ -1467,10 +1467,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#routing-modes" class="md-nav__link">
+  <a href="#routing" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Routing Modes
+        Routing
       </span>
     </span>
   </a>
@@ -1579,25 +1579,26 @@
 
 <h1 id="frontend-architecture">Frontend Architecture<a class="headerlink" href="#frontend-architecture" title="Permanent link">&para;</a></h1>
 <hr />
-<p><strong>Last updated:</strong> June 2026</p>
+<p><strong>Last updated:</strong> September 2026</p>
 <hr />
-<p>The frontend of Crestr is a <strong>single-page application</strong> built with vanilla JavaScript and <strong>OpenLayers</strong> for mapping. It provides an interactive hiking route planner with manual and automatic routing modes.</p>
+<p>The frontend of Crestr is a <strong>single-page application</strong> built with vanilla Typescript and <strong>OpenLayers</strong> for mapping.
+It provides an interactive hiking route planner with manual and automatic routing modes.</p>
 <h2 id="technology-stack">Technology Stack<a class="headerlink" href="#technology-stack" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>OpenLayers</strong> – Interactive mapping, layers, and vector features</li>
-<li><strong>Vanilla JavaScript</strong> – Modular ES6 modules with clean separation of concerns</li>
+<li><strong>Vanilla Typescript</strong> – Modular ES6 modules with clean separation of concerns</li>
 <li><strong>Chart.js</strong> – Elevation profile visualisation</li>
 <li><strong>HTML/CSS</strong> – Semantic markup and responsive design</li>
 </ul>
 <p>No heavy frontend frameworks are used, keeping the bundle size small and performance high on mobile devices.</p>
 <h2 id="module-structure">Module Structure<a class="headerlink" href="#module-structure" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>frontend/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── map.js                           # OpenLayers map initialisation and core layers
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── ui.js                            # Main UI logic, mode switching, event handlers
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── Auth/                            # Login, registration, logout, account management
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── init/                            # Map and icon initialisation
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── ui/                              # Main UI logic, mode switching, event handlers
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── auth/                            # Login, registration, logout, account management
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── settings.js / settingsState.js   # User preferences (units, theme)
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── routes/                          # Route creation, saving, loading, state
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── Utils/                           # Shared helpers (formatting, coordinate rounding, etc.)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── utils/                           # Shared helpers (formatting, coordinate rounding, etc.)
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── saved_points/                    # Saved location markers
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── cursorManager.js                 # Smart cursor control during route creation
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── elevationChart.js                # Dynamic elevation profile
@@ -1605,16 +1606,16 @@
 </span></code></pre></div>
 <h2 id="key-design-patterns">Key Design Patterns<a class="headerlink" href="#key-design-patterns" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>State Management</strong>: Centralised route and settings state (<code>routeState.js</code>, <code>settingsState.js</code>)</li>
+<li><strong>State Management</strong>: Centralised route and settings state (<code>routeState.ts</code>, <code>settingsState.ts</code>)</li>
 <li><strong>Modular Architecture</strong>: Small, focused modules with clear exports</li>
 <li><strong>Coordinate Normalisation</strong>: Robust handling of Web Mercator ↔ WGS84 conversions with elevation support</li>
 <li><strong>Performance</strong>: Cursor management, layer management, and lazy loading of saved points</li>
 </ul>
 <h2 id="core-features">Core Features<a class="headerlink" href="#core-features" title="Permanent link">&para;</a></h2>
-<h3 id="routing-modes">Routing Modes<a class="headerlink" href="#routing-modes" title="Permanent link">&para;</a></h3>
+<h3 id="routing">Routing<a class="headerlink" href="#routing" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Automatic Mode</strong>: Click start/end --&gt; A* pathfinding via backend</li>
-<li><strong>Manual Mode</strong>: Click-to-draw custom routes with real-time distance/ETA + snap-to-path</li>
+<li>Click-to-draw custom routes with snap-to-path and real-time distance, ETA and elevation profiles </li>
+<li>Basic route editing via moving start, end or intermediary points in a route  </li>
 </ul>
 <h3 id="saved-content">Saved Content<a class="headerlink" href="#saved-content" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1625,15 +1626,14 @@
 <h3 id="visual-feedback">Visual Feedback<a class="headerlink" href="#visual-feedback" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Dynamic elevation chart (Chart.js)</li>
-<li>Real-time route statistics (distance, ETA, elevation change)</li>
-<li>Smart cursor states (grab, crosshair, etc.)</li>
+<li>Real-time route statistics (distance, ETA, elevation profile)</li>
 <li>Dark/light/system theme support</li>
 </ul>
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
 <ol>
 <li>User interaction on map</li>
 <li>Coordinate processing and validation</li>
-<li>API call to FastAPI backend (<code>/calculate-path</code>, etc.)</li>
+<li>API call to FastAPI backend (<code>/routing/calculate-path</code>, etc.)</li>
 <li>Response --&gt; update map layers, stats panel, elevation chart</li>
 <li>Optional persistence to PostgreSQL via backend</li>
 </ol>
@@ -1646,16 +1646,16 @@
 </ul>
 <h2 id="current-limitations">Current Limitations<a class="headerlink" href="#current-limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Vanilla JS requires disciplined module organisation (no reactivity)</li>
+<li>Vanilla TS requires disciplined module organisation (no reactivity)</li>
 <li>All state is in-memory + localStorage (server sync on key actions)</li>
 <li>Some duplication between manual and loaded route display logic</li>
 </ul>
 <h2 id="future-improvements">Future Improvements<a class="headerlink" href="#future-improvements" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Consider migrating high-frequency UI updates to a lightweight reactive library if complexity grows</li>
-<li>Better TypeScript support for larger team collaboration</li>
 <li>Progressive Web App (PWA) capabilities / WASM for offline route viewing</li>
 <li>Component-based structure for easier maintenance</li>
+<li>Better design of app on mobile interfaces </li>
 </ul>
 <h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>
 <ul>

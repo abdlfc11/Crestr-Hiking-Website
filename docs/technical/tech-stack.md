@@ -2,7 +2,7 @@
 
 ---
 
-**Last updated:** July 2026
+**Last updated:** September 2026
 
 ---
 
@@ -13,7 +13,7 @@ and maintainability while working within the constraints of a solo-developed pro
 
 | Layer | Technology | Notes |
 |---|---|---|
-| Frontend | HTML, CSS, JavaScript, OpenLayers | Client-side mapping and UI |
+| Frontend | HTML, CSS, TypeScript, OpenLayers | Client-side mapping and UI |
 | Backend | Python and FastAPI | Web framework layer |
 | Database | PostgreSQL + SQLModel ORM | Relational storage with ORM |
 | Pathfinding | Custom A* algorithm + KDTree spatial indexing | Core routing logic |
@@ -24,13 +24,12 @@ and maintainability while working within the constraints of a solo-developed pro
 
 ### Frontend
 
-- **HTML, CSS, JavaScript**: Core web technologies. No heavy frameworks at present to keep bundle size small and performance high
+- **HTML, CSS, TypeScript**: Core web technologies. No heavy frameworks at present to keep bundle size small and performance high
 - **OpenLayers**: Chosen for interactive mapping capabilities, vector layer support, and strong OSM integration. Provides the foundation for route display and user interaction.
 
 ### Backend
 
 - **Python**: Primary language due to strong ecosystem support for geospatial libraries and rapid development.
-- **Flask**: Current main web framework. Lightweight, flexible, and sufficient for the current scope.
 - **FastAPI**: Current main web framework after migrating from Flask, which offers better performance, automatic OpenAPI documentation, and modern async support.
 
 ### Database

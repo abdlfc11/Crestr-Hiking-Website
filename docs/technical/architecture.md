@@ -2,7 +2,7 @@
 
 ---
 
-**Last updated:** July 2026
+**Last updated:** September 2026
 
 ---
 
@@ -15,7 +15,7 @@ Crestr follows a **static-first, precomputed** architecture optimised for perfor
 
 ### Core Layers
 
-- **Frontend**: Static HTML/CSS/JavaScript with OpenLayers for interactive mapping
+- **Frontend**: Static HTML/CSS/TypeScript with OpenLayers for interactive mapping
 - **Data Processing Pipeline**: Python scripts that build and enrich the trail graph
 - **Routing Engine**: Custom A* implementation running in Python (called via backend)
 - **Backend**: Lightweight FastAPI application serving the API
@@ -58,11 +58,11 @@ User
 
 ↓
 
-Frontend: OpenLayers + JS
+Frontend: OpenLayers + TS
 
 ↓
 
-Backend: Flask API
+Backend: FastAPI API
 
 ↓
 
