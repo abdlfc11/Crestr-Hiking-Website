@@ -16,12 +16,11 @@ const NavBar = (): React.JSX.Element => {
             setMobileMenu(true);
         }
     }
-
     return <>
         <nav id="navbar" aria-label="Primary">
             <div id="left-nav-side" className="nav-sides">
                 <div id="navbar-logo-container">
-                    <a href="https://crestr.co.uk">
+                    <a href="#">
                         <img src="https://images.crestr.co.uk/Crest-Logo.png" id="navbar-logo-image" alt="Crest logo" width="60" height="60" />
                     </a>
                 </div>
@@ -36,16 +35,16 @@ const NavBar = (): React.JSX.Element => {
             <div id="right-nav-side" className="nav-sides">
 
                 <ul id="login-register-navbar-list" className="navbar-list">
+                    <li id="app-link" className="navbar-item"><a href="https://app.crestr.co.uk" className="navbar-link">Map</a></li>
                     <li id="login-link" className="navbar-item"><a href="https://app.crestr.co.uk/login-page" className="navbar-link">Login</a></li>
                     <li id="register-link" className="navbar-item"><a href="https://app.crestr.co.uk/register-page" className="navbar-link">Register</a></li>
+                    <a href="https://github.com/abdlfc11/Crestr-Hiking-App" target="_blank" rel="noopener noreferrer" className="navbar-link github-icon-link" aria-label="View GitHub repository">
+                        <FaGithub />
+                    </a>
                 </ul>
 
                 <ul className="navbar-list">
-                    <li className="navbar-item">
-                        <a href="https://github.com/abdlfc11/Crestr-Hiking-App" target="_blank" rel="noopener noreferrer" className="navbar-link github-icon-link" aria-label="View GitHub repository">
-                            <FaGithub />
-                        </a>
-                    </li>
+                    
                 </ul>
 
                 {/** mobile hamburger menu toggle: only visible below 768px, controls #mobile-menu */}
@@ -66,8 +65,8 @@ const NavBar = (): React.JSX.Element => {
 
         <div id="mobile-menu" className={mobileMenuOpen ? "open" : ""}>
             <ul id="mobile-menu-list">
-                <li><a className="mobile-menu-link" href="#about-section">About</a></li>
-                <li><a className="mobile-menu-link" href="#feature-section">Features</a></li>
+                <li><a className="mobile-menu-link" href="#about-section" onClick={() => toggleMobileMenu(mobileMenuOpen)}>About</a></li>
+                <li><a className="mobile-menu-link" href="#feature-section" onClick={() => toggleMobileMenu(mobileMenuOpen)}>Features</a></li>
                 <li><a className="mobile-menu-link" href="https://crestr.co.uk/docs">Documentation</a></li>
                 <li className="mobile-menu-divider" role="separator" />
                 <li><a className="mobile-menu-link mobile-menu-link-primary" href="https://app.crestr.co.uk/register">Register</a></li>
