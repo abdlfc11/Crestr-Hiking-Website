@@ -15,6 +15,7 @@
         <link rel="canonical" href="https://docs.crestr.co.uk/technical/action_log_codes/">
       
       
+      
         <link rel="prev" href="../../user/exporting-routes/">
       
       
@@ -25,7 +26,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="zensical-0.0.63">
+      <meta name="generator" content="zensical-0.0.71">
     
     
       
@@ -36,12 +37,12 @@
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.10763589.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.e442bf79.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.812a03bb.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
       
       
 
@@ -81,14 +82,11 @@
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#action-log-reference" class="md-skip">
-          Skip to content
-        </a>
-      
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
     </div>
     <div data-md-component="announce">
       
@@ -1006,6 +1004,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_saved_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>GET_SAVED_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_shared_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>ADD_SHARED_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#delete_point" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1618,6 +1638,33 @@
 
                 
               
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/v0.4/v0.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  v0.4 Releases
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
             </ul>
           </nav>
         
@@ -1973,6 +2020,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_saved_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>GET_SAVED_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_shared_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>ADD_SHARED_ROUTE</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#delete_point" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2061,8 +2130,10 @@
             <div class="md-content" data-md-component="content">
               
               <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
                 
                   
+
   
   
 
@@ -2192,6 +2263,18 @@ for example, generating routes too fast in a short space of time</li>
 <li><strong>On Success (<code>outcome: true</code>):</strong> Waypoint data retrieved.</li>
 <li><strong>On Failure (<code>outcome: false</code>):</strong> Invalid waypoint ID requested / connection dropped.</li>
 </ul>
+<h3 id="get_saved_route"><code>GET_SAVED_ROUTE</code><a class="headerlink" href="#get_saved_route" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Querying saved routes on the server's database.</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Route data recieved successfully.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Invalid route ID requested / unauthenticated user / connection dropped.</li>
+</ul>
+<h3 id="add_shared_route"><code>ADD_SHARED_ROUTE</code><a class="headerlink" href="#add_shared_route" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Context:</strong> Adding a shared route to the server's database</li>
+<li><strong>On Success (<code>outcome: true</code>):</strong> Route successfully added.</li>
+<li><strong>On Failure (<code>outcome: false</code>):</strong> Route data invalid / unauthenticated user / connection drop.</li>
+</ul>
 <h3 id="delete_point"><code>DELETE_POINT</code><a class="headerlink" href="#delete_point" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Context:</strong> Deleting a user waypoint from the system.</li>
@@ -2279,7 +2362,7 @@ for example, generating routes too fast in a short space of time</li>
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
@@ -2291,10 +2374,10 @@ for example, generating routes too fast in a short space of time</li>
       
         
         
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.sections","navigation.expand","navigation.top","content.code.copy","content.code.annotate","content.tabs.link"],"redirect":null,"search":"../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.sections","navigation.expand","navigation.top","content.code.copy","content.code.annotate","content.tabs.link"],"redirect":null,"search":"../../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a2388154.min.js"></script>
       
     
   </body>

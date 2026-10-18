@@ -139,6 +139,19 @@ for example, generating routes too fast in a short space of time
 - **On Success (`outcome: true`):** Waypoint data retrieved.
 - **On Failure (`outcome: false`):** Invalid waypoint ID requested / connection dropped.
 
+### `GET_SAVED_ROUTE`
+
+- **Context:** Querying saved routes on the server's database.
+- **On Success (`outcome: true`):** Route data recieved successfully.
+- **On Failure (`outcome: false`):** Invalid route ID requested / unauthenticated user / connection dropped.
+
+### `ADD_SHARED_ROUTE`
+
+- **Context:** Adding a shared route to the server's database
+- **On Success (`outcome: true`):** Route successfully added.
+- **On Failure (`outcome: false`):** Route data invalid / unauthenticated user / connection drop.
+
+
 ### `DELETE_POINT`
 
 - **Context:** Deleting a user waypoint from the system.

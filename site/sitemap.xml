@@ -4,49 +4,70 @@
         <loc>https://docs.crestr.co.uk/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/user/getting-started/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.1/v0.1.0/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/user/developers/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.1/v0.1/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/user/automatic-routing/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.0/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/user/manual-routing/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.1/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/user/exporting-routes/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.10/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/action_log_codes/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.11/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/data-preprocessing/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.12/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/tech-stack/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.2/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/architecture/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.3/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/routing-engine/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.4/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/kdtree/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.5/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/elevation/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.6/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/backend-api/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.7/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/frontend-architecture/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.8/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/roadmap/overview/</loc>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2.9/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/releases/v0.3/v0.3.0/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/releases/v0.3/v0.3.1/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/releases/v0.3/v0.3.2/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/releases/v0.3/v0.3/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/releases/v0.4/v0.4.0/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/releases/v0.4/v0.4/</loc>
       </url>
       <url>
         <loc>https://docs.crestr.co.uk/roadmap/2025/</loc>
@@ -58,12 +79,48 @@
         <loc>https://docs.crestr.co.uk/roadmap/2027/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/releases/v0.1/v0.1/</loc>
+        <loc>https://docs.crestr.co.uk/roadmap/overview/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/releases/v0.2/v0.2/</loc>
+        <loc>https://docs.crestr.co.uk/technical/action_log_codes/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/releases/v0.3/v0.3/</loc>
+        <loc>https://docs.crestr.co.uk/technical/architecture/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/backend-api/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/data-preprocessing/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/elevation/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/frontend-architecture/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/kdtree/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/routing-engine/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/tech-stack/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/user/automatic-routing/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/user/developers/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/user/exporting-routes/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/user/getting-started/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/user/manual-routing/</loc>
       </url>
 </urlset>

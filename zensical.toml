@@ -37,7 +37,8 @@ nav = [
     { "Releases" = [
         { "v0.1 Releases" = "releases/v0.1/v0.1.md" },
         { "v0.2 Releases" = "releases/v0.2/v0.2.md" },
-        { "v0.3 Releases" = "releases/v0.3/v0.3.md" }
+        { "v0.3 Releases" = "releases/v0.3/v0.3.md" },
+        { "v0.4 Releases" = "releases/v0.4/v0.4.md" }
     ] }
 ]
 
