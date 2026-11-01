@@ -44,7 +44,7 @@ const NavBar = (): React.JSX.Element => {
                 </ul>
 
                 <ul className="navbar-list">
-                    
+
                 </ul>
 
                 {/** mobile hamburger menu toggle: only visible below 768px, controls #mobile-menu */}
@@ -69,7 +69,7 @@ const NavBar = (): React.JSX.Element => {
                 <li><a className="mobile-menu-link" href="#feature-section" onClick={() => toggleMobileMenu(mobileMenuOpen)}>Features</a></li>
                 <li><a className="mobile-menu-link" href="https://crestr.co.uk/docs">Documentation</a></li>
                 <li className="mobile-menu-divider" role="separator" />
-                <li><a className="mobile-menu-link mobile-menu-link-primary" href="https://app.crestr.co.uk/register">Register</a></li>
+                <li><a className="mobile-menu-link mobile-menu-link-primary" href="https://app.crestr.co.uk/map">Map</a></li>
             </ul>
         </div>
     </>
