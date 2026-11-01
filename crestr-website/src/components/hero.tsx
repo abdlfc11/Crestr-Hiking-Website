@@ -11,7 +11,7 @@ const Hero = (): React.JSX.Element  => {
     return <section id="hero-section">
         <div id="hero-image"></div>
         <div id="hero-text-container">
-            <h1 id="top-hero-text" className="hero-text">Find your trail in Cumbria</h1>
+            <h1 id="top-hero-text" className="hero-text">Find your trail</h1>
             <h1 id="bottom-hero-text" className="hero-text">without the subscriptions</h1>
             <p className="hero-subtitle">Simple. Accurate. Completely free.</p>
 
