@@ -1,7 +1,7 @@
 [project]
 site_name = "Crestr Documentation"
-site_url = "https://docs.crestr.co.uk"          # required for sitemap, canonical URLs, OG tags — set to your real docs URL
-site_description = "Documentation for Crest, a free open-source hiking route planner for Cumbria, UK."
+site_url = "https://docs.crestr.co.uk"
+site_description = "Documentation for Crest, a free open-source hiking route planner for the UK and Ireland."
 site_author = "Abdul"
 copyright = "&copy; 2026 Abdul"
 repo_url = "https://github.com/abdlfc11/Crestr-Hiking-App"
@@ -38,7 +38,8 @@ nav = [
         { "v0.1 Releases" = "releases/v0.1/v0.1.md" },
         { "v0.2 Releases" = "releases/v0.2/v0.2.md" },
         { "v0.3 Releases" = "releases/v0.3/v0.3.md" },
-        { "v0.4 Releases" = "releases/v0.4/v0.4.md" }
+        { "v0.4 Releases" = "releases/v0.4/v0.4.md" },
+        { "v1 Releases" = "releases/v1/v1.md" }
     ] }
 ]
 
