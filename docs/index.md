@@ -34,10 +34,13 @@ Finally, access the app at [localhost:5000](http://localhost:5000){:target="_bla
 Crest aims to give users the features they pay for in other apps such as:
 
 - **An Interactive topographic map**: View paths and landmarks in detail at a high resolution
-- **Auto mode**: Generate routes using a custom A\* routing engine built from the ground up
-- **Manual mode**: click on the map to create points which make up a route, now supporting snap-to-path
+- **Snap-to-Path routing**: Between waypoints, routes are made which follow existing paths as opposed to being a straight line
 - **Search**: Search for any area in Great Britain and the map will be taken there
 - **POIs**: Save points of interest to your account
 - **Export routes** in:
     - **GPX**: for GPS watches and handheld devices
     - **GeoJSON**: for Google Maps, Strava, OS Maps, and more
+- **Import routes** in:
+    - **FIT**
+    - **GPX**
+    - **GeoJSON**
