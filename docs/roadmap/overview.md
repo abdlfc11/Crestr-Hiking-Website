@@ -1,17 +1,17 @@
 # Roadmap Overview
 
-This roadmap exists to give a clear, honest picture of where Crestr is heading over the next few years.
+This roadmap exists to give a clear  picture of where Crestr is heading over the next few years.
   
 It likely won't remain the same, as I will be a university student and as such may not always be able to commit myself to long-term projects, most notably, the mobile app (which may be delayed beyond Nov. 2027)
 
 ## A Personal Note
 Crestr started as my A‑Level Computer Science project in 2025.  
-Most of the early work, such as the first A* implementation, the KDTree, the basic UI, the initial routing engine, was built during revision weeks, late nights, and whatever spare time I could carve out between exams.
+Most of the early work, such as the first A* implementation, the KDTree, the basic UI, the initial routing engine, was built during my spare time.
 
 In 2026, I continued developing Crestr while finishing my A‑Levels and preparing for university.  
-From September 2026 onward, I’ll be starting my first year at university, which means development pace may shift depending on workload, deadlines, and life in general.  
+From September 2026 onward, I’ll be starting my first year at university, which means development pace will shift depending on workload, deadlines, and life in general.  
 
-Some features may arrive earlier than expected, others may slip, that’s just the reality of being a solo dev balancing a long‑term project with everything else happening in life.
+Some features may arrive earlier than expected and others will undoubtedly slip, that’s just the reality of being a solo dev working on a long‑term project.
 
 ## How to Read This Roadmap
 Each year in this roadmap represents a realistic snapshot of what I can achieve within that timeframe:
@@ -29,6 +29,6 @@ Every year is broken into:
 
 ## The Journey Ahead
 This roadmap will evolve as Crestr grows.  
-Some ideas will be added, some will be removed, and some will shift between years as I learn more, improve the system, and balance development with university life.
+Ideas will be added, removed, or shift between years as I learn more and balance development with university life.
 
-Crestr is something I genuinely enjoy building, and this roadmap is here to keep the journey transparent and structured. 
+Crestr is something I enjoy building, and this roadmap is here to keep development transparent and structured.
