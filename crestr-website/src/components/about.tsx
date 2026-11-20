@@ -38,7 +38,7 @@ export const aboutTemplates = [
     },
     {
         heading: "What features are planned for the future?",
-        description: "The roadmap includes offline support, improved elevation data, route difficulty filters, and expanded coverage beyond Cumbria."
+        description: `The roadmap includes a mobile app, difficulty filters, more settings and much more.`
     },
     {
         heading: "Can I use Crestr offline?",
