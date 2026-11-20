@@ -46,6 +46,7 @@ nav = [
 # Theme
 [project.theme]
 variant = "modern"
+language = "en"
 logo = "assets/images/Crest-Logo.png"
 favicon = "favicon.ico"
 features = [
@@ -53,13 +54,28 @@ features = [
     "navigation.sections",
     "navigation.expand",
     "navigation.top",
+    "navigation.instant",
+    "navigation.instant.progress",
+    "navigation.tracking",
+    "navigation.footer",
     "content.code.copy",
     "content.code.annotate",
     "content.tabs.link",
+    "search.highlight",
 ]
 
 [project.theme.icon]
 repo = "fontawesome/brands/github"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/abdlfc11/Crestr-Hiking-App"
+name = "Crestr on GitHub"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/map"
+link = "https://app.crestr.co.uk"
+name = "Crestr App"
 
 # Palette (light + dark + auto/system, three-way toggle)
 [[project.theme.palette]]
