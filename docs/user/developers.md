@@ -34,7 +34,6 @@ Crestr-Hiking-App/
 ├── Dockerfile
 ├── src/
 │   ├── app.py
-│   ├── pathfinder.py
 │   └── config.py
 |   └── ...
 ├── data/
@@ -46,7 +45,7 @@ Crestr-Hiking-App/
 
 ## 2. Set Up Your `.env` File
 
-Copy the example configuration:
+Copy the example configuration to a `.env` file:
 
 ```bash
 cp example.env .env
@@ -61,20 +60,11 @@ At minimum you'll need to replace:
 - `PGADMIN_PASS`
 - `UMAMI_APP_SECRET`
 
-### Important: `docker-compose.yml` reads from `.env`, not `example.env`
-
-Docker Compose expects a `.env` file in the project root for variable interpolation.
-Therefore, after cloning the repository, copy `example.env` to `.env` before starting the stack via the command below
-
-```sh
-cp example.env .env
-```
-
 Without this file, services such as pgAdmin and Umami will fail to start correctly
 
 ## 3. Build and Start the App
 
-### Option A — Full stack via Docker (recommended for working on the full app, DB, analytics, pgAdmin)
+### Option A - Full stack via Docker (recommended for working on the full app, DB, analytics, pgAdmin)
 
 ```sh
 docker-compose up --build
@@ -88,7 +78,7 @@ docker-compose up --build --force-recreate  # force rebuild and restart all serv
 docker-compose logs -f                # follow logs in real time
 ```
 
-For faster local iteration, you'll also want to swap the `command:` on the `web-fastapi` service from the gunicorn prod command to the Uvicorn command for easier debugging:
+For faster local iteration, you'll also want to swap the `command:` on the `web-fastapi` service from the gunicorn prod command to the Uvicorn command for easier debugging (see below).
 
 ```sh
 ### command: gunicorn -c src/gunicorn.config.py fastapi_app:app # Prod
@@ -120,9 +110,9 @@ Make sure `LOCAL_DATABASE_URI` in your `.env` points at `localhost` (not the `db
 
 ## 4. Access the App
 
-Once containers/services are up, the app is accessible at [localhost:5000](http://localhost:5000), opening on the map.
+Once containers/services are up, the app is accessible at [http://localhost](http://localhost), opening on the map.
 
-Create an account to save routes and points at [localhost:5000/register-page](http://localhost:5000/register-page).
+Create an account to save routes and points at [http://localhost/register-page](http://localhost/register-page).
 
 Other local services:
 
@@ -137,4 +127,3 @@ Other local services:
 | Docker permission error | Run with `sudo` (Linux) or ensure Docker Desktop is running |
 | Build fails | Run `docker system prune -f` and try again |
 | `umami`/`pgadmin` won't start or has blank credentials | Confirm you have a `.env` file (not just `example.env`) in the project root — see Step 2 |
-

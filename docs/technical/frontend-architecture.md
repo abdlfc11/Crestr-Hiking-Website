@@ -2,7 +2,7 @@
 
 ---
 
-**Last updated:** September 2026
+**Last updated:** November 2026
 
 ---
 
@@ -11,10 +11,10 @@ It provides an interactive hiking route planner with manual and automatic routin
 
 ## Technology Stack
 
-- **OpenLayers** – Interactive mapping, layers, and vector features
-- **Vanilla Typescript** – Modular ES6 modules with clean separation of concerns
-- **Chart.js** – Elevation profile visualisation
-- **HTML/CSS** – Semantic markup and responsive design
+- **OpenLayers** - Interactive mapping, layers, and vector features
+- **Vanilla Typescript** - Modular ES6 modules with clean separation of concerns
+- **Chart.js** - Elevation profile visualisation
+- **HTML/CSS** - Semantic markup and responsive design
 
 No heavy frontend frameworks are used, keeping the bundle size small and performance high on mobile devices.
 
@@ -93,4 +93,3 @@ frontend/
 - [Tech Stack](./tech-stack.md)
 - [Backend API](./backend-api.md)
 - [Routing Engine](./routing-engine.md)
-

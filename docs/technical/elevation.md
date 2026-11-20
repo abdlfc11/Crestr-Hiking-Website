@@ -2,7 +2,9 @@
 
 ---
 
-**Last updated:** July 2026
+**Last updated:** November 2026
+
+> NOTE : This describes my custom algorithm and workflow which takes OSM and elevation data as input and outputs a graph. Crestr no longer uses this, as it was replaced with a BRouter service. You can still find this in the [Legacy Repository](https://github.com/abdlfc11/Crestr-Legacy)
 
 ---
 
@@ -102,4 +104,3 @@ Additional attributes stored for filtering and debugging:
 - Support for multiple regional DEMs
 - Integration of more advanced cost models (e.g. Tobler's Hiking Function)
 - Real-time slope-based filtering options in the UI
-

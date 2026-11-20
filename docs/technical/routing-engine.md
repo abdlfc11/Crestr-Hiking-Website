@@ -1,8 +1,9 @@
 # Routing Engine
-
 ---
 
-**Last updated:** July 2026
+**Last updated:** November 2026
+
+> NOTE : This describes my custom A* algorithm used to create routes between points A and B. Crestr no longer uses this, as it was replaced with a BRouter service. You can still find this in the [Legacy Repository](https://github.com/abdlfc11/Crestr-Legacy)
 
 ---
 
@@ -92,4 +93,3 @@ The `min_slope` parameter enables future features such as “avoid steep section
 - [KDTree](./kdtree.md)
 - [Elevation Pipeline](./elevation.md)
 - [Architecture Overview](./architecture.md)
-

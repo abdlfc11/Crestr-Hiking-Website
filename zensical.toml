@@ -11,10 +11,9 @@ repo_name = "Crestr Hiking App"
 nav = [
     { Home = "index.md" },
         { "User Guide" = [
-        { "Getting Started" = "user/getting-started.md" },
-        { "Developers" = "user/developers.md" },
-        { "Automatic Routing" = "user/automatic-routing.md" },
-        { "Manual Routing" = "user/manual-routing.md" },
+        { "Getting Started (Self-hosters)" = "user/getting-started.md" },
+        { "Getting Started (Developers)" = "user/developers.md" },
+        { "Routing" = "user/routing.md" },
         { "Exporting Routes" = "user/exporting-routes.md" }
     ] },
     { "Technical" = [

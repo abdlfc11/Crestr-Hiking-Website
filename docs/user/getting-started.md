@@ -1,4 +1,4 @@
-**Last updated:** July 2026
+**Last updated:** November 2026
 
 ---
 
@@ -40,7 +40,6 @@ Crestr-Hiking-App/
 ├── Dockerfile
 ├── src/
 │   ├── fastapi_app.py
-│   ├── Pathfinding/
 │   └── config.py
 |   └── ... 
 ├── data/
@@ -57,8 +56,8 @@ Crestr-Hiking-App/
 The contents of the example.env file is shown below
 
 ```bash
- # Application
-ENVIRONMENT=production
+# Application
+ENVIRONMENT=Dev
 SITE_DOMAIN=http://localhost
 
 # APIs
@@ -78,7 +77,9 @@ PGADMIN_PASS=change_me
 PGADMIN_PORT=5050
 
 # Routing
-GRAPH_PATH=graph_generation/elevation_populated_graph.pkl
+BROUTER_BASE_URL=http://brouter:17777
+BROUTER_PROFILE=hiking-profile
+BROUTER_TIMEOUT_SECONDS=10
 
 # Umami
 UMAMI_WEBSITE_ID=get_ID_from_umami
@@ -87,9 +88,9 @@ UMAMI_DB_PASSWORD=change_this_to_a_strong_password
 UMAMI_APP_SECRET=generate_a_long_random_secret
 ```
 
-The app will work fine with these values unchanged excepting the searching for an area feature,
-as this is achieved via the `LOCATIONIQ_API_KEY` of which you will need to retrieve your own from
-[their website](https://locationiq.com)
+The app will work fine with these values unchanged excepting the 'Search for Area' feature,
+as this uses the `LOCATIONIQ_API_KEY` which you will need to retrieve your own from
+[their website](https://locationiq.com).
 
 ### 3. Build and Start the App
 
@@ -112,8 +113,8 @@ docker-compose logs -f # this allows you to follow logs in real time
 Wait until the containers are running
   
 
-Once they are, the app should  be accessible via [localhost:5000](http://localhost:5000), opening on the map.
-You may want to make an account to save routes and points by visiting [localhost:5000/register](http://localhost:5000/register)
+Once they are, the app should  be accessible via [http://localhost](http://localhost), opening on the map.
+You may want to make an account to save routes and points by visiting [http://localhost/register-page](http://localhost/register-page)
 
 ### 5. Common Issues + Troubleshooting
 
@@ -122,4 +123,4 @@ You may want to make an account to save routes and points by visiting [localhost
 | Port 5000 already in use | Change the port in docker-compose.yml |
 | Docker permission error | Run with sudo (linux) or ensure Docker Desktop is operational |
 | Build fails | run docker system prune -f and try again |
-
+|"exec /entrypoint.sh: no such file or directory" | Ensure all shell scripts use `LF` line endings rather than `CRLF`

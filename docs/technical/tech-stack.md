@@ -2,7 +2,7 @@
 
 ---
 
-**Last updated:** September 2026
+**Last updated:** November 2026
 
 ---
 
@@ -16,7 +16,7 @@ and maintainability while working within the constraints of a solo-developed pro
 | Frontend | HTML, CSS, TypeScript, OpenLayers | Client-side mapping and UI |
 | Backend | Python and FastAPI | Web framework layer |
 | Database | PostgreSQL + SQLModel ORM | Relational storage with ORM |
-| Pathfinding | Custom A* algorithm + KDTree spatial indexing | Core routing logic |
+| Pathfinding | BRouter | Expert routing API hosted on a docker container |
 | Map Data | OpenStreetMap (OSM) for nodes, OpenTopoMap for tiles, LocationIQ for reverse geocoding | Source of geographic data |
 | Authentication | Sessions PostgreSQL table + Cookies | User session management |
 
@@ -39,13 +39,7 @@ and maintainability while working within the constraints of a solo-developed pro
 
 ### Core Algorithms
 
-- **A * Pathfinding**: Custom implementation tailored to hiking constraints (elevation, terrain difficulty, preferences).
-- **KDTree**: Used for efficient spatial nearest-neighbour searches when indexing OSM data.
-
-### Data Sources
-
-- **OpenStreetMap (OSM)**: Primary source of trail, elevation, and land-use data.
-- Future plans include PostGIS for better querying.
+- **BRouter**: Expert open-source routing algorithm. This replaced my custom algorithm to allow routing across the UK and Ireland rather than just Cumbria. It handles elevation and geographic map tiles via `.rd5` allowing me to easily provide international routing for Crestr should I upgrade the current server.
 
 ### Authentication & Security
 
@@ -57,12 +51,8 @@ and maintainability while working within the constraints of a solo-developed pro
 - Favour open-source and community-supported tools.
 - Ensure the architecture supports incremental improvements without major rewrites.
 
-## Future Considerations
-
-- Introduce PostGIS for advanced spatial queries.
-
 ## Rationale
 
-Choices were driven by the need for strong geospatial capabilities, developer velocity, and long-term maintainability.
-The current stack allows rapid iteration while avoiding unnecessary complexity.
+Choices were driven by the need for strong geospatial capabilities, and long-term maintainability. The current stack allows rapid iteration while avoiding unnecessary complexity.
 
+The decision to replace my own algorithm with a BRouter docker container shows this the clearest, as I put aside my own work in the favour of a better product.

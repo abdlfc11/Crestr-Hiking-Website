@@ -2,7 +2,9 @@
 
 ---
 
-**Last updated:** July 2026
+**Last updated:** November 2026
+
+> NOTE : This describes the use of a KDTree in my custom A* algorithm used to create routes between points A and B. Crestr no longer uses this, as it was replaced with a BRouter service. You can still find this in the [Legacy Repository](https://github.com/abdlfc11/Crestr-Legacy)
 
 ---
 
@@ -67,4 +69,3 @@ rectangle-based filtering on very large graphs.
 - [Routing Engine (A*)](./routing-engine.md)
 - [Elevation Pipeline](./elevation.md)
 - [Tech Stack](./tech-stack.md)
-
