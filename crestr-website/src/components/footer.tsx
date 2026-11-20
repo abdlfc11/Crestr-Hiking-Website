@@ -49,7 +49,7 @@ export default function Footer({ linkGroups = defaultLinkGroups }: FooterProps) 
               alt="Crestr"
             />
             <p className="footer-blurb">
-              A free, open-source hiking route planner for Cumbria.
+              A free, open-source hiking route planner for the UK and Ireland.
             </p>
           </div>
 
