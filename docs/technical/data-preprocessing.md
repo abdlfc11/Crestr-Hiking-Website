@@ -2,7 +2,9 @@
 
 ---
 
-**Last updated:** July 2026
+**Last updated:** November 2026
+
+> NOTE : This describes the graph created by my own custom algorithm. Crestr no longer uses this, as it was replaced with a BRouter service. You can still find this in the [Legacy Repository](https://github.com/abdlfc11/Crestr-Legacy)
 
 ---
 

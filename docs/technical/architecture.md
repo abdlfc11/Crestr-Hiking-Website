@@ -2,7 +2,7 @@
 
 ---
 
-**Last updated:** September 2026
+**Last updated:** November 2026
 
 ---
 
@@ -16,90 +16,37 @@ Crestr follows a **static-first, precomputed** architecture optimised for perfor
 ### Core Layers
 
 - **Frontend**: Static HTML/CSS/TypeScript with OpenLayers for interactive mapping
-- **Data Processing Pipeline**: Python scripts that build and enrich the trail graph
-- **Routing Engine**: Custom A* implementation running in Python (called via backend)
-- **Backend**: Lightweight FastAPI application serving the API
-- **Data Storage**: Precomputed iGraph graph (Pickle) + OSM-derived data
-
-## Data Flow
-
-1. **Raw Data Ingestion**  
-• OpenStreetMap extracts are processed into nodes and edges.  
-• Produces `unpopulated_igraph.pkl`
-2. **Graph Enrichment** (Offline)  
-• Elevation assignment from DEM raster  
-• Naismith-based cost calculation  
-• Terrain factor application  
-• Produces `elevation_populated_igraph.pkl`
-3. **Routing Request** (Runtime)  
-User selects start/end on map → Frontend sends coordinates to backend → A* engine returns optimised path.
-4. **Response**  
-Path is returned to the frontend and visualised on the OpenLayers map.
-
-## Key Design Principles
-
-- **Performance First**  
-Heavy computation (elevation, graph enrichment) is done once during preprocessing.
-Runtime routing must feel instant.
-- **Separation of Concerns**
-Data preprocessing is completely decoupled from routing.
-Routing logic is isolated in the `AStarRouteFinder` class.
-- **Spatial Efficiency**  
-Global KDTree + dynamic subgraph extraction keeps memory and CPU usage low even on large graphs.
-- **Simplicity & Maintainability**  
-Minimal external dependencies.
-Core algorithms are custom but easy to reason about and extend.
-- **Static Where Possible**
-The application avoids heavy databases or real-time servers in favour of precomputed artefacts.
+- **Routing Engine**: BRouter Docker container
+- **Backend**: Lightweight FastAPI application serving APIs (auth, routing etc)
+- **Data Storage**: BRouter `.rd5` files
 
 ## Component Diagram
 
 User
 
-↓
+↓(1) ↑(6)
 
 Frontend: OpenLayers + TS
 
-↓
+↓(2) ↑(5)
 
 Backend: FastAPI API
 
-↓
+↓(3) ↑(4)
 
-Routing Engine: A* + KDTree
-
-↓
-
-Enriched Graph (Pickle)
-
-↑
-
-Preprocessing Pipeline
-
-↑
-
-OSM Data + DEM Raster
+Routing Engine: BRouter
 
 ## Technology Choices Summary
 
 See [Tech Stack](./tech-stack.md) for full details.
 
-## Strengths
-
-- Excellent routing performance on regional datasets.
-- Clear separation between preprocessing and runtime paths.
-- Easy to extend with new cost functions or filtering options.
-- Low operational cost (static-first design).
 
 ## Current Limitations
 
-- Currently tied to a single regional DEM and graph.
-- Graph updates require full reprocessing.
-- Limited multi-user / concurrency support (not needed yet).
+- Limited multi-user / concurrency support (easily achieved via FastAPI async support)
 
 ## Future Evolution
 
-- Tile-based processing
 - Potential internationalisation and sponsorship pathway for production use.
 
 ## Related Documents
@@ -109,4 +56,3 @@ See [Tech Stack](./tech-stack.md) for full details.
 - [KDTree](./kdtree.md)
 - [Elevation Pipeline](./elevation.md)
 - [Data Preprocessing](./data-preprocessing.md)
-

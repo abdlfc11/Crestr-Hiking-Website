@@ -1,14 +1,14 @@
 <p align="center">
   <img src="./assets/images/Crest-Logo.png" width="200">
   <br>
-  <p><i>Crestr is an open-source, hiking route planner for Cumbria, aiming to make hiking more accessible</i></p>
+  <p><i>Crestr is an open-source, hiking route planner for the UK and Ireland, aiming to make hiking more accessible</i></p>
 </p>
 
 <p align="center">
   <a href="user/getting-started.md" class="md-button md-button--primary">
     Get Started
   </a>
-  <a href="user/automatic-routing.md" class="md-button md-button--primary">
+  <a href="user/routing.md" class="md-button md-button--primary">
   User guide
   </a>
 </p>
@@ -27,7 +27,7 @@ cd Crestr-Hiking-App
 # create a docker container for the app
 docker-compose up --build
 ```
-Finally, access the app at [localhost:5000](http://localhost:5000){:target="_blank"}
+Finally, access the app at [http://localhost](http://localhost){:target="_blank"}
 
 # Features
 

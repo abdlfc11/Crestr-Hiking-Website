@@ -127,9 +127,6 @@
         <loc>https://docs.crestr.co.uk/technical/tech-stack/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/user/automatic-routing/</loc>
-      </url>
-      <url>
         <loc>https://docs.crestr.co.uk/user/developers/</loc>
       </url>
       <url>
@@ -139,6 +136,6 @@
         <loc>https://docs.crestr.co.uk/user/getting-started/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/user/manual-routing/</loc>
+        <loc>https://docs.crestr.co.uk/user/routing/</loc>
       </url>
 </urlset>

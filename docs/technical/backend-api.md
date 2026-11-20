@@ -2,7 +2,7 @@
 
 ---
 
-**Last updated:** July 2026
+**Last updated:** November 2026
 
 ---
 
@@ -14,15 +14,13 @@ It serves the interactive map, handles authentication, stores user data, and exe
 The backend follows a classic monolithic structure suitable for the current scale of the application:
 
 - **FastAPI App** (`src/fastapi_app.py`): Main application with routes and auth.
-- **Pathfinding Module** (`src/Pathfinding/pathfinder.py` and `src/Pathfinding/NodeFinder.py`) : Contains the A* routing engine and spatial helpers.
 - **Database Models** (`models.py`): SQLModel definitions for PostgreSQL.
-- **NodeFinder Service**: Central class managing graph loading, coordinate conversions, and route building.
 
 ## Core Responsibilities
 
 - User authentication and session management
 - Saving and loading user routes and saved points
-- Executing A* pathfinding requests
+- Requesting and formatting routes from the BRouter service
 - File import/export (GPX, GeoJSON, KML, FIT)
 - Search functionality via LocationIQ API
 - Settings persistence
@@ -37,7 +35,7 @@ The backend follows a classic monolithic structure suitable for the current scal
 
 ### Routing
 
-- `POST /routing/calculate-path` --> Main endpoint that returns an optimised hiking route as GeoJSON
+- `POST /routing/calculate-path` --> Main endpoint that returns a hiking route as GeoJSON
 - `POST /routing/save-route` --> Persists a generated route to the database
 - `POST /routing/load-route` --> Retrieves a saved route
 - `POST /routing/delete-route` --> Deletes a route via route name (also ensures current user owns route)
@@ -65,7 +63,6 @@ The backend follows a classic monolithic structure suitable for the current scal
 
 - **Rate Limiting**: Implemented via [FastAPI-Limiter](https://pypi.org/project/fastapi-limiter/) to protect against abuse.
 - **Coordinate Handling**: Robust conversion between Web Mercator, WGS84, and BNG using [pyproj](https://pypi.org/project/pyproj/).
-- **Graph Management**: Lazy loading of the large trail graph with KDTree optimisation.
 - **Error Handling**: Consistent JSON responses and custom error pages.
 - **Use of Sessions Table**: Mixed with Cookies to send cryptographic session IDs which are sent back to the backend on each (authentication-required) API call
 
@@ -73,13 +70,8 @@ The backend follows a classic monolithic structure suitable for the current scal
 
 - All routing runs synchronously --> FastAPI refactor has been shipped and so asynchronous calls should be started to be designed
 
-## Future Migration Path
-
-- Move heavy pathfinding to a separate micro-service or background worker if needed.
-
 ## Related Documents
 
 - [Tech Stack](./tech-stack.md)
 - [Routing Engine (A*)](./routing-engine.md)
 - [Architecture Overview](./architecture.md)
-
