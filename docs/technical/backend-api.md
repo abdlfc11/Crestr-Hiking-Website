@@ -72,6 +72,5 @@ The backend follows a classic monolithic structure suitable for the current scal
 
 ## Related Documents
 
-- [Tech Stack](./tech-stack.md)
-- [Routing Engine (A*)](./routing-engine.md)
-- [Architecture Overview](./architecture.md)
+- [Tech Stack](tech-stack.md)
+- [Architecture Overview](architecture.md)

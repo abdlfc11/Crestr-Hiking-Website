@@ -90,6 +90,5 @@ frontend/
 
 ## Related Documents
 
-- [Tech Stack](./tech-stack.md)
-- [Backend API](./backend-api.md)
-- [Routing Engine](./routing-engine.md)
+- [Tech Stack](tech-stack.md)
+- [Backend API](backend-api.md)

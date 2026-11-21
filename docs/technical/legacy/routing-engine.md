@@ -89,7 +89,7 @@ The `min_slope` parameter enables future features such as “avoid steep section
 
 ## Related Documents
 
-- [Tech Stack](./tech-stack.md)
-- [KDTree](./kdtree.md)
-- [Elevation Pipeline](./elevation.md)
-- [Architecture Overview](./architecture.md)
+- [Tech Stack](../../technical/tech-stack.md)
+- [KDTree](kdtree.md)
+- [Elevation Pipeline](elevation.md)
+- [Architecture Overview](../../technical/architecture.md)

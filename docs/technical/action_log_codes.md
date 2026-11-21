@@ -8,7 +8,17 @@ For self-hosters and open-source contributors, troubleshooting a headless backen
 
 By default, this project includes a **pgAdmin** instance exposed via your `docker-compose.yml` file (accessible at `http://localhost:5050`). The `ActionLog` table within your Postgres database serves as a transparent, centralised dashboard for your entire application's health.
 
-### How to Use this with pgAdmin:
+### Benefits for Self-Hosters:
+
+- **Instant Diagnosis:** Instead of digging through raw, unformatted Docker container logs, you can quickly check the error_code column to identify exactly why a feature (like a map tile loading or account creation) is failing in your local environment.
+- **Environmental Integrity Checks:** Codes like `NO_PATH_FOUND` or `LOAD_MAP` failures instantly signal if your local osm/map data assets are missing or disconnected from your containers.
+
+### Benefits for Contributors:
+
+- **Performance Profiling:** Successful events (where outcome is true) often populate the duration_ms column. This allows you to benchmark optimisations made to pathfinding algorithms or database queries directly from your local deployment.
+- **No Lost Stack Traces:** If a route handler crashes during development, the complete Python exception stack trace is securely captured in the info column, even if the main API response returned a generic 500 error to the client.
+
+## How to Use this with pgAdmin:
 
 1. Open your browser and navigate to `http://localhost:5050`.
 2. Connect to your application database and locate the `action_log` table.
@@ -20,17 +30,9 @@ FROM public.action_log
 ORDER BY created_at DESC;
 ```
 
-### Benefits for Self-Hosters:
-
-- **Instant Diagnosis:** Instead of digging through raw, unformatted Docker container logs, you can quickly check the error_code column to identify exactly why a feature (like a map tile loading or account creation) is failing in your local environment.
-- **Environmental Integrity Checks:** Codes like `NO_PATH_FOUND` or `LOAD_MAP` failures instantly signal if your local osm/map data assets are missing or disconnected from your containers.
-
-### Benefits for Contributors:
-
-- **Performance Profiling:** Successful events (where outcome is true) often populate the duration_ms column. This allows you to benchmark optimisations made to pathfinding algorithms or database queries directly from your local deployment.
-- **No Lost Stack Traces:** If a route handler crashes during development, the complete Python exception stack trace is securely captured in the info column, even if the main API response returned a generic 500 error to the client.
-
 ---
+
+# Codes 
 
 ## Rate Limiting
 
@@ -185,4 +187,3 @@ for example, generating routes too fast in a short space of time
 - **Context:** Processing coordinate boundary geocoding or spatial address queries.
 - **On Success (`outcome: true`):** Search indices returned matches.
 - **On Failure (`outcome: false`):** Database lookup failed, query thread timed out and/or incorrect (or no) API key.
-

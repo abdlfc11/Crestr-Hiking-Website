@@ -18,14 +18,11 @@ nav = [
     ] },
     { "Technical" = [
         { "Action Log Codes" = "technical/action_log_codes.md" },
-        { "Data Preprocessing" = "technical/data-preprocessing.md" },
         { "Tech Stack" = "technical/tech-stack.md" },
         { "Architecture Overview" = "technical/architecture.md" },
-        { "Routing Engine (A*)" = "technical/routing-engine.md" },
-        { "KDTree" = "technical/kdtree.md" },
-        { "Elevation Pipeline" = "technical/elevation.md" },
         { "Backend API" = "technical/backend-api.md" },
-        { "Frontend Architecture" = "technical/frontend-architecture.md" }
+        { "Frontend Architecture" = "technical/frontend-architecture.md" },
+        { "Legacy Routing Engine" = "technical/legacy/legacy.md" }
     ] },
     { "Roadmap" = [
         { "Overview" = "roadmap/overview.md" },

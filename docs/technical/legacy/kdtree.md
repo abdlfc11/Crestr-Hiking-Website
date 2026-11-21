@@ -66,6 +66,6 @@ rectangle-based filtering on very large graphs.
 
 ## Related Documents
 
-- [Routing Engine (A*)](./routing-engine.md)
-- [Elevation Pipeline](./elevation.md)
-- [Tech Stack](./tech-stack.md)
+- [Routing Engine (A*)](routing-engine.md)
+- [Elevation Pipeline](elevation.md)
+- [Tech Stack](../../technical/tech-stack.md)

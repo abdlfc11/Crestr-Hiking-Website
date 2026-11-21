@@ -51,8 +51,4 @@ See [Tech Stack](./tech-stack.md) for full details.
 
 ## Related Documents
 
-- [Tech Stack](./tech-stack.md)
-- [Routing Engine (A*)](./routing-engine.md)
-- [KDTree](./kdtree.md)
-- [Elevation Pipeline](./elevation.md)
-- [Data Preprocessing](./data-preprocessing.md)
+- [Tech Stack](tech-stack.md)
