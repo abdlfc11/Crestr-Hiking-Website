@@ -14,7 +14,7 @@ interface allFeatures {
 export const features = [
   {
     "heading": "Plan Routes with Precision",
-    "description": "Create routes that follow real paths across the UK & Ireland. See distance, estimated time, and elevation gain update live, with an elevation profile generated as soon as the route is ready. Drop waypoints anywhere along the line to refine it without starting over.",
+    "description": "Create routes that follow paths via snap-to-path across the UK & Ireland. See distance, estimated time, and elevation gain update live, with an elevation profile generated as soon as the route is ready. Drop waypoints anywhere along the line to refine it without starting over.",
     "imageUrl": "https://images.crestr.co.uk/Routing.jpeg",
     "altText": "Feature preview: Routing in Crestr"
   },
