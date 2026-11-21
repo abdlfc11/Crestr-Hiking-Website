@@ -12,37 +12,37 @@
         <meta name="author" content="Abdul">
       
       
-        <link rel="canonical" href="https://docs.crestr.co.uk/technical/routing-engine/">
+        <link rel="canonical" href="https://docs.crestr.co.uk/technical/legacy/legacy/">
       
       
       
-        <link rel="prev" href="../architecture/">
+        <link rel="prev" href="../../frontend-architecture/">
       
       
-        <link rel="next" href="../kdtree/">
+        <link rel="next" href="../../../roadmap/overview/">
       
       
         
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="zensical-0.0.71">
     
     
       
-        <title>Routing Engine (A*) - Crestr Documentation</title>
+        <title>Legacy Routing Engine - Crestr Documentation</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.e442bf79.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.e442bf79.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
       
       
 
@@ -61,7 +61,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -97,9 +97,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Crestr Documentation" class="md-header__button md-logo" aria-label="Crestr Documentation" data-md-component="logo">
+    <a href="../../.." title="Crestr Documentation" class="md-header__button md-logo" aria-label="Crestr Documentation" data-md-component="logo">
       
-  <img src="../../assets/images/Crest-Logo.png" alt="Crestr Documentation">
+  <img src="../../../assets/images/Crest-Logo.png" alt="Crestr Documentation">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Routing Engine (A*)
+              Legacy Routing Engine
             
           </span>
         </div>
@@ -210,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   Home
@@ -231,7 +231,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../user/getting-started/" class="md-tabs__link">
+        <a href="../../../user/getting-started/" class="md-tabs__link">
           
   
   User Guide
@@ -255,7 +255,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../action_log_codes/" class="md-tabs__link">
+        <a href="../../action_log_codes/" class="md-tabs__link">
           
   
   Technical
@@ -277,7 +277,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../roadmap/overview/" class="md-tabs__link">
+        <a href="../../../roadmap/overview/" class="md-tabs__link">
           
   
   Roadmap
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../releases/v0.1/v0.1/" class="md-tabs__link">
+        <a href="../../../releases/v0.1/v0.1/" class="md-tabs__link">
           
   
   Releases
@@ -332,9 +332,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Crestr Documentation" class="md-nav__button md-logo" aria-label="Crestr Documentation" data-md-component="logo">
+    <a href="../../.." title="Crestr Documentation" class="md-nav__button md-logo" aria-label="Crestr Documentation" data-md-component="logo">
       
-  <img src="../../assets/images/Crest-Logo.png" alt="Crestr Documentation">
+  <img src="../../../assets/images/Crest-Logo.png" alt="Crestr Documentation">
 
     </a>
     Crestr Documentation
@@ -361,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -440,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user/getting-started/" class="md-nav__link">
+      <a href="../../../user/getting-started/" class="md-nav__link">
         
   
   
@@ -467,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user/developers/" class="md-nav__link">
+      <a href="../../../user/developers/" class="md-nav__link">
         
   
   
@@ -494,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user/routing/" class="md-nav__link">
+      <a href="../../../user/routing/" class="md-nav__link">
         
   
   
@@ -521,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user/exporting-routes/" class="md-nav__link">
+      <a href="../../../user/exporting-routes/" class="md-nav__link">
         
   
   
@@ -612,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../action_log_codes/" class="md-nav__link">
+      <a href="../../action_log_codes/" class="md-nav__link">
         
   
   
@@ -639,34 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-preprocessing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Data Preprocessing
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-                
-              
-                
-                  
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tech-stack/" class="md-nav__link">
+      <a href="../../tech-stack/" class="md-nav__link">
         
   
   
@@ -693,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="../../architecture/" class="md-nav__link">
         
   
   
@@ -701,6 +674,60 @@
     
   
   Architecture Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Architecture
 
     
   </span>
@@ -736,7 +763,7 @@
   <span class="md-ellipsis">
     
   
-  Routing Engine (A*)
+  Legacy Routing Engine
 
     
   </span>
@@ -753,7 +780,7 @@
   <span class="md-ellipsis">
     
   
-  Routing Engine (A*)
+  Legacy Routing Engine
 
     
   </span>
@@ -779,115 +806,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Overview
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Key Components
-      </span>
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-astarroutefinder-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        1. AStarRouteFinder Class
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-heuristic-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        2. Heuristic Function
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spatial-optimisation-a_star-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        3. Spatial Optimisation (<code>a_star</code> function)
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Algorithm Flow
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-decisions" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Design Decisions
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Performance Characteristics
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Future Improvements
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Related Documents
+        Summary
       </span>
     </span>
   </a>
@@ -898,114 +820,6 @@
   
 </nav>
       
-    </li>
-  
-
-                
-              
-                
-                  
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kdtree/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  KDTree
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-                
-              
-                
-                  
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../elevation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Elevation Pipeline
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-                
-              
-                
-                  
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../backend-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Backend API
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-                
-              
-                
-                  
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../frontend-architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Frontend Architecture
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1079,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../roadmap/overview/" class="md-nav__link">
+      <a href="../../../roadmap/overview/" class="md-nav__link">
         
   
   
@@ -1106,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../roadmap/2025/" class="md-nav__link">
+      <a href="../../../roadmap/2025/" class="md-nav__link">
         
   
   
@@ -1133,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../roadmap/2026/" class="md-nav__link">
+      <a href="../../../roadmap/2026/" class="md-nav__link">
         
   
   
@@ -1160,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../roadmap/2027/" class="md-nav__link">
+      <a href="../../../roadmap/2027/" class="md-nav__link">
         
   
   
@@ -1248,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.1/v0.1/" class="md-nav__link">
+      <a href="../../../releases/v0.1/v0.1/" class="md-nav__link">
         
   
   
@@ -1275,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.2/v0.2/" class="md-nav__link">
+      <a href="../../../releases/v0.2/v0.2/" class="md-nav__link">
         
   
   
@@ -1302,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.3/v0.3/" class="md-nav__link">
+      <a href="../../../releases/v0.3/v0.3/" class="md-nav__link">
         
   
   
@@ -1329,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.4/v0.4/" class="md-nav__link">
+      <a href="../../../releases/v0.4/v0.4/" class="md-nav__link">
         
   
   
@@ -1356,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v1/v1/" class="md-nav__link">
+      <a href="../../../releases/v1/v1/" class="md-nav__link">
         
   
   
@@ -1425,115 +1239,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Overview
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Key Components
-      </span>
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-astarroutefinder-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        1. AStarRouteFinder Class
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-heuristic-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        2. Heuristic Function
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spatial-optimisation-a_star-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        3. Spatial Optimisation (<code>a_star</code> function)
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Algorithm Flow
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-decisions" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Design Decisions
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Performance Characteristics
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Future Improvements
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Related Documents
+        Summary
       </span>
     </span>
   </a>
@@ -1560,91 +1269,19 @@
   
 
 
-<h1 id="routing-engine">Routing Engine<a class="headerlink" href="#routing-engine" title="Permanent link">&para;</a></h1>
-<hr />
+<h1 id="crestr-legacy">Crestr Legacy<a class="headerlink" href="#crestr-legacy" title="Permanent link">&para;</a></h1>
 <p><strong>Last updated:</strong> November 2026</p>
-<blockquote>
-<p>NOTE : This describes my custom A* algorithm used to create routes between points A and B. Crestr no longer uses this, as it was replaced with a BRouter service. You can still find this in the <a href="https://github.com/abdlfc11/Crestr-Legacy">Legacy Repository</a></p>
-</blockquote>
 <hr />
-<p>The core of Crestr’s route generation is a custom <em><em>A</em> pathfinding</em>* implementation,
-heavily optimised for large hiking networks and realistic hiking costs.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The routing engine finds the lowest-cost path between two points on the enriched graph while respecting user preferences
-such as minimum slope tolerance.</p>
-<p>It combines:</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>The following pages detail my custom pathfinding and graph building processes used in Crestr before it was replaced by a BRouter service. </p>
+<p>Crestr moved to a BRouter service for routing in <a href="../../../releases/v1/v1.0/v1.0.0/">v1.0.0</a>, the last version of Crestr before this change is <a href="../../../releases/v0.4/v0.4.0/">v0.4.0</a>, and can be found in the <a href="https://github.com/abdlfc11/Crestr-Legacy">Legacy Crestr Repository</a>. </p>
+<hr />
+<p>See below for more details on the legacy routing engine.</p>
 <ul>
-<li>Accurate <strong>Naismith-based edge costs</strong> (from the elevation pipeline)</li>
-<li><strong>Euclidean heuristic</strong> with elevation penalty</li>
-<li><strong>Spatial optimisation</strong> using a global KDTree and dynamic subgraph extraction</li>
-</ul>
-<h2 id="key-components">Key Components<a class="headerlink" href="#key-components" title="Permanent link">&para;</a></h2>
-<h3 id="1-astarroutefinder-class">1. AStarRouteFinder Class<a class="headerlink" href="#1-astarroutefinder-class" title="Permanent link">&para;</a></h3>
-<p>The main implementation of the A* algorithm:</p>
-<ul>
-<li><strong>Priority Queue</strong> (<code>nodes_left</code>): Uses <code>heapq</code> to always expand the most promising node next.</li>
-<li><strong>Cost Tracking</strong>:</li>
-<li><code>actual_cost</code>: Real cost from start to current node</li>
-<li><code>full_cost</code>: <code>actual_cost + heuristic</code></li>
-<li><strong>Early Termination</strong>: Returns as soon as the destination node is dequeued.</li>
-<li><strong>Slope Filtering</strong>: Skips edges that violate the user’s <code>min_slope</code> preference.</li>
-</ul>
-<h3 id="2-heuristic-function">2. Heuristic Function<a class="headerlink" href="#2-heuristic-function" title="Permanent link">&para;</a></h3>
-<p>A fast, admissible heuristic that estimates remaining time:</p>
-<ul>
-<li>Straight-line (Euclidean) distance at 1.4 m/s base speed</li>
-<li>Additional penalty for elevation difference to the destination</li>
-<li>Guarantees optimality while guiding the search efficiently</li>
-</ul>
-<h3 id="3-spatial-optimisation-a_star-function">3. Spatial Optimisation (<code>a_star</code> function)<a class="headerlink" href="#3-spatial-optimisation-a_star-function" title="Permanent link">&para;</a></h3>
-<p>Because the full graph is large, the engine uses several techniques to reduce computation:</p>
-<ul>
-<li><strong>Global KDTree</strong>: Built once for fast nearest-neighbour lookups.</li>
-<li><strong>Radius-based Subgraph</strong>: Extracts a relevant portion of the graph around the start and end points.</li>
-<li><strong>Bounding Box Culling</strong>: Further removes nodes outside the search area.</li>
-<li><strong>Snapping</strong>: Snaps the user’s clicked coordinates to the nearest actual trail node.</li>
-</ul>
-<p>These optimisations make routing feel instantaneous even on a dense national trail network.</p>
-<h2 id="algorithm-flow">Algorithm Flow<a class="headerlink" href="#algorithm-flow" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Snap start and end coordinates to the nearest trail nodes using KDTree.</li>
-<li>Build a focused subgraph around the route corridor.</li>
-<li>Run A* on the subgraph using precomputed edge costs.</li>
-<li>Reconstruct and return the path.</li>
-</ol>
-<h2 id="design-decisions">Design Decisions<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h2>
-<ul>
-<li>*<em>Why A</em>?**<br />
-It guarantees the optimal path when using an admissible heuristic, while being significantly faster than Dijkstra in practice.
-The use of a heuristic allows me to tune the algorithm to the specific needs of my app making pathfinding highly customisable.</li>
-<li><strong>Precomputed Costs</strong><br />
-All elevation, terrain, and Naismith calculations are done once during preprocessing.
-The routing engine only reads these values.</li>
-<li><strong>Scalability</strong><br />
-The combination of KDTree + subgraph extraction allows the engine to scale to 1M+ node graphs without excessive memory or CPU usage.</li>
-<li><strong>Customisability</strong><br />
-The <code>min_slope</code> parameter enables future features such as “avoid steep sections”.</li>
-</ul>
-<h2 id="performance-characteristics">Performance Characteristics<a class="headerlink" href="#performance-characteristics" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Typical routing time: well under 1 second on regional graphs (distance approx 5-7km).</li>
-<li>Memory efficient due to subgraph extraction.</li>
-<li>Scales with trail density rather than total graph size.</li>
-</ul>
-<h2 id="future-improvements">Future Improvements<a class="headerlink" href="#future-improvements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Bidirectional A* for even faster searches.</li>
-<li>Support for multi-criteria optimisation (e.g. shortest vs least ascent).</li>
-<li>Caching of common routes.</li>
-<li>Real-time dynamic obstacles or closures.</li>
-<li>Integration with live weather / trail conditions.</li>
-</ul>
-<h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href=".././tech-stack/">Tech Stack</a></li>
-<li><a href=".././kdtree/">KDTree</a></li>
-<li><a href=".././elevation/">Elevation Pipeline</a></li>
-<li><a href=".././architecture/">Architecture Overview</a></li>
+<li><a href="../data-preprocessing/">Data Preprocessing</a></li>
+<li><a href="../routing-engine/">Routing Engine (A*)</a></li>
+<li><a href="../kdtree/">KDTree</a></li>
+<li><a href="../elevation/">Elevation Pipeline</a></li>
 </ul>
 
 
@@ -1685,7 +1322,7 @@ The <code>min_slope</code> parameter enables future features such as “avoid st
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture Overview">
+          <a href="../../frontend-architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frontend Architecture">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -1695,20 +1332,20 @@ The <code>min_slope</code> parameter enables future features such as “avoid st
                 Previous
               </span>
               <div class="md-ellipsis">
-                Architecture Overview
+                Frontend Architecture
               </div>
             </div>
           </a>
         
         
           
-          <a href="../kdtree/" class="md-footer__link md-footer__link--next" aria-label="Next: KDTree">
+          <a href="../../../roadmap/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                KDTree
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1777,10 +1414,10 @@ The <code>min_slope</code> parameter enables future features such as “avoid st
       
         
         
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.sections","navigation.expand","navigation.top","navigation.instant","navigation.instant.progress","navigation.tracking","navigation.footer","content.code.copy","content.code.annotate","content.tabs.link","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.tabs","navigation.sections","navigation.expand","navigation.top","navigation.instant","navigation.instant.progress","navigation.tracking","navigation.footer","content.code.copy","content.code.annotate","content.tabs.link","search.highlight"],"redirect":null,"search":"../../../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a2388154.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a2388154.min.js"></script>
       
     
   </body>

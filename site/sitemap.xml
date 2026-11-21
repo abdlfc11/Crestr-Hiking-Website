@@ -109,19 +109,22 @@
         <loc>https://docs.crestr.co.uk/technical/backend-api/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/data-preprocessing/</loc>
-      </url>
-      <url>
-        <loc>https://docs.crestr.co.uk/technical/elevation/</loc>
-      </url>
-      <url>
         <loc>https://docs.crestr.co.uk/technical/frontend-architecture/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/kdtree/</loc>
+        <loc>https://docs.crestr.co.uk/technical/legacy/data-preprocessing/</loc>
       </url>
       <url>
-        <loc>https://docs.crestr.co.uk/technical/routing-engine/</loc>
+        <loc>https://docs.crestr.co.uk/technical/legacy/elevation/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/legacy/kdtree/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/legacy/legacy/</loc>
+      </url>
+      <url>
+        <loc>https://docs.crestr.co.uk/technical/legacy/routing-engine/</loc>
       </url>
       <url>
         <loc>https://docs.crestr.co.uk/technical/tech-stack/</loc>
